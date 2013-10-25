@@ -18,11 +18,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.title = @"Dashboard";
+    //self.view.backgroundColor = [UIColor clearColor];
+    //self.view.backgroundColor = [UIColor colorWithRed: 0.0 green: 0.477 blue: 1.0 alpha:1.0];
     
     // Change button color
-    _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    //_sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;

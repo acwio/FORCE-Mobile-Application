@@ -29,14 +29,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    //self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    //self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
     self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
-    _menuItems = @[@"title", @"dashboard", @"meetings", @"map", @"space", @"settings", @"about"];
     
+    
+    _menuItems = @[@"title", @"dashboard", @"meetings", @"people", @"files", @"space", @"settings", @"about"];
+}
 
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    // Set the title of navigation bar by using the menu items
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
+    destViewController.title = [[_menuItems objectAtIndex:indexPath.row] capitalizedString];
+    
+    // Set the photo if it navigates to the PhotoView
+    if ([segue.identifier isEqualToString:@"showPhoto"]) {
+        PhotoViewController *photoController = (PhotoViewController*)segue.destinationViewController;
+        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo.jpg", [_menuItems objectAtIndex:indexPath.row]];
+        photoController.photoFilename = photoFilename;
+    }
+    
+    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
+        SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
+        
+        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
+            
+            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
+            [navController setViewControllers: @[dvc] animated: NO ];
+            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+        };
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
