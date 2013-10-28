@@ -26,7 +26,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIGestureRecognizerSubclass.h>
-
+#include "AppDelegate.h"
 #import "SWRevealViewController.h"
 
 #pragma mark - SWDirectionPanGestureRecognizer
@@ -126,6 +126,7 @@ static CGFloat statusBarAdjustment( UIView* view )
 @property (nonatomic, readonly) UIView *rightView;
 @property (nonatomic, readonly) UIView *frontView;
 @property (nonatomic, assign) BOOL disableLayout;
+@property UIView *_underStatusBarView;
 
 @end
 
@@ -165,6 +166,15 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
         CALayer *frontViewLayer = _frontView.layer;
         frontViewLayer.masksToBounds = NO;
         frontViewLayer.shadowColor = [UIColor blackColor].CGColor;
+        
+        /* Here starts my under status bar implementation */
+        CGRect statusFrame = [[UIApplication sharedApplication]statusBarFrame];
+        __underStatusBarView = [[UIView alloc]initWithFrame:statusFrame];
+        [__underStatusBarView setBackgroundColor:[UIColor blackColor]];
+        [__underStatusBarView setAlpha:0.0];
+        [self addSubview:__underStatusBarView];
+        /* here it ends */
+        
         //frontViewLayer.shadowOpacity = 1.0f;
         frontViewLayer.shadowOpacity = _c.frontViewShadowOpacity;
         frontViewLayer.shadowOffset = _c.frontViewShadowOffset;
@@ -285,6 +295,9 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     
     CGFloat rightWidth = rightRevealWidth + _c.rightViewRevealOverdraw;
     _rightView.frame = CGRectMake(bounds.size.width-rightWidth+rightXLocation, 0.0f, rightWidth, bounds.size.height);
+    
+    /*this line changes the under status bar view alpha*/
+    __underStatusBarView.alpha = xLocation/rearRevealWidth;
 }
 
 

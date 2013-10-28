@@ -61,6 +61,8 @@ typedef enum
 // Object instance init and rear view setting
 - (id)initWithRearViewController:(UIViewController *)rearViewController frontViewController:(UIViewController *)frontViewController;
 
+@property (nonatomic) UIView *_underStatusBarView;
+
 // Rear view controller, can be nil if not used
 @property (strong, nonatomic) UIViewController *rearViewController;
 
@@ -99,7 +101,7 @@ typedef enum
 - (UIPanGestureRecognizer*)panGestureRecognizer;
 
 // The following properties are provided for further customization, they are set to default values on initialization,
-// you should not generally have to set them
+// you should not generallyhave to set them
 
 // Defines how much of the rear or right view is shown, default is 260.
 @property (assign, nonatomic) CGFloat rearViewRevealWidth;

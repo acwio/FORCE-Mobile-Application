@@ -1,30 +1,39 @@
 //
-//  ViewController.m
-//  SidebarDemo
+//  MeetingViewController.m
+//  FORCE
 //
-//  Created by Simon on 28/6/13.
-//  Copyright (c) 2013 Appcoda. All rights reserved.
+//  Created by Alex on 10/27/13.
+//  Copyright (c) 2013 Middle Tennessee State University. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "MeetingViewController.h"
 #import "SWRevealViewController.h"
 
-@interface MainViewController ()
+@interface MeetingViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation MeetingViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"Dashboard";
+    self.title = @"Meetings";
     //self.view.backgroundColor = [UIColor clearColor];
     //self.view.backgroundColor = [UIColor colorWithRed: 0.0 green: 0.477 blue: 1.0 alpha:1.0];
     
     // Change button color
-    _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    //_sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
@@ -32,7 +41,6 @@
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
 }
 
 - (void)didReceiveMemoryWarning

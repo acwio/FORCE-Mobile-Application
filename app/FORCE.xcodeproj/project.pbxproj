@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D013CA181E1AA8005426F8 /* MeetingViewController.m */; };
+		21D013CD181F1287005426F8 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D013CC181F1287005426F8 /* user.png */; };
 		21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FD9594181844BA00E50963 /* SWRevealViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
@@ -43,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21D013C9181E1AA8005426F8 /* MeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingViewController.h; sourceTree = "<group>"; };
+		21D013CA181E1AA8005426F8 /* MeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingViewController.m; sourceTree = "<group>"; };
+		21D013CC181F1287005426F8 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		21FD9593181844BA00E50963 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		21FD9594181844BA00E50963 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		F4EECF0E177C99F400778578 /* FORCE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FORCE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +153,8 @@
 				F4EECF74177FF90600778578 /* PhotoViewController.m */,
 				F4EECF34177C9A1E00778578 /* Library */,
 				F4EECF18177C99F400778578 /* Supporting Files */,
+				21D013C9181E1AA8005426F8 /* MeetingViewController.h */,
+				21D013CA181E1AA8005426F8 /* MeetingViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 		F4EECF53177F37CB00778578 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21D013CC181F1287005426F8 /* user.png */,
 				F4FE87F91780081300CB3DA8 /* comments_photo.jpg */,
 				F4FE87FD178010F000CB3DA8 /* bookmark_photo.jpg */,
 				F4FE8801178010FA00CB3DA8 /* tag_photo.jpg */,
@@ -264,6 +272,7 @@
 				F4EECF61177F384900778578 /* wishlist.png in Resources */,
 				F4EECF63177F3CAB00778578 /* tag.png in Resources */,
 				F4EECF67177F4AB000778578 /* nav_bg.png in Resources */,
+				21D013CD181F1287005426F8 /* user.png in Resources */,
 				F4EECF6A177F4C0200778578 /* menu.png in Resources */,
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
 				F4FE87FB1780081300CB3DA8 /* comments_photo.jpg in Resources */,
@@ -283,6 +292,7 @@
 			files = (
 				21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
+				21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,

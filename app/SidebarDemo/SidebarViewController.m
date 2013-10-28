@@ -35,7 +35,7 @@
     
     
     
-    _menuItems = @[@"title", @"dashboard", @"meetings", @"people", @"files", @"space", @"settings", @"about"];
+    _menuItems = @[@"title", @"dashboard", @"meetings", @"people", @"files", @"settings", @"about"];
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
@@ -84,6 +84,17 @@
 {
     // Return the number of rows in the section.
     return [self.menuItems count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 83;
+    }
+    else
+    {
+        return 50;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
