@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     /* the following line will allow the nav bar & blue menu button to show */
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
     
     self.title = @"Archive";
     //self.view.backgroundColor = [UIColor clearColor];
@@ -39,11 +39,19 @@
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.revealViewController;
-    _sidebarButton.action = @selector(revealToggle:);
+    //_sidebarButton.target = self.revealViewController;
+    //_sidebarButton.action = @selector(revealToggle:);
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    UIButton *btn =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(10.0, 2.0, 28.0, 20.0)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"menu.png"] forState:UIControlStateNormal];
+    [btn addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
+    self.navigationItem.leftBarButtonItem=barBtn;
 }
 
 - (void)didReceiveMemoryWarning
