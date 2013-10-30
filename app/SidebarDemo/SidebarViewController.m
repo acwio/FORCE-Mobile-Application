@@ -35,7 +35,7 @@
     
     
     
-    _menuItems = @[@"title", @"dashboard", @"meetings", @"people", @"files", @"settings", @"about"];
+    _menuItems = @[@"title", @"dashboard", @"archive", @"people", @"files", @"settings", @"about"];
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
