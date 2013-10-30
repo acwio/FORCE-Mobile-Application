@@ -170,7 +170,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
         /* Here starts my under status bar implementation */
         CGRect statusFrame = [[UIApplication sharedApplication]statusBarFrame];
         __underStatusBarView = [[UIView alloc]initWithFrame:statusFrame];
-        [__underStatusBarView setBackgroundColor:[UIColor blackColor]];
+        [__underStatusBarView setBackgroundColor:[UIColor whiteColor]];
         [__underStatusBarView setAlpha:0.0];
         [self addSubview:__underStatusBarView];
         /* here it ends */
@@ -297,7 +297,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     _rightView.frame = CGRectMake(bounds.size.width-rightWidth+rightXLocation, 0.0f, rightWidth, bounds.size.height);
     
     /*this line changes the under status bar view alpha*/
-    __underStatusBarView.alpha = xLocation/rearRevealWidth;
+    __underStatusBarView.alpha = 1.0; //xLocation/rearRevealWidth;
 }
 
 

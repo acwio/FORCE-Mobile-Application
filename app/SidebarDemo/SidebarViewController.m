@@ -29,9 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    //self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
+    self.view.backgroundColor = [UIColor blackColor]; //colorWithWhite:0.2f alpha:1.0f];
+    self.tableView.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
+    self.tableView.separatorColor = [UIColor blackColor]; //colorWithWhite:0.15f alpha:0.2f];
     
     
     
@@ -89,11 +89,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        return 83;
+        return 120;
     }
     else
     {
-        return 50;
+        return 45;
     }
 }
 
@@ -107,6 +107,8 @@
     
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
     
     return cell;
     
