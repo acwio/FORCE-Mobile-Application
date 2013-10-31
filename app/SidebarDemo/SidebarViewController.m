@@ -32,10 +32,9 @@
     self.view.backgroundColor = [UIColor blackColor]; //colorWithWhite:0.2f alpha:1.0f];
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
     self.tableView.separatorColor = [UIColor blackColor]; //colorWithWhite:0.15f alpha:0.2f];
+    self.tableView.alwaysBounceVertical = NO;
     
-    
-    
-    _menuItems = @[@"title", @"dashboard", @"archive", @"people", @"files", @"settings", @"about"];
+    _menuItems = @[@"title", @"dashboard", @"archive", @"people", @"files", @"settings", @"about", @"space"];
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
@@ -84,6 +83,19 @@
 {
     // Return the number of rows in the section.
     return [self.menuItems count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    // This will create a "invisible" footer
+    return 0.01f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [UIView new];
+    
+    // If you are not using ARC:
+    // return [[UIView new] autorelease];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

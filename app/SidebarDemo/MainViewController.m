@@ -33,6 +33,7 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     
+    /* make nav bar button */
     UIButton *btn =  [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(10.0, 2.0, 28.0, 20.0)];
     [btn setBackgroundImage:[UIImage imageNamed:@"menu.png"] forState:UIControlStateNormal];
