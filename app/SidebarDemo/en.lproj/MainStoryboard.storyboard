@@ -217,6 +217,62 @@
             </objects>
             <point key="canvasLocation" x="597" y="-179"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="FRA-Tp-hH1">
+            <objects>
+                <tableViewController id="3Ac-Mi-o4u" customClass="SearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IHB-5b-xLX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="GJy-mV-L9U">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="3Ac-Mi-o4u" id="Pjl-Is-9JP"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="011-16-vb8">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="011-16-vb8" id="qSU-Lt-xrQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3Ac-Mi-o4u" id="dvW-3h-0ne"/>
+                            <outlet property="delegate" destination="3Ac-Mi-o4u" id="hqm-zM-yBt"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Bdw-1A-UCV" id="hOy-rO-rFz"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGx-aG-Xoh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="wK8-2a-2jB">
+                    <connections>
+                        <outlet property="delegate" destination="3Ac-Mi-o4u" id="D7h-MY-fP8"/>
+                        <outlet property="searchContentsController" destination="3Ac-Mi-o4u" id="Uef-gl-i7v"/>
+                        <outlet property="searchResultsDataSource" destination="3Ac-Mi-o4u" id="ajv-hc-IRa"/>
+                        <outlet property="searchResultsDelegate" destination="3Ac-Mi-o4u" id="Jro-bH-YQU"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="Bdw-1A-UCV">
+                    <connections>
+                        <outlet property="delegate" destination="3Ac-Mi-o4u" id="0SW-Ai-Ai5"/>
+                        <outlet property="searchBar" destination="GJy-mV-L9U" id="deC-SH-t4z"/>
+                        <outlet property="searchContentsController" destination="3Ac-Mi-o4u" id="mgS-ot-RwL"/>
+                        <outlet property="searchResultsDataSource" destination="3Ac-Mi-o4u" id="1Ot-2n-ac4"/>
+                        <outlet property="searchResultsDelegate" destination="3Ac-Mi-o4u" id="N6g-eH-M5H"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="599" y="553"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Z6-ag-ZQ1">
             <objects>
@@ -251,6 +307,7 @@
                     <connections>
                         <segue destination="Meq-yH-YF6" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="yJj-Aa-ezf"/>
                         <segue destination="5D7-fp-3iF" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="ArD-3b-JNv"/>
+                        <segue destination="3Ac-Mi-o4u" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegue" id="W1s-TR-sQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4c-d4-88L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,6 +325,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zaF-c6-UNR"/>
+        <segue reference="sEJ-TL-x5G"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,7 @@
 		21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D013CA181E1AA8005426F8 /* MeetingViewController.m */; };
 		21D013CD181F1287005426F8 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D013CC181F1287005426F8 /* user.png */; };
 		21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FD9594181844BA00E50963 /* SWRevealViewController.m */; };
+		D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D31721821E83C0055F3A2 /* SearchViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
 		F4EECF16177C99F400778578 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF15177C99F400778578 /* CoreGraphics.framework */; };
@@ -50,6 +51,8 @@
 		21D013CC181F1287005426F8 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		21FD9593181844BA00E50963 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		21FD9594181844BA00E50963 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		D84D31711821E83C0055F3A2 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		D84D31721821E83C0055F3A2 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		F4EECF0E177C99F400778578 /* FORCE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FORCE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EECF11177C99F400778578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4EECF13177C99F400778578 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,6 +143,8 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D84D31711821E83C0055F3A2 /* SearchViewController.h */,
+				D84D31721821E83C0055F3A2 /* SearchViewController.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
@@ -294,6 +299,7 @@
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
+				D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
