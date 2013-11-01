@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
+#import "DataClass.h"
 
 @interface MainViewController ()
 
@@ -42,12 +43,17 @@
     
     self.navigationItem.leftBarButtonItem=barBtn;
 
+    //testing global stuff
+    DataClass *obj=[DataClass getInstance];
+    obj.str= @"I am Global variable";
+
 }
 
 // This is called both on load and after returning to this view
 // The gestures need to be set both times, so that was moved here.
 - (void)viewDidAppear:(BOOL)animated
 {
+
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }

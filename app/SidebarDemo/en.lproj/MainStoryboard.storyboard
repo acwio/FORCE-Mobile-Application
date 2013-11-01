@@ -63,7 +63,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="MeetingTabBar" definesPresentationContext="YES" id="f8k-os-NU9" customClass="MeetingTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="YTP-ih-hiK"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Ra7-tv-elG">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

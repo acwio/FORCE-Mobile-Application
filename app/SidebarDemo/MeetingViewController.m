@@ -49,6 +49,8 @@
     UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.leftBarButtonItem=barBtn;
+
+
 }
 
 // This is called both on load and after returning to this view

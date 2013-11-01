@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		088A986218234CCE001B1602 /* DataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A986118234CCE001B1602 /* DataClass.m */; };
 		21BD95A518231BA900A931D7 /* Icon_60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A118231BA900A931D7 /* Icon_60x60.png */; };
 		21BD95A618231BA900A931D7 /* Icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A218231BA900A931D7 /* Icon_120x120.png */; };
 		21BD95A718231BA900A931D7 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A318231BA900A931D7 /* login.png */; };
@@ -51,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		088A986018234CCE001B1602 /* DataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataClass.h; sourceTree = "<group>"; };
+		088A986118234CCE001B1602 /* DataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataClass.m; sourceTree = "<group>"; };
 		21BD95A118231BA900A931D7 /* Icon_60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_60x60.png; sourceTree = "<group>"; };
 		21BD95A218231BA900A931D7 /* Icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_120x120.png; sourceTree = "<group>"; };
 		21BD95A318231BA900A931D7 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
@@ -174,6 +177,10 @@
 				F4EECF48177DF87700778578 /* SidebarViewController.h */,
 				F4EECF49177DF87700778578 /* SidebarViewController.m */,
 				F4EECF18177C99F400778578 /* Supporting Files */,
+				21D013C9181E1AA8005426F8 /* MeetingViewController.h */,
+				21D013CA181E1AA8005426F8 /* MeetingViewController.m */,
+				088A986018234CCE001B1602 /* DataClass.h */,
+				088A986118234CCE001B1602 /* DataClass.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -323,6 +330,7 @@
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
+				088A986218234CCE001B1602 /* DataClass.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
 				F4EECF75177FF90600778578 /* PhotoViewController.m in Sources */,
