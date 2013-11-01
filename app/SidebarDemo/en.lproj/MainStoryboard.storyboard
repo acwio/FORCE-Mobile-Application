@@ -39,6 +39,64 @@
             </objects>
             <point key="canvasLocation" x="1204" y="-193"/>
         </scene>
+        <!--View Controller - Item 1-->
+        <scene sceneID="Dfl-po-3Wa">
+            <objects>
+                <viewController id="EZC-uX-N0J" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bso-YG-goj"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHh-b2-NVF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="thH-De-e0h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="CRm-Tc-sKd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUh-SO-ACa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="377"/>
+        </scene>
+        <!--Meeting Tab Bar Controller-->
+        <scene sceneID="feO-g6-kRj">
+            <objects>
+                <tabBarController storyboardIdentifier="MeetingTabBar" definesPresentationContext="YES" id="f8k-os-NU9" customClass="MeetingTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YTP-ih-hiK"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ra7-tv-elG">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="EZC-uX-N0J" kind="relationship" relationship="viewControllers" id="cyE-CC-4t0"/>
+                        <segue destination="jcU-ls-9Rq" kind="relationship" relationship="viewControllers" id="2AE-zl-nWD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YmT-CY-7DU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="596"/>
+        </scene>
+        <!--View Controller - Item 2-->
+        <scene sceneID="PPt-fl-QGC">
+            <objects>
+                <viewController id="jcU-ls-9Rq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ocb-WS-ZzV"/>
+                        <viewControllerLayoutGuide type="bottom" id="91n-QD-CPj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kXL-c5-sVp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="gP7-Hr-gAP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DHl-Jg-QCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="1048"/>
+        </scene>
         <!--Main View Controller - Main View Controller-->
         <scene sceneID="5">
             <objects>
@@ -242,10 +300,11 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="011-16-vb8">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="011-16-vb8">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="011-16-vb8" id="qSU-Lt-xrQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -315,6 +374,7 @@
                         <segue destination="Meq-yH-YF6" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="yJj-Aa-ezf"/>
                         <segue destination="5D7-fp-3iF" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="ArD-3b-JNv"/>
                         <segue destination="3Ac-Mi-o4u" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegue" id="W1s-TR-sQu"/>
+                        <segue destination="f8k-os-NU9" kind="custom" customClass="SWRevealViewControllerSegue" id="Nvz-c6-c5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4c-d4-88L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,6 +392,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sEJ-TL-x5G"/>
+        <segue reference="zaF-c6-UNR"/>
     </inferredMetricsTieBreakers>
 </document>

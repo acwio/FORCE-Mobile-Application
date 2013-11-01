@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainViewController.h"
 
 @interface SearchViewController : UITableViewController
 

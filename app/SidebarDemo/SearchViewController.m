@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Middle Tennessee State University. All rights reserved.
 //
 
+#import "SWRevealViewController.h"
 #import "SearchViewController.h"
+#import "MeetingTabBarController.h"
 
 @interface SearchViewController ()
 
@@ -134,6 +136,36 @@ shouldReloadTableForSearchString:(NSString *)searchString
     return YES;
 }
 
+// Called when you click on an item in the search results
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    // Create a new meeting page, using the identifier defined in Storyboard
+    MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+    stubController.view.backgroundColor = [UIColor whiteColor];
+    
+    // Set the title depending on if there was a search or not
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        stubController.title = [searchResults objectAtIndex:indexPath.row];
+        
+    } else {
+        stubController.title = [tableData objectAtIndex:indexPath.row];
+        
+    }
+    
+    // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
+    // a reference to revealViewController
+    [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    // Push the new meeting page on top of the current page
+    [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:NO];
+    
+    // Hide the search bar (it saves your search)
+    [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+    
+    
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -180,9 +212,8 @@ shouldReloadTableForSearchString:(NSString *)searchString
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+ };
+*/
 
- */
 
 @end

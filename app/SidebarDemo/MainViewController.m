@@ -41,16 +41,28 @@
     UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.leftBarButtonItem=barBtn;
-    
+
+}
+
+// This is called both on load and after returning to this view
+// The gestures need to be set both times, so that was moved here.
+- (void)viewDidAppear:(BOOL)animated
+{
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)openMeetingPage
+{
+    UIViewController *stubController = [[UIViewController alloc] init];
+	stubController.view.backgroundColor = [UIColor whiteColor];
+	[self.navigationController pushViewController:stubController animated:YES];
 }
 
 @end

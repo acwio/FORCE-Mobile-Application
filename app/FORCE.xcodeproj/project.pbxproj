@@ -15,6 +15,7 @@
 		21D013CD181F1287005426F8 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D013CC181F1287005426F8 /* user.png */; };
 		21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FD9594181844BA00E50963 /* SWRevealViewController.m */; };
 		D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D31721821E83C0055F3A2 /* SearchViewController.m */; };
+		D84D3176182347560055F3A2 /* MeetingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D3175182347560055F3A2 /* MeetingTabBarController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
 		F4EECF16177C99F400778578 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF15177C99F400778578 /* CoreGraphics.framework */; };
@@ -61,6 +62,8 @@
 		21FD9594181844BA00E50963 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		D84D31711821E83C0055F3A2 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		D84D31721821E83C0055F3A2 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		D84D3174182347560055F3A2 /* MeetingTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingTabBarController.h; sourceTree = "<group>"; };
+		D84D3175182347560055F3A2 /* MeetingTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingTabBarController.m; sourceTree = "<group>"; };
 		F4EECF0E177C99F400778578 /* FORCE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FORCE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EECF11177C99F400778578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4EECF13177C99F400778578 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,23 +155,25 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D84D31711821E83C0055F3A2 /* SearchViewController.h */,
-				D84D31721821E83C0055F3A2 /* SearchViewController.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
+				F4EECF34177C9A1E00778578 /* Library */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
+				D84D3174182347560055F3A2 /* MeetingTabBarController.h */,
+				D84D3175182347560055F3A2 /* MeetingTabBarController.m */,
 				F4EECF2C177C99F400778578 /* MainViewController.h */,
 				F4EECF2D177C99F400778578 /* MainViewController.m */,
-				F4EECF48177DF87700778578 /* SidebarViewController.h */,
-				F4EECF49177DF87700778578 /* SidebarViewController.m */,
 				F4EECF6C177FD51300778578 /* MapViewController.h */,
 				F4EECF6D177FD51300778578 /* MapViewController.m */,
-				F4EECF73177FF90500778578 /* PhotoViewController.h */,
-				F4EECF74177FF90600778578 /* PhotoViewController.m */,
-				F4EECF34177C9A1E00778578 /* Library */,
-				F4EECF18177C99F400778578 /* Supporting Files */,
 				21D013C9181E1AA8005426F8 /* MeetingViewController.h */,
 				21D013CA181E1AA8005426F8 /* MeetingViewController.m */,
+				F4EECF73177FF90500778578 /* PhotoViewController.h */,
+				F4EECF74177FF90600778578 /* PhotoViewController.m */,
+				D84D31711821E83C0055F3A2 /* SearchViewController.h */,
+				D84D31721821E83C0055F3A2 /* SearchViewController.m */,
+				F4EECF48177DF87700778578 /* SidebarViewController.h */,
+				F4EECF49177DF87700778578 /* SidebarViewController.m */,
+				F4EECF18177C99F400778578 /* Supporting Files */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */,
+				D84D3176182347560055F3A2 /* MeetingTabBarController.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,

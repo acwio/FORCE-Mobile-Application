@@ -41,10 +41,7 @@
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     //_sidebarButton.target = self.revealViewController;
     //_sidebarButton.action = @selector(revealToggle:);
-    
-    // Set the gesture
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
+        
     UIButton *btn =  [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(10.0, 2.0, 28.0, 20.0)];
     [btn setBackgroundImage:[UIImage imageNamed:@"menu.png"] forState:UIControlStateNormal];
@@ -52,6 +49,14 @@
     UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.leftBarButtonItem=barBtn;
+}
+
+// This is called both on load and after returning to this view
+// The gestures need to be set both times, so that was moved here.
+- (void)viewDidAppear:(BOOL)animated
+{
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
