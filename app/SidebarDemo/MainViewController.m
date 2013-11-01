@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
+#import "DataClass.h"
 
 @interface MainViewController ()
 
@@ -41,6 +42,11 @@
     UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.leftBarButtonItem=barBtn;
+    
+    //testing global stuff
+    DataClass *obj=[DataClass getInstance];
+    obj.str= @"I am Global variable";
+    
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];

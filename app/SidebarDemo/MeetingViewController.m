@@ -52,6 +52,8 @@
     UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.leftBarButtonItem=barBtn;
+
+
 }
 
 - (void)didReceiveMemoryWarning
