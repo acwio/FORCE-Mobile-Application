@@ -30,13 +30,30 @@ NSArray *searchResults;
 {
     [super viewDidLoad];
     
+    //self.edgesForExtendedLayout=UIRectEdgeNone;
+    //self.extendedLayoutIncludesOpaqueBars=NO;
+    //self.automaticallyAdjustsScrollViewInsets=NO;
+    self.tableView.frame = CGRectMake(60, 0, 260,900);
     tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-
+    
+    self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
+    //self.tableView.frame = CGRectMake(60, 20, 260,900);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
+{
+    controller.searchBar.showsCancelButton = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.tableView.frame = CGRectMake(60, 0, 260,900);
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +97,21 @@ NSArray *searchResults;
         cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
     }
     
+    cell.textLabel.textAlignment = UITextAlignmentRight;
+    
+    for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            [subview removeFromSuperview];
+            break;
+        }
+    }
+
+    //self.tableView.frame = CGRectMake(60, 20, 260,900);
+    //self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
+    //self.view.backgroundColor = [UIColor blackColor]; //colorWithWhite:0.2f alpha:1.0f];
+    //self.tableView.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
+    //self.tableView.separatorColor = [UIColor blackColor]; //colorWithWhite:0.15f alpha:0.2f];
+    
     return cell;
 }
 
@@ -99,7 +131,6 @@ shouldReloadTableForSearchString:(NSString *)searchString
                                scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
                                       objectAtIndex:[self.searchDisplayController.searchBar
                                                      selectedScopeButtonIndex]]];
-    
     return YES;
 }
 
