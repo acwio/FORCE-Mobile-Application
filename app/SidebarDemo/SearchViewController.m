@@ -7,6 +7,7 @@
 //
 
 #import "SearchViewController.h"
+#import "DataClass.h"
 
 @interface SearchViewController ()
 
@@ -29,6 +30,10 @@ NSArray *searchResults;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    /* references the SAME obj.str declared in the MainViewController */
+    DataClass *obj=[DataClass getInstance];
+    NSLog(@"%@", obj.str);
     
     //self.edgesForExtendedLayout=UIRectEdgeNone;
     //self.extendedLayoutIncludesOpaqueBars=NO;

@@ -5,15 +5,6 @@
 //  Created by nep2d on 10/31/13.
 //  Copyright (c) 2013 Middle Tennessee State University. All rights reserved.
 //
-
-#import "DataClass.h"
-
-//
-//  DataClass.m
-//  FORCE
-//
-//  Created by nep2d on 10/31/13.
-//  Copyright (c) 2013 Middle Tennessee State University. All rights reserved.
 //
 
 #import "DataClass.h"
