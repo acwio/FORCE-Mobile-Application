@@ -17,7 +17,7 @@
 
 @implementation SearchViewController
 
-NSArray *tableData;
+NSMutableArray *meetings;
 NSArray *searchResults;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -34,14 +34,13 @@ NSArray *searchResults;
     [super viewDidLoad];
     
     /* references the SAME obj.str declared in the MainViewController */
-    DataClass *obj=[DataClass getInstance];
-    NSLog(@"%@", obj.meetings);
+    DataClass *data=[DataClass getInstance];
+    meetings = data.meetings;
     
     //self.edgesForExtendedLayout=UIRectEdgeNone;
     //self.extendedLayoutIncludesOpaqueBars=NO;
     //self.automaticallyAdjustsScrollViewInsets=NO;
     self.tableView.frame = CGRectMake(60, 0, 260,900);
-    tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
     
     self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
     //self.tableView.frame = CGRectMake(60, 20, 260,900);
@@ -83,7 +82,7 @@ NSArray *searchResults;
         return [searchResults count];
         
     } else {
-        return [tableData count];
+        return [meetings count];
         
     }
 }
@@ -98,11 +97,15 @@ NSArray *searchResults;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    Meeting *meet;
+    
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+        meet = [searchResults objectAtIndex:indexPath.row];
     } else {
-        cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+       meet = [meetings objectAtIndex:indexPath.row];
     }
+    
+    cell.textLabel.text = meet.name;
     
     cell.textLabel.textAlignment = UITextAlignmentRight;
     
@@ -125,10 +128,10 @@ NSArray *searchResults;
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSPredicate *resultPredicate = [NSPredicate
-                                    predicateWithFormat:@"SELF contains[cd] %@",
+                                    predicateWithFormat:@"name contains[cd] %@",
                                     searchText];
     
-    searchResults = [tableData filteredArrayUsingPredicate:resultPredicate];
+    searchResults = [meetings filteredArrayUsingPredicate:resultPredicate];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
@@ -149,15 +152,18 @@ shouldReloadTableForSearchString:(NSString *)searchString
     MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
     stubController.view.backgroundColor = [UIColor whiteColor];
     
+    Meeting *meet;
+    
     // Set the title depending on if there was a search or not
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        stubController.title = [searchResults objectAtIndex:indexPath.row];
+         meet = [searchResults objectAtIndex:indexPath.row];
         
     } else {
-        stubController.title = [tableData objectAtIndex:indexPath.row];
+        meet = [meetings objectAtIndex:indexPath.row];
         
     }
     
+    stubController.title = meet.name;
     stubController.data = stubController.title;
     
     // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
