@@ -362,6 +362,7 @@
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				088A986218234CCE001B1602 /* DataClass.m in Sources */,
 				08C034571824A99300D749C7 /* Person.m in Sources */,
+				D84D317A1824AAED0055F3A2 /* DetailViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
 				F4EECF75177FF90600778578 /* PhotoViewController.m in Sources */,
