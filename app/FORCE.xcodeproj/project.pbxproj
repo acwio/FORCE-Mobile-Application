@@ -21,6 +21,8 @@
 		D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D31721821E83C0055F3A2 /* SearchViewController.m */; };
 		D84D3176182347560055F3A2 /* MeetingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D3175182347560055F3A2 /* MeetingTabBarController.m */; };
 		D84D317A1824AAED0055F3A2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D31791824AAED0055F3A2 /* DetailViewController.m */; };
+		D84D317D182574710055F3A2 /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D317C182574710055F3A2 /* MediaViewController.m */; };
+		D84D317F182576D60055F3A2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84D317E182576D60055F3A2 /* AVFoundation.framework */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
 		F4EECF16177C99F400778578 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF15177C99F400778578 /* CoreGraphics.framework */; };
@@ -79,6 +81,9 @@
 		D84D3175182347560055F3A2 /* MeetingTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingTabBarController.m; sourceTree = "<group>"; };
 		D84D31781824AAED0055F3A2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D84D31791824AAED0055F3A2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D84D317B182574710055F3A2 /* MediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaViewController.h; sourceTree = "<group>"; };
+		D84D317C182574710055F3A2 /* MediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaViewController.m; sourceTree = "<group>"; };
+		D84D317E182576D60055F3A2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F4EECF0E177C99F400778578 /* FORCE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FORCE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EECF11177C99F400778578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4EECF13177C99F400778578 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84D317F182576D60055F3A2 /* AVFoundation.framework in Frameworks */,
 				F4EECF72177FE9BA00778578 /* MapKit.framework in Frameworks */,
 				F4EECF70177FE9B400778578 /* CoreLocation.framework in Frameworks */,
 				F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */,
@@ -142,6 +148,8 @@
 			children = (
 				D84D31781824AAED0055F3A2 /* DetailViewController.h */,
 				D84D31791824AAED0055F3A2 /* DetailViewController.m */,
+				D84D317B182574710055F3A2 /* MediaViewController.h */,
+				D84D317C182574710055F3A2 /* MediaViewController.m */,
 			);
 			name = "Meeting Page Tabs";
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 		F4EECF10177C99F400778578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D84D317E182576D60055F3A2 /* AVFoundation.framework */,
 				F4EECF11177C99F400778578 /* UIKit.framework */,
 				F4EECF13177C99F400778578 /* Foundation.framework */,
 				F4EECF15177C99F400778578 /* CoreGraphics.framework */,
@@ -366,6 +375,7 @@
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
 				F4EECF75177FF90600778578 /* PhotoViewController.m in Sources */,
+				D84D317D182574710055F3A2 /* MediaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
