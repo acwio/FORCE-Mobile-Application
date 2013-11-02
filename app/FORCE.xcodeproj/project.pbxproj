@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		088A986218234CCE001B1602 /* DataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A986118234CCE001B1602 /* DataClass.m */; };
+		08C0345418247D3800D749C7 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C0345318247D3800D749C7 /* Meeting.m */; };
 		21BD95A518231BA900A931D7 /* Icon_60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A118231BA900A931D7 /* Icon_60x60.png */; };
 		21BD95A618231BA900A931D7 /* Icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A218231BA900A931D7 /* Icon_120x120.png */; };
 		21BD95A718231BA900A931D7 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A318231BA900A931D7 /* login.png */; };
@@ -54,6 +55,8 @@
 /* Begin PBXFileReference section */
 		088A986018234CCE001B1602 /* DataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataClass.h; sourceTree = "<group>"; };
 		088A986118234CCE001B1602 /* DataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataClass.m; sourceTree = "<group>"; };
+		08C0345218247D3800D749C7 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
+		08C0345318247D3800D749C7 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
 		21BD95A118231BA900A931D7 /* Icon_60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_60x60.png; sourceTree = "<group>"; };
 		21BD95A218231BA900A931D7 /* Icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_120x120.png; sourceTree = "<group>"; };
 		21BD95A318231BA900A931D7 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				21D013CA181E1AA8005426F8 /* MeetingViewController.m */,
 				088A986018234CCE001B1602 /* DataClass.h */,
 				088A986118234CCE001B1602 /* DataClass.m */,
+				08C0345218247D3800D749C7 /* Meeting.h */,
+				08C0345318247D3800D749C7 /* Meeting.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */,
+				08C0345418247D3800D749C7 /* Meeting.m in Sources */,
 				D84D3176182347560055F3A2 /* MeetingTabBarController.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */,
