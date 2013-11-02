@@ -45,7 +45,7 @@
 
     //testing global stuff
     DataClass *obj=[DataClass getInstance];
-    obj.str= @"I am Global variable";
+    //obj.str= @"I am Global variable";
 
 }
 
