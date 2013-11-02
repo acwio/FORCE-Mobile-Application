@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeetingTabBarController : UITabBarController
+@interface MeetingTabBarController : UITabBarController {
+    NSString *data;
+}
 
 @property (nonatomic, strong) NSString *data;
 

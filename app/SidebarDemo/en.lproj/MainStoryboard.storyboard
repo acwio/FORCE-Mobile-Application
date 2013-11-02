@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1227" y="351"/>
         </scene>
-        <!--View Controller - Info-->
+        <!--Detail View Controller - Detail-->
         <scene sceneID="Dfl-po-3Wa">
             <objects>
-                <viewController id="EZC-uX-N0J" sceneMemberID="viewController">
+                <viewController id="EZC-uX-N0J" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bso-YG-goj"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-b2-NVF"/>
@@ -50,9 +50,21 @@
                     <view key="view" contentMode="scaleToFill" id="thH-De-e0h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFY-rA-fl7">
+                                <rect key="frame" x="61" y="141" width="198" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" id="CRm-Tc-sKd"/>
+                    <tabBarItem key="tabBarItem" title="Detail" id="CRm-Tc-sKd"/>
+                    <connections>
+                        <outlet property="label" destination="OFY-rA-fl7" id="V4o-6c-p3c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUh-SO-ACa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

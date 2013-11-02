@@ -1,21 +1,21 @@
 //
-//  MeetingTabBarController.m
+//  DetailViewController.m
 //  FORCE
 //
-//  Created by Nathan Reale on 10/31/13.
+//  Created by Nathan Reale on 11/1/13.
 //  Copyright (c) 2013 Middle Tennessee State University. All rights reserved.
 //
 
+#import "DetailViewController.h"
 #import "MeetingTabBarController.h"
-#import "SWRevealViewController.h"
 
-@interface MeetingTabBarController ()
+@interface DetailViewController ()
 
 @end
 
-@implementation MeetingTabBarController
+@implementation DetailViewController
 
-@synthesize data;
+@synthesize label;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,14 +31,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    data = ((MeetingTabBarController *)self.tabBarController).data;
     
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    NSLog(@"%@", self.data);
+    self.label.text = data;
 }
 
 - (void)didReceiveMemoryWarning
