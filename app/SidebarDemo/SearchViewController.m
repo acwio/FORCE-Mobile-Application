@@ -164,7 +164,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     }
     
     stubController.title = meet.name;
-    stubController.data = stubController.title;
+    stubController.meeting = meet;
     
     // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
     // a reference to revealViewController

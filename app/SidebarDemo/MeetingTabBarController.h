@@ -10,11 +10,9 @@
 #include "Meeting.h"
 
 @interface MeetingTabBarController : UITabBarController {
-    NSString *data;
     Meeting *meeting;
 }
 
-@property (nonatomic, strong) NSString *data;
 @property (nonatomic, strong) Meeting *meeting;
 
 @end
