@@ -7,13 +7,17 @@
 //
 
 #import "MeetingViewController.h"
+#import "MeetingTabBarController.h"
 #import "SWRevealViewController.h"
+#import "DataClass.h"
 
 @interface MeetingViewController ()
 
 @end
 
 @implementation MeetingViewController
+
+NSMutableArray *meetings;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +32,8 @@
 {
     [super viewDidLoad];
     
-    /* the following line will allow the nav bar & blue menu button to show */
-    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
+    DataClass *data=[DataClass getInstance];
+    meetings = data.meetings;
     
     self.title = @"Archive";
     //self.view.backgroundColor = [UIColor clearColor];
@@ -66,5 +70,65 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [meetings count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier/* forIndexPath:indexPath*/];
+    
+    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    Meeting *meet = [meetings objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = meet.name;
+    
+    for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            [subview removeFromSuperview];
+            break;
+        }
+    }
+    
+    return cell;
+}
+
+
+// Called when you click on an item in the search results
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // Create a new meeting page, using the identifier defined in Storyboard
+    MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+    stubController.view.backgroundColor = [UIColor whiteColor];
+    
+    Meeting *meet = [meetings objectAtIndex:indexPath.row];
+    stubController.title = meet.name;
+    stubController.meeting = meet;
+    
+    // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
+    // a reference to revealViewController
+    [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    // Push the new meeting page on top of the current page
+    [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+    
+}
+
 
 @end

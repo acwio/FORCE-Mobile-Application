@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeetingViewController : UIViewController
+@interface MeetingViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @end
