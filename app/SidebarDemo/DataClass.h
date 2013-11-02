@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
-//http://stackoverflow.com/questions/6065965/how-to-define-a-global-variable-that-can-be-accessed-anywhere-in-my-application
+#import "Meeting.h"
 
 @interface DataClass : NSObject {
     
@@ -18,4 +16,29 @@
 }
 @property(nonatomic,retain)NSMutableArray *meetings;
 +(DataClass*)getInstance;
++(Meeting*) setName: (NSString *) name
+        setDate: (NSString *) date
+        setSTime:(NSString *) startTime
+        setETime:(NSString *) endTime
+        setDesc: (NSString *) description
+        setComp: (NSString *) company
+        setAddr: (NSString *) address
+        setCity: (NSString *) city
+        setStat: (NSString *) state
+        setZip : (NSString *) zip;
 @end
+
+/*
+ @synthesize name;
+ @synthesize date;
+ @synthesize startTime;
+ @synthesize endTime;
+ @synthesize description;
+ @synthesize company;
+ @synthesize address;
+ @synthesize city;
+ @synthesize state;
+ @synthesize zip;
+ @synthesize people;
+ @synthesize files;
+ */
