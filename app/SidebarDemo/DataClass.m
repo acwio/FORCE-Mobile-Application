@@ -11,7 +11,7 @@
 
 //DataClass.m
 @implementation DataClass
-@synthesize str;
+@synthesize meetings;
 static DataClass *instance =nil;
 +(DataClass *)getInstance
 {

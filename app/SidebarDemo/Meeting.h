@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
+#import "File.h"
 
 @interface Meeting : NSObject
 {
@@ -21,8 +23,8 @@
     NSString *state;        //state
     NSString *zip;          //city
     
-    //array of people to be added here for attending
-    //array of files to be added here for files in the meeting
+    NSMutableArray *people;
+    NSMutableArray *files;
 }
 @property(nonatomic,retain)NSString *name;
 @property(nonatomic,retain)NSString *date;
@@ -33,6 +35,8 @@
 @property(nonatomic,retain)NSString *city;
 @property(nonatomic,retain)NSString *state;
 @property(nonatomic,retain)NSString *zip;
+@property(nonatomic,retain)NSMutableArray *people;
+@property(nonatomic,retain)NSMutableArray *files;
 
 +(Meeting*)getInstance;
 @end

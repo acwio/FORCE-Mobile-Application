@@ -18,6 +18,8 @@
 @synthesize city;
 @synthesize state;
 @synthesize zip;
+@synthesize people;
+@synthesize files;
 static Meeting *instance=nil;
 +(Meeting *)getInstance
 {

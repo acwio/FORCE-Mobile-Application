@@ -13,9 +13,9 @@
 
 @interface DataClass : NSObject {
     
-    NSString *str;
+    NSMutableArray *meetings;
     
 }
-@property(nonatomic,retain)NSString *str;
+@property(nonatomic,retain)NSMutableArray *meetings;
 +(DataClass*)getInstance;
 @end
