@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1227" y="-1184"/>
         </scene>
-        <!--View Controller - Navigation-->
+        <!--Navigation View Controller - Navigation-->
         <scene sceneID="PPt-fl-QGC">
             <objects>
-                <viewController id="jcU-ls-9Rq" sceneMemberID="viewController">
+                <viewController id="jcU-ls-9Rq" customClass="NavigationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ocb-WS-ZzV"/>
                         <viewControllerLayoutGuide type="bottom" id="91n-QD-CPj"/>
