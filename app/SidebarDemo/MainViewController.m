@@ -44,14 +44,6 @@
     self.navigationItem.leftBarButtonItem=barBtn;
 
     //testing global stuff
-    DataClass *obj=[DataClass getInstance];
-    if(obj.meetings == nil)
-    {
-        obj.meetings = [[NSMutableArray alloc] init];
-    }
-    Meeting *item = [DataClass setName:@"test" setDate:@"test" setSTime:@"test" setETime:@"test" setDesc:@"test" setComp:@"test" setAddr:@"test" setCity:@"test" setStat:@"test" setZip:@"test"];
-    
-    [obj.meetings addObject:item];
     //obj.str= @"I am Global variable";
 
 }
