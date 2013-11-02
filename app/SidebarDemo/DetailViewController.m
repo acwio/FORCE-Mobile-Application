@@ -15,7 +15,14 @@
 
 @implementation DetailViewController
 
-@synthesize label;
+@synthesize meeting;
+
+@synthesize titleLabel;
+@synthesize dateLabel;
+@synthesize timeLabel;
+@synthesize companyLabel;
+@synthesize addressLabel;
+@synthesize descriptionLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +38,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    data = ((MeetingTabBarController *)self.tabBarController).data;
+    self.meeting = ((MeetingTabBarController *)self.tabBarController).meeting;
     
-    self.label.text = data;
+    self.titleLabel.text = meeting.name;
+    self.dateLabel.text = meeting.date;
+    self.timeLabel.text = meeting.startTime;
+    self.companyLabel.text = meeting.company;
+    self.addressLabel.text = meeting.address;
+    self.descriptionLabel.text = meeting.description;
 }
 
 - (void)didReceiveMemoryWarning
