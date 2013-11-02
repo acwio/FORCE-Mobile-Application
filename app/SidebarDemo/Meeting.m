@@ -15,6 +15,7 @@
 @synthesize endTime;
 @synthesize description;
 @synthesize company;
+@synthesize address;
 @synthesize city;
 @synthesize state;
 @synthesize zip;

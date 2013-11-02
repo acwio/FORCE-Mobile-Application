@@ -14,14 +14,14 @@
 {
     NSString *name;         //meeting name
     NSString *date;         //meeting date
-    NSString *startTime;    //meeting end time
+    NSString *startTime;    //meeting start time
     NSString *endTime;      //meeting end time
     NSString *description;  //meeting description
     NSString *company;      //company holding meeting
     NSString *address;      //address of meeting
     NSString *city;         //city
     NSString *state;        //state
-    NSString *zip;          //city
+    NSString *zip;          //zip
     
     NSMutableArray *people;
     NSMutableArray *files;
@@ -32,6 +32,7 @@
 @property(nonatomic,retain)NSString *endTime;
 @property(nonatomic,retain)NSString *description;
 @property(nonatomic,retain)NSString *company;
+@property(nonatomic,retain)NSString *address;
 @property(nonatomic,retain)NSString *city;
 @property(nonatomic,retain)NSString *state;
 @property(nonatomic,retain)NSString *zip;
