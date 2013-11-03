@@ -10,6 +10,7 @@
 #import "SearchViewController.h"
 #import "MeetingTabBarController.h"
 #import "DataClass.h"
+#import "Meeting.h"
 
 @interface SearchViewController ()
 
@@ -17,8 +18,10 @@
 
 @implementation SearchViewController
 
-NSMutableArray *meetings;
-NSArray *searchResults;
+DataClass *data;
+NSArray *meetingResults;
+NSArray *peopleResults;
+NSArray *fileResults;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,8 +37,7 @@ NSArray *searchResults;
     [super viewDidLoad];
     
     /* references the SAME obj.str declared in the MainViewController */
-    DataClass *data=[DataClass getInstance];
-    meetings = data.meetings;
+    data=[DataClass getInstance];
     
     //self.edgesForExtendedLayout=UIRectEdgeNone;
     //self.extendedLayoutIncludesOpaqueBars=NO;
@@ -72,23 +74,54 @@ NSArray *searchResults;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return 0;
+    } else {
+        return 3;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [searchResults count];
-        
-    } else {
-        return [meetings count];
-        
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return 0;
     }
+    
+    switch (section) {
+        case 0: return [meetingResults count];
+        case 1: return [peopleResults count];
+        case 2: return [fileResults count];
+        default: return 0;
+    }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width, 30)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:header.bounds];
+    [header addSubview:headerLabel];
+    
+    switch (section) {
+        case 0:
+            [headerLabel setText:@"Meetings"];
+            break;
+        case 1:
+            [headerLabel setText:@"People"];
+            break;
+        case 2:
+            [headerLabel setText:@"Files"];
+            break;
+    }
+    
+    headerLabel.textAlignment = UITextAlignmentCenter;
+    
+    return header;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier/* forIndexPath:indexPath*/];
     
@@ -97,15 +130,21 @@ NSArray *searchResults;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    Meeting *meet;
-    
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        meet = [searchResults objectAtIndex:indexPath.row];
-    } else {
-       meet = [meetings objectAtIndex:indexPath.row];
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return cell;
     }
     
-    cell.textLabel.text = meet.name;
+    switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = [[meetingResults objectAtIndex:indexPath.row] name];
+            break;
+        case 1:
+            cell.textLabel.text = [[peopleResults objectAtIndex:indexPath.row] name];
+            break;
+        case 2:
+            cell.textLabel.text = [[fileResults objectAtIndex:indexPath.row] name];
+            break;
+    }
     
     cell.textLabel.textAlignment = UITextAlignmentRight;
     
@@ -115,12 +154,6 @@ NSArray *searchResults;
             break;
         }
     }
-
-    //self.tableView.frame = CGRectMake(60, 20, 260,900);
-    //self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
-    //self.view.backgroundColor = [UIColor blackColor]; //colorWithWhite:0.2f alpha:1.0f];
-    //self.tableView.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
-    //self.tableView.separatorColor = [UIColor blackColor]; //colorWithWhite:0.15f alpha:0.2f];
     
     return cell;
 }
@@ -131,7 +164,9 @@ NSArray *searchResults;
                                     predicateWithFormat:@"name contains[cd] %@",
                                     searchText];
     
-    searchResults = [meetings filteredArrayUsingPredicate:resultPredicate];
+    meetingResults = [data.meetings filteredArrayUsingPredicate:resultPredicate];
+    peopleResults = [data.people filteredArrayUsingPredicate:resultPredicate];
+    fileResults = [data.files filteredArrayUsingPredicate:resultPredicate];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
@@ -148,21 +183,21 @@ shouldReloadTableForSearchString:(NSString *)searchString
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return;
+    }
+    
     // Create a new meeting page, using the identifier defined in Storyboard
     MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
     stubController.view.backgroundColor = [UIColor whiteColor];
     
-    Meeting *meet;
-    
     // Set the title depending on if there was a search or not
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-         meet = [searchResults objectAtIndex:indexPath.row];
-        
-    } else {
-        meet = [meetings objectAtIndex:indexPath.row];
-        
+    if (indexPath.section != 0) {
+        return;
     }
     
+    Meeting *meet;
+    meet = [meetingResults objectAtIndex:indexPath.row];
     stubController.title = meet.name;
     stubController.meeting = meet;
     
