@@ -10,7 +10,6 @@
 #import "Meeting.h"
 
 @interface DetailViewController : UIViewController {
-    NSString *data;
     Meeting *meeting;
 }
 

@@ -29,6 +29,8 @@
 		D8E02D0F1826BDBC0027BD35 /* FilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D0E1826BDBC0027BD35 /* FilesViewController.m */; };
 		D8E02D111826C28E0027BD35 /* force.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8E02D101826C28E0027BD35 /* force.pdf */; };
 		D8E02D131826C4E40027BD35 /* Person.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8E02D121826C4E40027BD35 /* Person.txt */; };
+		D8E02D161826CDCA0027BD35 /* PeopleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D151826CDCA0027BD35 /* PeopleDetailViewController.m */; };
+		D8E02D191826CF990027BD35 /* FilesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D181826CF990027BD35 /* FilesDetailViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
 		F4EECF16177C99F400778578 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF15177C99F400778578 /* CoreGraphics.framework */; };
@@ -109,6 +111,10 @@
 		D8E02D0E1826BDBC0027BD35 /* FilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesViewController.m; sourceTree = "<group>"; };
 		D8E02D101826C28E0027BD35 /* force.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = force.pdf; sourceTree = "<group>"; };
 		D8E02D121826C4E40027BD35 /* Person.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Person.txt; sourceTree = "<group>"; };
+		D8E02D141826CDCA0027BD35 /* PeopleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleDetailViewController.h; sourceTree = "<group>"; };
+		D8E02D151826CDCA0027BD35 /* PeopleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleDetailViewController.m; sourceTree = "<group>"; };
+		D8E02D171826CF990027BD35 /* FilesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesDetailViewController.h; sourceTree = "<group>"; };
+		D8E02D181826CF990027BD35 /* FilesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesDetailViewController.m; sourceTree = "<group>"; };
 		F4EECF0E177C99F400778578 /* FORCE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FORCE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EECF11177C99F400778578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4EECF13177C99F400778578 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -178,6 +184,10 @@
 				D84D317C182574710055F3A2 /* MediaViewController.m */,
 				D84D3180182589180055F3A2 /* NavigationViewController.h */,
 				D84D3181182589180055F3A2 /* NavigationViewController.m */,
+				D8E02D141826CDCA0027BD35 /* PeopleDetailViewController.h */,
+				D8E02D151826CDCA0027BD35 /* PeopleDetailViewController.m */,
+				D8E02D171826CF990027BD35 /* FilesDetailViewController.h */,
+				D8E02D181826CF990027BD35 /* FilesDetailViewController.m */,
 			);
 			name = "Meeting Page Tabs";
 			sourceTree = "<group>";
@@ -423,6 +433,7 @@
 				21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */,
 				08C0345A1824AD4B00D749C7 /* File.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
+				D8E02D191826CF990027BD35 /* FilesDetailViewController.m in Sources */,
 				D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				088A986218234CCE001B1602 /* DataClass.m in Sources */,
@@ -433,6 +444,7 @@
 				D84D3182182589180055F3A2 /* NavigationViewController.m in Sources */,
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
 				F4EECF75177FF90600778578 /* PhotoViewController.m in Sources */,
+				D8E02D161826CDCA0027BD35 /* PeopleDetailViewController.m in Sources */,
 				D84D317D182574710055F3A2 /* MediaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
