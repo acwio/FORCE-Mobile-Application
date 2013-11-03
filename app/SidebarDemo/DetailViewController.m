@@ -51,12 +51,15 @@
     
     
     // Draw the images of the people
+    int count = 0;
     for (Person *p in meeting.people) {
-        NSLog(@"%@", p.name);
-        UIImage *image = [[UIImage alloc] init];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        UIImage *image = [UIImage imageNamed:@"calendar_photo.jpg"];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        imageView.frame = CGRectMake(count*40, 0, 40, 40);
         [imageView setImage:image];
         [self.peopleView addSubview:imageView];
+        
+        count++;
     }
 }
 
