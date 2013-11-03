@@ -179,6 +179,13 @@ static Meeting *meet = nil;
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
         }
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        dateComponents.year = 1988;
+        dateComponents.month = 02;
+        dateComponents.day = 01;
+        dateComponents.hour = 10;
+        NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+        NSLog(@"date: %@", date);
     }
     return instance;
 }
