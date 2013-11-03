@@ -12,9 +12,12 @@
 @interface DataClass : NSObject {
     
     NSMutableArray *meetings;
-    
+    NSMutableArray *people;
+    NSMutableArray *files;
 }
 @property(nonatomic,retain)NSMutableArray *meetings;
+@property(nonatomic,retain)NSMutableArray *people;
+@property(nonatomic,retain)NSMutableArray *files;
 +(DataClass*)getInstance;
 +(Meeting*) setName: (NSString *) name
         setDate: (NSString *) date
@@ -25,20 +28,21 @@
         setAddr: (NSString *) address
         setCity: (NSString *) city
         setStat: (NSString *) state
-        setZip : (NSString *) zip;
+        setZip : (NSString *) zip
+        setPeople: (NSMutableArray *) people
+        setFiles:(NSMutableArray *) files;
+
++(Person *) setName: (NSString *) name
+            setTitle: (NSString *) title
+            setCompany: (NSString *) company
+            setPicURL: (NSString *) picURL;
+
++(File *)   setName: (NSString *) name
+            setPath: (NSString *) path;
 @end
 
-/*
- @synthesize name;
- @synthesize date;
- @synthesize startTime;
- @synthesize endTime;
- @synthesize description;
- @synthesize company;
- @synthesize address;
- @synthesize city;
- @synthesize state;
- @synthesize zip;
- @synthesize people;
- @synthesize files;
+/*NSString *name;     //name of a person
+ NSString *title;    //title in the company
+ NSString *company;  //company person works for
+ NSString *picURL;   //URL of person's picture
  */
