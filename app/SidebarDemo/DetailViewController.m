@@ -24,6 +24,8 @@
 @synthesize addressLabel;
 @synthesize descriptionLabel;
 
+@synthesize peopleView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -46,6 +48,16 @@
     self.companyLabel.text = meeting.company;
     self.addressLabel.text = meeting.address;
     self.descriptionLabel.text = meeting.description;
+    
+    
+    // Draw the images of the people
+    for (Person *p in meeting.people) {
+        NSLog(@"%@", p.name);
+        UIImage *image = [[UIImage alloc] init];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        [imageView setImage:image];
+        [self.peopleView addSubview:imageView];
+    }
 }
 
 - (void)didReceiveMemoryWarning
