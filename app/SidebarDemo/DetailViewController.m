@@ -24,6 +24,9 @@
 @synthesize addressLabel;
 @synthesize descriptionLabel;
 
+@synthesize peopleHeaderLabel;
+@synthesize fileHeaderLabel;
+
 @synthesize peopleView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -74,6 +77,22 @@
     self.companyLabel.text = meeting.company;
     self.addressLabel.text = meeting.address;
     self.descriptionLabel.text = meeting.description;
+        
+    if ([meeting.people count] == 0) {
+        self.peopleHeaderLabel.text = @"No Attendees";
+    } else if([meeting.people count] == 1) {
+        self.peopleHeaderLabel.text = @"1 Attendee";
+    } else {
+        self.peopleHeaderLabel.text = [NSString stringWithFormat:@"%d People Attending", [meeting.people count]];
+    }
+    
+    if ([meeting.files count] == 0) {
+        self.fileHeaderLabel.text = @"No Files";
+    } else if([meeting.files count] == 1) {
+        self.fileHeaderLabel.text = @"1 File";
+    } else {
+        self.fileHeaderLabel.text = [NSString stringWithFormat:@"%d Files", [meeting.files count]];
+    }
     
     
     // Draw the images of the people
