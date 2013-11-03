@@ -43,8 +43,15 @@
     self.meeting = ((MeetingTabBarController *)self.tabBarController).meeting;
     
     self.titleLabel.text = meeting.name;
-    self.dateLabel.text = meeting.date;
-    self.timeLabel.text = meeting.startTime;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    //[formatter setDateFormat:@"EEE MMM dd HH:mm:ss ZZZ yyyy"];
+    [formatter setDateFormat:@"EEE MMM dd yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:meeting.date];
+    [formatter setDateFormat:@"HH:mm a"];
+    NSString *time = [formatter stringFromDate:meeting.date];
+    self.dateLabel.text = stringFromDate;
+    self.timeLabel.text = time;
     self.companyLabel.text = meeting.company;
     self.addressLabel.text = meeting.address;
     self.descriptionLabel.text = meeting.description;

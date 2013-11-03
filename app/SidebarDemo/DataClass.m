@@ -29,6 +29,9 @@ static Meeting *meet = nil;
             instance.people = [[NSMutableArray alloc] init];
             instance.files = [[NSMutableArray alloc] init];
             
+            //set up date stuff
+            NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+            
             //set up all people
             [instance.people addObject:[Person initWithName:@"Magic Karp" title:@"Splash" company:@"Poke E Monn" picture:@"user.png"]];
             [instance.people addObject:[Person initWithName:@"Gyra Dos" title:@"Dragon-like" company:@"Poke E Monn" picture:@"calendar_photo.jpg"]];
@@ -75,8 +78,15 @@ static Meeting *meet = nil;
             //assign files
             [mFiles addObject:[instance.files objectAtIndex:0]];
             [mFiles addObject:[instance.files objectAtIndex:1]];
+            
+            //set up date
+            dateComponents.year = 2012;
+            dateComponents.month = 10;
+            dateComponents.day = 11;
+            dateComponents.hour = 10;
+            NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
             //assign a meeting
-            [instance.meetings addObject:[self setName:@"TestMeeting" setDate:@"10/11/12" setSTime:@"4:00pm" setETime:@"5:00pm" setDesc:@"test meeting" setComp:@"NOM PEW LLC" setAddr:@"234 nom drive" setCity:@"nom" setStat:@"Nomtopia" setZip:@"1111111" setPeople:mPeople setFiles:mFiles]];
+            [instance.meetings addObject:[self setName:@"TestMeeting" setDate:date setDesc:@"test meeting" setComp:@"NOM PEW LLC" setAddr:@"234 nom drive" setCity:@"nom" setStat:@"Nomtopia" setZip:@"1111111" setPeople:mPeople setFiles:mFiles]];
             //empty mPeople and mFiles
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
@@ -92,7 +102,15 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:9]];
             [mFiles addObject:[instance.files objectAtIndex:3]];
             [mFiles addObject:[instance.files objectAtIndex:7]];
-            [instance.meetings addObject:[self setName:@"Annual Sales Report" setDate:@"11/12/13" setSTime:@"4:00PM" setETime:@"4:30PM" setDesc:@"This is a meeting to discuss the annual sales." setComp:@"The Republic" setAddr:@"Space" setCity:@"Space City" setStat:@"Tatooine" setZip:@"1234567" setPeople:mPeople setFiles:mFiles]];
+            
+            //set up date
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 12;
+            dateComponents.hour = 10;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Annual Sales Report" setDate:date setDesc:@"This is a meeting to discuss the annual sales." setComp:@"The Republic" setAddr:@"Space" setCity:@"Space City" setStat:@"Tatooine" setZip:@"1234567" setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
@@ -107,7 +125,15 @@ static Meeting *meet = nil;
             //assign files
             [mFiles addObject:[instance.files objectAtIndex:0]];
             [mFiles addObject:[instance.files objectAtIndex:1]];
-            [instance.meetings addObject:[self setName:@"Technology Report" setDate:@"1/2/3" setSTime:@"12:30PM" setETime:@"2:00PM" setDesc:@"Talk about the technological advances we are strivingto make" setComp:@"Death Star Inc" setAddr:@"1234 Death Star" setCity:@"Death Star" setStat:@"Space" setZip:@"54678"setPeople:mPeople setFiles:mFiles]];
+            
+            dateComponents.year = 2003;
+            dateComponents.month = 02;
+            dateComponents.day = 01;
+            dateComponents.hour = 6;
+            dateComponents.minute = 30;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Technology Report" setDate:date setDesc:@"Talk about the technological advances we are strivingto make" setComp:@"Death Star Inc" setAddr:@"1234 Death Star" setCity:@"Death Star" setStat:@"Space" setZip:@"54678"setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
@@ -136,7 +162,14 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:8]];
             [mFiles addObject:[instance.files objectAtIndex:9]];
             [mFiles addObject:[instance.files objectAtIndex:10]];
-            [instance.meetings addObject:[self setName:@"Interview" setDate:@"12/24/14" setSTime:@"2:00PM" setETime:@"3:00PM" setDesc:@"Interview for potential candidates who really want a job!" setComp:@"Scrooge LLC" setAddr:@"123 Bah Humbug Lane" setCity:@"New York" setStat:@"New York" setZip:@"12345" setPeople:mPeople setFiles:mFiles]];
+            
+            dateComponents.year = 2014;
+            dateComponents.month = 12;
+            dateComponents.day = 24;
+            dateComponents.hour = 8;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Interview" setDate:date setDesc:@"Interview for potential candidates who really want a job!" setComp:@"Scrooge LLC" setAddr:@"123 Bah Humbug Lane" setCity:@"New York" setStat:@"New York" setZip:@"12345" setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
@@ -146,7 +179,14 @@ static Meeting *meet = nil;
             [mPeople addObject:[instance.people objectAtIndex:4]];
             //assign files
             [mFiles addObject:[instance.files objectAtIndex:6]];
-            [instance.meetings addObject:[self setName:@"Business Meeting" setDate:@"11/31/2013" setSTime:@"1:00PM" setETime:@"2:00PM" setDesc:@"Meeting with a Potential Client" setComp:@"The Sales Company" setAddr:@"742 Cerulean Circuit" setCity:@"Indianapolis" setStat:@"Indiana" setZip:@"22506" setPeople:mPeople setFiles:mFiles]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 31;
+            dateComponents.hour = 7;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Business Meeting" setDate:date setDesc:@"Meeting with a Potential Client" setComp:@"The Sales Company" setAddr:@"742 Cerulean Circuit" setCity:@"Indianapolis" setStat:@"Indiana" setZip:@"22506" setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
@@ -160,7 +200,15 @@ static Meeting *meet = nil;
             //assign files
             [mFiles addObject:[instance.files objectAtIndex:4]];
             [mFiles addObject:[instance.files objectAtIndex:3]];
-            [instance.meetings addObject:[self setName:@"Meglomaniacs Meeting" setDate:@"11/15/2013" setSTime:@"12:30PM" setETime:@"1:30PM" setDesc:@"A meeting of likeminded individuals who want to take over the world." setComp:@"The Truth Squad" setAddr:@"444 Truth Lane" setCity:@"Truth City" setStat:@"Tennessee" setZip:@"37128" setPeople:mPeople setFiles:mFiles]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 15;
+            dateComponents.hour = 6;
+            dateComponents.minute = 30;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Meglomaniacs Meeting" setDate:date setDesc:@"A meeting of likeminded individuals who want to take over the world." setComp:@"The Truth Squad" setAddr:@"444 Truth Lane" setCity:@"Truth City" setStat:@"Tennessee" setZip:@"37128" setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
@@ -175,24 +223,23 @@ static Meeting *meet = nil;
             //assign files
             [mFiles addObject:[instance.files objectAtIndex:5]];
             [mFiles addObject:[instance.files objectAtIndex:10]];
-            [instance.meetings addObject:[self setName:@"Monthly Financial Report" setDate:@"11/5/2013" setSTime:@"2:45PM" setETime:@"3:45PM" setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setPeople:mPeople setFiles:mFiles]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Monthly Financial Report" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
         }
-        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-        dateComponents.year = 1988;
-        dateComponents.month = 02;
-        dateComponents.day = 01;
-        dateComponents.hour = 10;
-        NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
-        NSLog(@"date: %@", date);
     }
     return instance;
 }
 +(Meeting *) setName: (NSString *) name
-        setDate: (NSString *) date
-        setSTime:(NSString *) startTime
-        setETime:(NSString *) endTime
+        setDate: (NSDate *) date
         setDesc: (NSString *) description
         setComp: (NSString *) company
         setAddr: (NSString *) address
@@ -205,8 +252,6 @@ static Meeting *meet = nil;
     meet = [Meeting new];
     meet.name = name;
     meet.date = date;
-    meet.startTime = startTime;
-    meet.endTime = endTime;
     meet.description = description;
     meet.company = company;
     meet.address = address;

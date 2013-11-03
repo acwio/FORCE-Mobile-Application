@@ -13,9 +13,7 @@
 @interface Meeting : NSObject
 {
     NSString *name;         //meeting name
-    NSString *date;         //meeting date
-    NSString *startTime;    //meeting start time
-    NSString *endTime;      //meeting end time
+    NSDate *date;         //meeting date
     NSString *description;  //meeting description
     NSString *company;      //company holding meeting
     NSString *address;      //address of meeting
@@ -27,9 +25,7 @@
     NSMutableArray *files;
 }
 @property(nonatomic,retain)NSString *name;
-@property(nonatomic,retain)NSString *date;
-@property(nonatomic,retain)NSString *startTime;
-@property(nonatomic,retain)NSString *endTime;
+@property(nonatomic,retain)NSDate *date;
 @property(nonatomic,retain)NSString *description;
 @property(nonatomic,retain)NSString *company;
 @property(nonatomic,retain)NSString *address;

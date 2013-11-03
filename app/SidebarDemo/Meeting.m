@@ -11,8 +11,6 @@
 @implementation Meeting
 @synthesize name;
 @synthesize date;
-@synthesize startTime;
-@synthesize endTime;
 @synthesize description;
 @synthesize company;
 @synthesize address;

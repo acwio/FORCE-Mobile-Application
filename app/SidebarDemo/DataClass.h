@@ -23,9 +23,7 @@
 +(DataClass*)getInstance;
 
 +(Meeting*) setName: (NSString *) name
-        setDate: (NSString *) date
-        setSTime:(NSString *) startTime
-        setETime:(NSString *) endTime
+        setDate: (NSDate *) date
         setDesc: (NSString *) description
         setComp: (NSString *) company
         setAddr: (NSString *) address
