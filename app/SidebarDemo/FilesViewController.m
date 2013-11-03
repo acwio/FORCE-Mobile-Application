@@ -93,6 +93,30 @@ NSMutableArray *files;
     return cell;
 }
 
+// Called when you click on a file
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Create a UIView and Controller to display the file
+    UIViewController *webViewController = [[UIViewController alloc] init];
+    UIWebView *webView = [[UIWebView alloc]  initWithFrame:CGRectMake(0, 0, 320, 568)];
+    [webView setScalesPageToFit:YES];
+    [webViewController.view addSubview:webView];
+    
+    File *file = [files objectAtIndex:indexPath.row];
+    
+    webViewController.title = file.name;
+    
+    // Find the url of the file and load into the webview
+    NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
+    NSURL *targetURL = [NSURL fileURLWithPath:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+    [webView loadRequest:request];
+    
+    // Push the new page on top of the current page
+    [(UINavigationController*)self.revealViewController.frontViewController pushViewController:webViewController animated:YES];
+    
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
