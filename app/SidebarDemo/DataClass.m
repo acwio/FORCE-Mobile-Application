@@ -182,7 +182,7 @@ static Meeting *meet = nil;
             
             dateComponents.year = 2013;
             dateComponents.month = 11;
-            dateComponents.day = 31;
+            dateComponents.day = 3;
             dateComponents.hour = 7;
             
             date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];

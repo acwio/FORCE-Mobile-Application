@@ -41,17 +41,36 @@
 	// Do any additional setup after loading the view.
     
     self.meeting = ((MeetingTabBarController *)self.tabBarController).meeting;
-    
     self.titleLabel.text = meeting.name;
     
+    //stuff for current date
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"EEE MMM dd yyyy"];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    
+    //tomorrow's date
+    int daysToAdd = 1;
+    NSDate *tomDate = [currDate dateByAddingTimeInterval:60*60*24*daysToAdd];
+    NSString *tDate = [dateFormatter stringFromDate:tomDate];
+    
+    
+    //stuff for stored date and time
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    //[formatter setDateFormat:@"EEE MMM dd HH:mm:ss ZZZ yyyy"];
     [formatter setDateFormat:@"EEE MMM dd yyyy"];
     NSString *stringFromDate = [formatter stringFromDate:meeting.date];
     [formatter setDateFormat:@"HH:mm a"];
     NSString *time = [formatter stringFromDate:meeting.date];
-    self.dateLabel.text = stringFromDate;
+    
+    //figure out if the date is today or tomorrow only.
+    if([stringFromDate isEqualToString:dateString])
+        self.dateLabel.text = @"Today";
+    else if ([dateString isEqualToString:tDate])
+        self.dateLabel.text = @"Tomorrow";
+    else
+        self.dateLabel.text = stringFromDate;
     self.timeLabel.text = time;
+    
     self.companyLabel.text = meeting.company;
     self.addressLabel.text = meeting.address;
     self.descriptionLabel.text = meeting.description;
