@@ -20,5 +20,6 @@
 @property(nonatomic,retain)NSString *company;
 @property(nonatomic,retain)NSString *picURL;
 
-+(Person*)getInstance;
++(Person*)initWithName:(NSString *) name title:(NSString *) title company:(NSString *) company picture: (NSString *) picture;
+
 @end

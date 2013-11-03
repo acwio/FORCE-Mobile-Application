@@ -9,16 +9,15 @@
 
 #import "DataClass.h"
 
-//DataClass.m
 @implementation DataClass
+
 @synthesize meetings;
 @synthesize people;
 @synthesize files;
 
 static DataClass *instance =nil;
 static Meeting *meet = nil;
-static Person *person = nil;
-static File *file = nil;
+
 +(DataClass *)getInstance
 {
     @synchronized(self)
@@ -31,30 +30,30 @@ static File *file = nil;
             instance.files = [[NSMutableArray alloc] init];
             
             //set up all people
-            [instance.people addObject:[self setName:@"Magic Karp" setPath:@"mkarp.jpg"]];
-            [instance.people addObject:[self setName:@"Gyra Dos" setPath:@"gDos.jpg"]];
-            [instance.people addObject:[self setName:@"Dragon Ite" setPath:@"dIte.jpg"]];
-            [instance.people addObject:[self setName:@"Ampha Ros" setPath:@"aRos.jpg"]];
-            [instance.people addObject:[self setName:@"Squirtle Squad" setPath:@"sSquad.jpg"]];
-            [instance.people addObject:[self setName:@"Pika Chu" setPath:@"pChu.jpg"]];
-            [instance.people addObject:[self setName:@"Ry Don" setPath:@"rDon.jpg"]];
-            [instance.people addObject:[self setName:@"Chari Zard" setPath:@"cZard.jpg"]];
-            [instance.people addObject:[self setName:@"Blast Oise" setPath:@"bOise.jpg"]];
-            [instance.people addObject:[self setName:@"Venus Aur" setPath:@"vAur.jpg"]];
-            [instance.people addObject:[self setName:@"Cle Fable" setPath:@"cFable.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Magic Karp" title:@"Splash" company:@"Poke E Monn" picture:@"user.png"]];
+            [instance.people addObject:[Person initWithName:@"Gyra Dos" title:@"Dragon-like" company:@"Poke E Monn" picture:@"calendar_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Dragon Ite" title:@"More Dragon-like" company:@"Poke E Monn" picture:@"bookmark_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Ampha Ros" title:@"Who?" company:@"Poke E Monn" picture:@"comments_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Squirtle Squad" title:@"Worst Pokemon ever" company:@"Poke E Monn" picture:@"tag_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Pika Chu" title:@"Pika Pika" company:@"Poke E Monn" picture:@"wishlist_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Ry Don" title:@"The Boss" company:@"Poke E Monn" picture:@"calendar_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Chari Zard" title:@"The BE(a)ST" company:@"Poke E Monn" picture:@"bookmark_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Blast Oise" title:@"Okay, I guess" company:@"Poke E Monn" picture:@"comments_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Venus Aur" title:@"Terrible" company:@"Poke E Monn" picture:@"tag_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Cle Fable" title:@"Cle-who?" company:@"Poke E Monn" picture:@"wishlist_photo.jpg"]];
             
             //set up all files
-            [instance.files addObject:[self setName:@"Expense Report" setPath:@"file1.pdf"]];
-            [instance.files addObject:[self setName:@"Meeting Docket" setPath:@"file2.doc"]];
-            [instance.files addObject:[self setName:@"Epic Notes" setPath:@"file3.rtf"]];
-            [instance.files addObject:[self setName:@"Future Endeavors" setPath:@"file4.pdf"]];
-            [instance.files addObject:[self setName:@"New Technology" setPath:@"file5.pdf"]];
-            [instance.files addObject:[self setName:@"White Board Picture" setPath:@"file6.png"]];
-            [instance.files addObject:[self setName:@"Cat Picture" setPath:@"file7.jpg"]];
-            [instance.files addObject:[self setName:@"AR Demo" setPath:@"file8.mov"]];
-            [instance.files addObject:[self setName:@"Recording of Tech Meeting" setPath:@"file9.ogg"]];
-            [instance.files addObject:[self setName:@"What did the fox say" setPath:@"file10.avi"]];
-            [instance.files addObject:[self setName:@"Other Expense Report" setPath:@"file11.pdf"]];
+            [instance.files addObject:[File initWithName:@"Expense Report" path:@"file1.pdf"]];
+            [instance.files addObject:[File initWithName:@"Meeting Docket" path:@"file2.doc"]];
+            [instance.files addObject:[File initWithName:@"Epic Notes" path:@"file3.rtf"]];
+            [instance.files addObject:[File initWithName:@"Future Endeavors" path:@"file4.pdf"]];
+            [instance.files addObject:[File initWithName:@"New Technology" path:@"file5.pdf"]];
+            [instance.files addObject:[File initWithName:@"White Board Picture" path:@"file6.png"]];
+            [instance.files addObject:[File initWithName:@"Cat Picture" path:@"file7.jpg"]];
+            [instance.files addObject:[File initWithName:@"AR Demo" path:@"file8.mov"]];
+            [instance.files addObject:[File initWithName:@"Recording of Tech Meeting" path:@"file9.ogg"]];
+            [instance.files addObject:[File initWithName:@"What did the fox say" path:@"file10.avi"]];
+            [instance.files addObject:[File initWithName:@"Other Expense Report" path:@"file11.pdf"]];
             
             /* Set up Meeting
                 Step1: Assign People Attending Meeting
@@ -213,28 +212,5 @@ static File *file = nil;
     return meet;
 }
 
-+(Person *) setName:(NSString *)name
-           setTitle:(NSString *)title
-          setCompany:(NSString *)company
-          setPicURL:(NSString *)picURL
-{
-    person = [Person new];
-    person.name = name;
-    person.title = title;
-    person.company = company;
-    person.picURL = picURL;
-    
-    return person;
-}
-
-+(File *) setName:(NSString *)name
-          setPath:(NSString *)path
-{
-    file = [File new];
-    file.name = name;
-    file.path = path;
-    
-    return file;
-}
 @end
 

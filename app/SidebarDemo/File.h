@@ -13,8 +13,10 @@
     NSString *name;     //name of a person
     NSString *path;   //URL of person's picture
 }
+
 @property(nonatomic,retain)NSString *name;
 @property(nonatomic,retain)NSString *path;
 
-+(File*)getInstance;
++(File*)initWithName:(NSString *) name path: (NSString *) path;
+
 @end

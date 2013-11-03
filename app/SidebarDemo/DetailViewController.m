@@ -53,7 +53,7 @@
     // Draw the images of the people
     int count = 0;
     for (Person *p in meeting.people) {
-        UIImage *image = [UIImage imageNamed:@"calendar_photo.jpg"];
+        UIImage *image = [UIImage imageNamed:p.picURL];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
         imageView.frame = CGRectMake(count*40, 0, 40, 40);
         [imageView setImage:image];

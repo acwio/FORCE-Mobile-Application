@@ -80,22 +80,17 @@ NSMutableArray *people;
     }
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    UILabel *titleLabel = (UILabel *)[cell viewWithTag:2];
-    UILabel *companyLabel = (UILabel *)[cell viewWithTag:3];
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:2];
+    UILabel *titleLabel = (UILabel *)[cell viewWithTag:3];
+    UILabel *companyLabel = (UILabel *)[cell viewWithTag:4];
     
     Person *person = [people objectAtIndex:indexPath.row];
     
-    titleLabel.text = person.name;
-    companyLabel.text = @"Company"/*person.company*/;
-    [imageView setImage:[UIImage imageNamed:@"calendar_photo.jpg"]];
-    
-    for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
-        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
-            [subview removeFromSuperview];
-            break;
-        }
-    }
-    
+    nameLabel.text = person.name;
+    titleLabel.text = person.title;
+    companyLabel.text = person.company;
+    [imageView setImage:[UIImage imageNamed:person.picURL]];
+        
     return cell;
 }
 

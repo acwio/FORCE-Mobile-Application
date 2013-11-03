@@ -15,10 +15,13 @@
     NSMutableArray *people;
     NSMutableArray *files;
 }
+
 @property(nonatomic,retain)NSMutableArray *meetings;
 @property(nonatomic,retain)NSMutableArray *people;
 @property(nonatomic,retain)NSMutableArray *files;
+
 +(DataClass*)getInstance;
+
 +(Meeting*) setName: (NSString *) name
         setDate: (NSString *) date
         setSTime:(NSString *) startTime
@@ -32,13 +35,6 @@
         setPeople: (NSMutableArray *) people
         setFiles:(NSMutableArray *) files;
 
-+(Person *) setName: (NSString *) name
-            setTitle: (NSString *) title
-            setCompany: (NSString *) company
-            setPicURL: (NSString *) picURL;
-
-+(File *)   setName: (NSString *) name
-            setPath: (NSString *) path;
 @end
 
 /*NSString *name;     //name of a person

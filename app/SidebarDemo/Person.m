@@ -9,21 +9,21 @@
 #import "Person.h"
 
 @implementation Person
+
 @synthesize name;
 @synthesize title;
 @synthesize company;
 @synthesize picURL;
-static Person *instance=nil;
-+(Person *)getInstance
+
++(Person*)initWithName:(NSString *) name title:(NSString *) title company:(NSString *) company picture: (NSString *) picture
 {
-    @synchronized(self)
-    {
-        if(instance==nil)
-        {
-            
-            instance= [Person new];
-        }
-    }
-    return instance;
+    Person *p = [[Person alloc] init];
+    p.name = name;
+    p.title = title;
+    p.company = company;
+    p.picURL = picture;
+    
+    return p;
 }
+
 @end

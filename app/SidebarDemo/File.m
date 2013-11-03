@@ -9,19 +9,17 @@
 #import "File.h"
 
 @implementation File
+
 @synthesize name;
 @synthesize path;
-static File *instance=nil;
-+(File *)getInstance
+
++(File*)initWithName:(NSString *) name path: (NSString *) path
 {
-    @synchronized(self)
-    {
-        if(instance==nil)
-        {
-            
-            instance= [File new];
-        }
-    }
-    return instance;
+    File *f = [[File alloc] init];
+    f.name = name;
+    f.path = path;
+    
+    return f;
 }
+
 @end
