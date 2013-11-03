@@ -8,6 +8,7 @@
 
 #import "MeetingTabBarController.h"
 #import "SWRevealViewController.h"
+#import "Meeting.h"
 
 @interface MeetingTabBarController ()
 
@@ -38,6 +39,9 @@
 {
     [super viewDidAppear:animated];
     
+    [[self.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%d", [self.meeting.people count]]];
+    [[self.tabBar.items objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%d", [self.meeting.files count]]];
+
 }
 
 - (void)didReceiveMemoryWarning
