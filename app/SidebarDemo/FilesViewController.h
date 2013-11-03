@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FilesViewController : UITableViewController
+@interface FilesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)toggleGroup:(id)sender;
 
 @end

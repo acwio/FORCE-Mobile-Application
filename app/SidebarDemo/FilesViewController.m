@@ -16,24 +16,37 @@
 
 @implementation FilesViewController
 
-NSMutableArray *files;
+@synthesize tableView;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+NSArray *files;
+NSMutableArray *groups;
+BOOL group = false;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     DataClass *data=[DataClass getInstance];
-    files = data.files;
-
+    files = [data.files sortedArrayUsingComparator:^(File *m1, File *m2) {
+        return [[m1 name] compare:[m2 name]];
+    }];
+    
+    groups = [[NSMutableArray alloc] init];
+    
+    NSPredicate *documentPredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.pdf'"];
+    NSPredicate *imagePredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.jpg'"];
+    
+    NSArray *firstItemsArray = [files filteredArrayUsingPredicate:documentPredicate];
+    NSMutableDictionary *firstItemsArrayDict = [NSMutableDictionary dictionaryWithObject:firstItemsArray forKey:@"data"];
+    [firstItemsArrayDict setValue:@"Documents" forKey:@"title"];
+    [groups addObject:firstItemsArrayDict];
+    
+    //Second section data
+    NSArray *secondItemsArray = [files filteredArrayUsingPredicate:imagePredicate];
+    NSMutableDictionary *secondItemsArrayDict = [NSMutableDictionary dictionaryWithObject:secondItemsArray forKey:@"data"];
+    [secondItemsArrayDict setValue:@"Images" forKey:@"title"];
+    [groups addObject:secondItemsArrayDict];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -60,13 +73,48 @@ NSMutableArray *files;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    
+    if (group) {
+        return [groups count];
+    } else {
+        return 1;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [files count];
+    if (group) {
+        return [[[groups objectAtIndex:section] objectForKey:@"data"] count];
+    } else {
+        return [files count];
+    }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (!group) {
+        return nil;
+    }
+    
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width, 30)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:header.bounds];
+    [header addSubview:headerLabel];
+    
+    header.backgroundColor = [UIColor colorWithRed:132.0/255.0 green:196.0/255.0 blue:64.0/255.0 alpha:1.0];
+    headerLabel.textColor = [UIColor whiteColor];
+    
+    [headerLabel setText:[[groups objectAtIndex:section] objectForKey:@"title"]];
+    
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (group) {
+        return 30.0;
+    } else {
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,15 +127,11 @@ NSMutableArray *files;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    File *file = [files objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = file.name;
-    
-    for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
-        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
-            [subview removeFromSuperview];
-            break;
-        }
+    if (group) {
+        cell.textLabel.text = [[[[groups objectAtIndex:indexPath.section] objectForKey:@"data"] objectAtIndex:indexPath.row] name];
+    } else {
+        File *file = [files objectAtIndex:indexPath.row];
+        cell.textLabel.text = file.name;
     }
     
     return cell;
@@ -115,6 +159,11 @@ NSMutableArray *files;
     // Push the new page on top of the current page
     [(UINavigationController*)self.revealViewController.frontViewController pushViewController:webViewController animated:YES];
     
+}
+
+- (IBAction)toggleGroup:(id)sender {
+    group = !group;
+    [tableView reloadData];
 }
 
 /*
