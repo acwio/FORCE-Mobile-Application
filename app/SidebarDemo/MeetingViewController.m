@@ -17,7 +17,7 @@
 
 @implementation MeetingViewController
 
-NSMutableArray *meetings;
+NSArray *meetings;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +33,11 @@ NSMutableArray *meetings;
     [super viewDidLoad];
     
     DataClass *data=[DataClass getInstance];
-    meetings = data.meetings;
+    meetings = [data.meetings sortedArrayUsingComparator:^(Meeting *m1, Meeting *m2) {
+        return [[m1 date] compare:[m2 date]];
+    }];
+    
+    
     
     self.title = @"Archive";
     //self.view.backgroundColor = [UIColor clearColor];
