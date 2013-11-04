@@ -358,6 +358,7 @@
                                                 <segment title="Type"/>
                                                 <segment title="Meeting"/>
                                             </segments>
+                                            <color key="tintColor" red="0.51764705879999995" green="0.76862745099999996" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="selectSort:" destination="Noi-g9-jLE" eventType="valueChanged" id="8tQ-9r-XMh"/>
                                             </connections>
