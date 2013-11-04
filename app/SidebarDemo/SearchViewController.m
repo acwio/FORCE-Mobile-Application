@@ -104,17 +104,18 @@ NSArray *fileResults;
     
     switch (section) {
         case 0:
-            [headerLabel setText:@"Meetings"];
+            [headerLabel setText:@"\tMeetings"];
             break;
         case 1:
-            [headerLabel setText:@"People"];
+            [headerLabel setText:@"\tPeople"];
             break;
         case 2:
-            [headerLabel setText:@"Files"];
+            [headerLabel setText:@"\tFiles"];
             break;
     }
-    
-    headerLabel.textAlignment = UITextAlignmentCenter;
+    [headerLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18.0]];
+    headerLabel.backgroundColor = [UIColor colorWithRed:131.0/255.0 green:194.0/255.0 blue:62.0/255.0 alpha:1.0 ];
+    headerLabel.textAlignment = UITextAlignmentLeft;
     
     return header;
 }
@@ -146,6 +147,7 @@ NSArray *fileResults;
             break;
     }
     
+    cell.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
     cell.textLabel.textAlignment = UITextAlignmentRight;
     
     for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
