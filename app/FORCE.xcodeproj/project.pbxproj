@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		088A986218234CCE001B1602 /* DataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A986118234CCE001B1602 /* DataClass.m */; };
+		08ABEE3C18284645002B46FB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ABEE3B18284645002B46FB /* AboutViewController.m */; };
 		08C0345418247D3800D749C7 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C0345318247D3800D749C7 /* Meeting.m */; };
 		08C034571824A99300D749C7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C034561824A99300D749C7 /* Person.m */; };
 		08C0345A1824AD4B00D749C7 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C034591824AD4B00D749C7 /* File.m */; };
-		08D8EB311828171C00794875 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D8EB301828171C00794875 /* AboutViewController.m */; };
 		08D8EB34182819A500794875 /* SeetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D8EB33182819A500794875 /* SeetingsViewController.m */; };
 		2103C003182741550061FBB9 /* Nav_About_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103BFF9182741550061FBB9 /* Nav_About_Icon.png */; };
 		2103C004182741550061FBB9 /* Nav_Archive_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103BFFA182741550061FBB9 /* Nav_Archive_Icon.png */; };
@@ -89,14 +89,14 @@
 /* Begin PBXFileReference section */
 		088A986018234CCE001B1602 /* DataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataClass.h; sourceTree = "<group>"; };
 		088A986118234CCE001B1602 /* DataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataClass.m; sourceTree = "<group>"; };
+		08ABEE3A18284645002B46FB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		08ABEE3B18284645002B46FB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		08C0345218247D3800D749C7 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		08C0345318247D3800D749C7 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
 		08C034551824A99300D749C7 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		08C034561824A99300D749C7 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		08C034581824AD4B00D749C7 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		08C034591824AD4B00D749C7 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
-		08D8EB2F1828171C00794875 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		08D8EB301828171C00794875 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		08D8EB32182819A500794875 /* SeetingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeetingsViewController.h; sourceTree = "<group>"; };
 		08D8EB33182819A500794875 /* SeetingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeetingsViewController.m; sourceTree = "<group>"; };
 		2103BFF9182741550061FBB9 /* Nav_About_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nav_About_Icon.png; sourceTree = "<group>"; };
@@ -325,10 +325,10 @@
 				D8E02D0B1826B0A30027BD35 /* PeopleViewController.m */,
 				D8E02D0D1826BDBC0027BD35 /* FilesViewController.h */,
 				D8E02D0E1826BDBC0027BD35 /* FilesViewController.m */,
-				08D8EB2F1828171C00794875 /* AboutViewController.h */,
-				08D8EB301828171C00794875 /* AboutViewController.m */,
 				08D8EB32182819A500794875 /* SeetingsViewController.h */,
 				08D8EB33182819A500794875 /* SeetingsViewController.m */,
+				08ABEE3A18284645002B46FB /* AboutViewController.h */,
+				08ABEE3B18284645002B46FB /* AboutViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -530,12 +530,12 @@
 				D8E02D0F1826BDBC0027BD35 /* FilesViewController.m in Sources */,
 				D84D3182182589180055F3A2 /* NavigationViewController.m in Sources */,
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
+				08ABEE3C18284645002B46FB /* AboutViewController.m in Sources */,
 				F4EECF75177FF90600778578 /* PhotoViewController.m in Sources */,
 				D8E02D161826CDCA0027BD35 /* PeopleDetailViewController.m in Sources */,
 				08D8EB34182819A500794875 /* SeetingsViewController.m in Sources */,
 				21C5AB321827643100925168 /* LoginViewController.m in Sources */,
 				D84D317D182574710055F3A2 /* MediaViewController.m in Sources */,
-				08D8EB311828171C00794875 /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
