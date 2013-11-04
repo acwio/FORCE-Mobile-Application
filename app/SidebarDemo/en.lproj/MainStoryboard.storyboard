@@ -79,7 +79,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Detail" id="CRm-Tc-sKd"/>
+                    <tabBarItem key="tabBarItem" title="Detail" image="InfoPage_Details_Icon.png" id="CRm-Tc-sKd"/>
                     <connections>
                         <outlet property="addressLabel" destination="2BU-mv-vjD" id="Tb5-qW-L9A"/>
                         <outlet property="companyLabel" destination="r4P-JH-Luv" id="x4o-Fw-0oc"/>
@@ -260,7 +260,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Navigation" id="gP7-Hr-gAP"/>
+                    <tabBarItem key="tabBarItem" title="Navigation" image="InfoPage_Location_Icon.png" id="gP7-Hr-gAP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHl-Jg-QCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -424,7 +424,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Meeting" id="HPO-uT-oU9"/>
+                    <tabBarItem key="tabBarItem" title="Meeting" image="InfoPage_Extras_Icon.png" id="HPO-uT-oU9"/>
                     <connections>
                         <outlet property="imageView" destination="9cg-b0-1fS" id="Yag-J5-kBF"/>
                         <outlet property="recordButton" destination="Atz-wZ-RcQ" id="y4S-Ck-yFD"/>
@@ -640,7 +640,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackTranslucent" searchBarStyle="minimal" id="GJy-mV-L9U">
+                        <searchBar key="tableHeaderView" contentMode="redraw" translucent="NO" id="GJy-mV-L9U">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -786,7 +786,7 @@
         <scene sceneID="xu5-N5-nh4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mhi-V2-7sH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="People" id="LqY-zM-RFi"/>
+                    <tabBarItem key="tabBarItem" title="People" image="InfoPage_People_Icon.png" id="LqY-zM-RFi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ElP-7S-ivT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -834,7 +834,7 @@
         <scene sceneID="77n-OD-EKw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hud-MS-QwR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Files" id="pgo-DH-TQn"/>
+                    <tabBarItem key="tabBarItem" title="Files" image="InfoPage_Files_Icon.png" id="pgo-DH-TQn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5P-D4-7a5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -849,9 +849,26 @@
             </objects>
             <point key="canvasLocation" x="2304" y="568"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="WNT-YS-Wfk">
+            <objects>
+                <viewController id="KCX-bk-TWw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hp5-SZ-z2B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oI3-nj-qCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
-        <image name="InfoPage_People_Icon.png" width="68" height="65"/>
+        <image name="InfoPage_Details_Icon.png" width="30" height="29"/>
+        <image name="InfoPage_Extras_Icon.png" width="30" height="29"/>
+        <image name="InfoPage_Files_Icon.png" width="30" height="29"/>
+        <image name="InfoPage_Location_Icon.png" width="30" height="29"/>
+        <image name="InfoPage_People_Icon.png" width="30" height="29"/>
         <image name="Nav_About_Icon.png" width="55" height="48"/>
         <image name="Nav_Archive_Icon.png" width="55" height="48"/>
         <image name="Nav_Dash_Icon.png" width="55" height="48"/>
