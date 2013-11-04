@@ -145,7 +145,7 @@ NSMutableArray *groups;
 {
     
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width, 30)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:header.bounds];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(20,0,tableView.frame.size.width - 40, 30)];
     [header addSubview:headerLabel];
     
     header.backgroundColor = [UIColor colorWithRed:132.0/255.0 green:196.0/255.0 blue:64.0/255.0 alpha:1.0];
