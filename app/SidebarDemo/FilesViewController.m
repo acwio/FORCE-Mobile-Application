@@ -37,6 +37,16 @@ BOOL group = false;
     self.navigationItem.leftBarButtonItem=barBtn;
     /* navigation bar button */
     
+    /* search bar button */
+    UIButton *btn2 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn2 setFrame:CGRectMake(10.0, 2.0, 26.0, 20.0)];
+    [btn2 setBackgroundImage:[UIImage imageNamed:@"Search_Magnify_Icon.png"] forState:UIControlStateNormal];
+    [btn2 addTarget:self.navigationController.searchDisplayController action:@selector(rightRevealToggle:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barBtn2 = [[UIBarButtonItem alloc] initWithCustomView:btn2];
+    
+    self.navigationItem.rightBarButtonItem=barBtn2;
+    /* search bar button */
+    
     DataClass *data=[DataClass getInstance];
     files = [data.files sortedArrayUsingComparator:^(File *m1, File *m2) {
         return [[m1 name] compare:[m2 name]];
