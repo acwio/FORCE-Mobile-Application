@@ -9,6 +9,7 @@
 #import "FilesViewController.h"
 #import "SWRevealViewController.h"
 #import "DataClass.h"
+#import "File.h"
 
 @interface FilesViewController ()
 
@@ -137,12 +138,25 @@ BOOL group = false;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    File *file;
+    
     if (group) {
-        cell.textLabel.text = [[[[groups objectAtIndex:indexPath.section] objectForKey:@"data"] objectAtIndex:indexPath.row] name];
+        file = [[[groups objectAtIndex:indexPath.section] objectForKey:@"data"] objectAtIndex:indexPath.row];
     } else {
-        File *file = [files objectAtIndex:indexPath.row];
-        cell.textLabel.text = file.name;
+        file = [files objectAtIndex:indexPath.row];
     }
+    
+    
+    
+    if ([[file.path pathExtension] isEqualToString:@"jpg"] || [[file.path pathExtension] isEqualToString:@"png"]) {
+        cell.imageView.image = [UIImage imageNamed:file.path];
+    } else if ([[file.path pathExtension] isEqualToString:@"pdf"]) {
+        cell.imageView.image = [UIImage imageNamed:@"pdf-icon.png"];
+    } else if ([[file.path pathExtension] isEqualToString:@"txt"]) {
+        cell.imageView.image = [UIImage imageNamed:@"txt-icon.png"];
+    }
+    
+    cell.textLabel.text = file.name;
     
     return cell;
 }
