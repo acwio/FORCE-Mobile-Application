@@ -31,7 +31,7 @@ NSString *sort = @"Name";
     
     /* navigation bar button button */
     UIButton *btn =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(10.0, 2.0, 28.0, 24.0)];
+    [btn setFrame:CGRectMake(10.0, 2.0, 25.5, 24.0)];
     [btn setBackgroundImage:[UIImage imageNamed:@"Nav_Icon.png"] forState:UIControlStateNormal];
     [btn addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
@@ -41,7 +41,7 @@ NSString *sort = @"Name";
     
     /* search bar button */
     UIButton *btn2 =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn2 setFrame:CGRectMake(10.0, 2.0, 28.0, 24.0)];
+    [btn2 setFrame:CGRectMake(10.0, 2.0, 25.5, 24.0)];
     [btn2 setBackgroundImage:[UIImage imageNamed:@"Search_Magnify_Icon.png"] forState:UIControlStateNormal];
     [btn2 addTarget:self.navigationController.searchDisplayController action:@selector(rightRevealToggle:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barBtn2 = [[UIBarButtonItem alloc] initWithCustomView:btn2];
