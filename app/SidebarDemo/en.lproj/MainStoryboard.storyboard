@@ -80,6 +80,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSP-EA-pC9">
+                                <rect key="frame" x="10" y="438" width="301" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -90,6 +95,7 @@
                         <outlet property="dateLabel" destination="UwZ-yw-I2Z" id="qm7-Lj-F2I"/>
                         <outlet property="descriptionLabel" destination="JVT-p2-ETV" id="OZX-6g-Ejf"/>
                         <outlet property="fileHeaderLabel" destination="Xmp-7h-0dM" id="BSa-sf-gQu"/>
+                        <outlet property="filesView" destination="YSP-EA-pC9" id="LzA-X7-sp8"/>
                         <outlet property="peopleHeaderLabel" destination="sPF-M6-oPy" id="Be6-tn-CTy"/>
                         <outlet property="peopleView" destination="cOX-oY-5A9" id="0SI-uE-kDc"/>
                         <outlet property="timeLabel" destination="uAC-0c-zVA" id="B0B-L8-KKK"/>

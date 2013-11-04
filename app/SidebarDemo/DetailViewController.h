@@ -26,5 +26,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *fileHeaderLabel;
 
 @property (nonatomic, strong) IBOutlet UIView *peopleView;
+@property (nonatomic, strong) IBOutlet UIView *filesView;
 
 @end

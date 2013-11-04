@@ -28,6 +28,7 @@
 @synthesize fileHeaderLabel;
 
 @synthesize peopleView;
+@synthesize filesView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -103,6 +104,27 @@
         imageView.frame = CGRectMake(count*40, 0, 40, 40);
         [imageView setImage:image];
         [self.peopleView addSubview:imageView];
+        
+        count++;
+    }
+    
+    // Draw the images of the people
+    count = 0;
+    for (File *f in meeting.files) {
+        UIImage *image;
+        
+        if ([[f.path pathExtension] isEqualToString:@"jpg"] || [[f.path pathExtension] isEqualToString:@"png"]) {
+            image = [UIImage imageNamed:f.path];
+        } else if ([[f.path pathExtension] isEqualToString:@"pdf"]) {
+            image = [UIImage imageNamed:@"pdf-icon.png"];
+        } else if ([[f.path pathExtension] isEqualToString:@"txt"]) {
+            image = [UIImage imageNamed:@"txt-icon.png"];
+        }
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        imageView.frame = CGRectMake(count*40, 0, 40, 40);
+        [imageView setImage:image];
+        [self.filesView addSubview:imageView];
         
         count++;
     }
