@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
+#import "MeetingTabBarController.h"
 #import "DataClass.h"
 
 @interface MainViewController ()
@@ -16,12 +17,19 @@
 
 @implementation MainViewController
 
+NSArray *meetings;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     //[[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    
+    DataClass *data=[DataClass getInstance];
+    meetings = [data.meetings sortedArrayUsingComparator:^(Meeting *m1, Meeting *m2) {
+        return [[m1 date] compare:[m2 date]];
+    }];
     
     self.title = @"Dashboard";
     //self.view.backgroundColor = [UIColor clearColor];
@@ -62,5 +70,111 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [meetings count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"SmallCell";
+    UITableViewCell *cell;
+    
+    Meeting *meet = [meetings objectAtIndex:indexPath.row];
+    
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LargeCell"/* forIndexPath:indexPath*/];
+        
+        UILabel *dateLabel = (UILabel *)[cell viewWithTag:2];
+        UILabel *timeLabel = (UILabel *)[cell viewWithTag:3];
+        UILabel *companyLabel = (UILabel *)[cell viewWithTag:4];
+        UILabel *addressLabel = (UILabel *)[cell viewWithTag:5];
+        UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:6];
+        
+        //stuff for current date
+        NSDate *currDate = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"EEE MMM dd yyyy"];
+        NSString *dateString = [dateFormatter stringFromDate:currDate];
+        
+        //tomorrow's date
+        NSString *tDate = [dateFormatter stringFromDate:[currDate dateByAddingTimeInterval:60*60*24]];
+        
+        
+        //stuff for stored date and time
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"EEE MMM dd yyyy"];
+        NSString *stringFromDate = [formatter stringFromDate:meet.date];
+        [formatter setDateFormat:@"HH:mm a"];
+        NSString *time = [formatter stringFromDate:meet.date];
+        
+        //figure out if the date is today or tomorrow only.
+        if([stringFromDate isEqualToString:dateString])
+            dateLabel.text = @"Today";
+        else if ([dateString isEqualToString:tDate])
+            dateLabel.text = @"Tomorrow";
+        else
+            dateLabel.text = stringFromDate;
+        
+        
+        timeLabel.text = time;
+        
+        companyLabel.text = meet.company;
+        addressLabel.text = meet.address;
+        descriptionLabel.text = meet.description;
+        
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier/* forIndexPath:indexPath*/];
+    }
+    
+   
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
+    
+    nameLabel.text = meet.name;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        return 200;
+        
+    } else {
+        return 44.0;
+    }
+}
+
+
+// Called when you click on an item in the search results
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // Create a new meeting page, using the identifier defined in Storyboard
+    MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+    stubController.view.backgroundColor = [UIColor whiteColor];
+    
+    Meeting *meet = [meetings objectAtIndex:indexPath.row];
+    stubController.title = meet.name;
+    stubController.meeting = meet;
+    
+    // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
+    // a reference to revealViewController
+    [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    // Push the new meeting page on top of the current page
+    [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+    
+}
+
 
 @end
