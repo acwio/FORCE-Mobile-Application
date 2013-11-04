@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "DataClass.h"
 #import "File.h"
+#import "Meeting.h"
 
 @interface FilesViewController ()
 
@@ -21,7 +22,8 @@
 
 NSArray *files;
 NSMutableArray *groups;
-BOOL group = false;
+NSMutableArray *meetings;
+NSString *sort = @"Name";
 
 - (void)viewDidLoad
 {
@@ -48,6 +50,8 @@ BOOL group = false;
     /* search bar button */
     
     DataClass *data=[DataClass getInstance];
+    meetings = data.meetings;
+    
     files = [data.files sortedArrayUsingComparator:^(File *m1, File *m2) {
         return [[m1 name] compare:[m2 name]];
     }];
@@ -68,11 +72,6 @@ BOOL group = false;
     [secondItemsArrayDict setValue:@"Images" forKey:@"title"];
     [groups addObject:secondItemsArrayDict];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 // This is called both on load and after returning to this view
@@ -95,8 +94,10 @@ BOOL group = false;
 {
     // Return the number of sections.
     
-    if (group) {
+    if ([sort  isEqual: @"Type"]) {
         return [groups count];
+    } else if ([sort  isEqual: @"Meeting"]) {
+        return [meetings count];
     } else {
         return 1;
     }
@@ -105,8 +106,11 @@ BOOL group = false;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (group) {
+    if ([sort  isEqual: @"Type"]) {
         return [[[groups objectAtIndex:section] objectForKey:@"data"] count];
+    } else if ([sort  isEqual: @"Meeting"]) {
+        Meeting *meet =[meetings objectAtIndex:section];
+        return [meet.files count];
     } else {
         return [files count];
     }
@@ -114,7 +118,7 @@ BOOL group = false;
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (!group) {
+    if ([sort  isEqual: @"Name"]) {
         return nil;
     }
     
@@ -125,13 +129,17 @@ BOOL group = false;
     header.backgroundColor = [UIColor colorWithRed:132.0/255.0 green:196.0/255.0 blue:64.0/255.0 alpha:1.0];
     headerLabel.textColor = [UIColor whiteColor];
     
-    [headerLabel setText:[[groups objectAtIndex:section] objectForKey:@"title"]];
+    if ([sort  isEqual: @"Type"]) {
+        [headerLabel setText:[[groups objectAtIndex:section] objectForKey:@"title"]];
+    } else {
+        [headerLabel setText:[[meetings objectAtIndex:section] name]];
+    }
     
     return header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (group) {
+    if ([sort  isEqual: @"Type"] || [sort  isEqual: @"Meeting"]) {
         return 30.0;
     } else {
         return 0;
@@ -150,8 +158,10 @@ BOOL group = false;
     
     File *file;
     
-    if (group) {
+    if ([sort  isEqual: @"Type"]) {
         file = [[[groups objectAtIndex:indexPath.section] objectForKey:@"data"] objectAtIndex:indexPath.row];
+    } else if ([sort  isEqual: @"Meeting"]) {
+        file = [[[meetings objectAtIndex:indexPath.section] files] objectAtIndex:indexPath.row];
     } else {
         file = [files objectAtIndex:indexPath.row];
     }
@@ -195,8 +205,9 @@ BOOL group = false;
     
 }
 
-- (IBAction)toggleGroup:(id)sender {
-    group = !group;
+- (IBAction)selectSort:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    sort = [segmentedControl titleForSegmentAtIndex: [segmentedControl selectedSegmentIndex]];
     [tableView reloadData];
 }
 

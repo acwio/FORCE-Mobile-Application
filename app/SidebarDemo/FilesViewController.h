@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-- (IBAction)toggleGroup:(id)sender;
+- (IBAction)selectSort:(id)sender;
 
 @end

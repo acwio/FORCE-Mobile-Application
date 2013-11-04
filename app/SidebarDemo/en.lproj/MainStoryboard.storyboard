@@ -346,17 +346,22 @@
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O9a-iI-MTQ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="62" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Group" style="plain" id="HcV-vH-JMb">
-                                        <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="1hn-nM-CjE">
-                                            <rect key="frame" x="16" y="7" width="51" height="31"/>
+                                    <barButtonItem style="plain" id="lPf-3Y-TYq">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="HPp-rE-bGi">
+                                            <rect key="frame" x="16" y="7" width="286" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Name"/>
+                                                <segment title="Type"/>
+                                                <segment title="Meeting"/>
+                                            </segments>
                                             <connections>
-                                                <action selector="toggleGroup:" destination="Noi-g9-jLE" eventType="valueChanged" id="naW-Um-lPh"/>
+                                                <action selector="selectSort:" destination="Noi-g9-jLE" eventType="valueChanged" id="8tQ-9r-XMh"/>
                                             </connections>
-                                        </switch>
+                                        </segmentedControl>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
