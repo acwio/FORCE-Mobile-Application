@@ -73,6 +73,14 @@
     
     cell.textLabel.text = file.name;
     
+    if ([[file.path pathExtension] isEqualToString:@"jpg"] || [[file.path pathExtension] isEqualToString:@"png"]) {
+        cell.imageView.image = [UIImage imageNamed:file.path];
+    } else if ([[file.path pathExtension] isEqualToString:@"pdf"]) {
+        cell.imageView.image = [UIImage imageNamed:@"pdf-icon.png"];
+    } else if ([[file.path pathExtension] isEqualToString:@"txt"]) {
+        cell.imageView.image = [UIImage imageNamed:@"txt-icon.png"];
+    }
+    
     for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
             [subview removeFromSuperview];
