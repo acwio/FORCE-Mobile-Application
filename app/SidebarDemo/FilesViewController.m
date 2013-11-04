@@ -26,6 +26,16 @@ BOOL group = false;
 {
     [super viewDidLoad];
     
+    /* navigation bar button */
+    UIButton *btn =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(10.0, 2.0, 28.0, 20.0)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"Nav_Icon.png"] forState:UIControlStateNormal];
+    [btn addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
+    self.navigationItem.leftBarButtonItem=barBtn;
+    /* navigation bar button */
+    
     DataClass *data=[DataClass getInstance];
     files = [data.files sortedArrayUsingComparator:^(File *m1, File *m2) {
         return [[m1 name] compare:[m2 name]];

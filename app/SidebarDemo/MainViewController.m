@@ -99,15 +99,16 @@ NSMutableArray *groups;
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     
-    /* make nav bar button */
+    /* navigation bar button button */
     UIButton *btn =  [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(10.0, 2.0, 28.0, 20.0)];
-    [btn setBackgroundImage:[UIImage imageNamed:@"menu.png"] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"Nav_Icon.png"] forState:UIControlStateNormal];
     [btn addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.leftBarButtonItem=barBtn;
-
+    /* navigation bar button */
+    
     //testing global stuff
     //obj.str= @"I am Global variable";
 
