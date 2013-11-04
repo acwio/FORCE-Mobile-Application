@@ -18,6 +18,7 @@
 @implementation MainViewController
 
 NSArray *meetings;
+NSMutableArray *groups;
 
 - (void)viewDidLoad
 {
@@ -30,6 +31,62 @@ NSArray *meetings;
     meetings = [data.meetings sortedArrayUsingComparator:^(Meeting *m1, Meeting *m2) {
         return [[m1 date] compare:[m2 date]];
     }];
+    
+    NSDate *todayDate = [NSDate date];
+    NSDate *tomDate = [todayDate dateByAddingTimeInterval:60*60*24];
+    NSDate *nextWeekDate = [todayDate dateByAddingTimeInterval:60*60*24*7];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
+    
+    groups = [[NSMutableArray alloc] init];
+    
+    NSPredicate *today = [NSPredicate predicateWithBlock:^BOOL(Meeting *evaluatedObject, NSDictionary *bindings) {
+        return [[dateFormat stringFromDate:todayDate] isEqualToString:[dateFormat stringFromDate:evaluatedObject.date]];
+    }];
+    
+    NSPredicate *tomorrow = [NSPredicate predicateWithBlock:^BOOL(Meeting *evaluatedObject, NSDictionary *bindings) {
+        return [[dateFormat stringFromDate:tomDate] isEqualToString:[dateFormat stringFromDate:evaluatedObject.date]];
+    }];
+    
+    NSPredicate *thisWeek = [NSPredicate predicateWithBlock:^BOOL(Meeting *evaluatedObject, NSDictionary *bindings) {
+        return ([tomDate compare:evaluatedObject.date] == NSOrderedAscending) && ([evaluatedObject.date compare:nextWeekDate] == NSOrderedAscending);
+    }];
+    
+    NSPredicate *later = [NSPredicate predicateWithBlock:^BOOL(Meeting *evaluatedObject, NSDictionary *bindings) {
+        return ([nextWeekDate compare:evaluatedObject.date] == NSOrderedAscending);
+    }];
+    
+    NSArray *itemsArray;
+    NSMutableDictionary *itemsArrayDict;
+    
+    itemsArray = [meetings filteredArrayUsingPredicate:today];
+    if ([itemsArray count] > 0) {
+        itemsArrayDict = [NSMutableDictionary dictionaryWithObject:itemsArray forKey:@"data"];
+        [itemsArrayDict setValue:@"Today" forKey:@"title"];
+        [groups addObject:[itemsArrayDict copy]];
+    }
+    
+    itemsArray = [meetings filteredArrayUsingPredicate:tomorrow];
+    if ([itemsArray count] > 0) {
+        itemsArrayDict = [NSMutableDictionary dictionaryWithObject:itemsArray forKey:@"data"];
+        [itemsArrayDict setValue:@"Tomorrow" forKey:@"title"];
+        [groups addObject:[itemsArrayDict copy]];
+    }
+    
+    itemsArray = [meetings filteredArrayUsingPredicate:thisWeek];
+    if ([itemsArray count] > 0) {
+        itemsArrayDict = [NSMutableDictionary dictionaryWithObject:itemsArray forKey:@"data"];
+        [itemsArrayDict setValue:@"This Week" forKey:@"title"];
+        [groups addObject:[itemsArrayDict copy]];
+    }
+    itemsArray = [meetings filteredArrayUsingPredicate:later];
+    if ([itemsArray count] > 0) {
+        itemsArrayDict = [NSMutableDictionary dictionaryWithObject:itemsArray forKey:@"data"];
+        [itemsArrayDict setValue:@"Future" forKey:@"title"];
+        [groups addObject:[itemsArrayDict copy]];
+    }
     
     self.title = @"Dashboard";
     //self.view.backgroundColor = [UIColor clearColor];
@@ -75,13 +132,28 @@ NSArray *meetings;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [groups count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [meetings count];
+    return [[[groups objectAtIndex:section] objectForKey:@"data"] count];
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width, 30)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:header.bounds];
+    [header addSubview:headerLabel];
+    
+    header.backgroundColor = [UIColor colorWithRed:132.0/255.0 green:196.0/255.0 blue:64.0/255.0 alpha:1.0];
+    headerLabel.textColor = [UIColor whiteColor];
+    
+    [headerLabel setText:[[groups objectAtIndex:section] objectForKey:@"title"]];
+    
+    return header;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,7 +161,7 @@ NSArray *meetings;
     static NSString *CellIdentifier = @"SmallCell";
     UITableViewCell *cell;
     
-    Meeting *meet = [meetings objectAtIndex:indexPath.row];
+    Meeting *meet = [[[groups objectAtIndex:indexPath.section] objectForKey:@"data"] objectAtIndex:indexPath.row];
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"LargeCell"/* forIndexPath:indexPath*/];
@@ -150,8 +222,12 @@ NSArray *meetings;
         return 200;
         
     } else {
-        return 44.0;
+        return 50.0;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30.0;
 }
 
 
@@ -163,7 +239,7 @@ NSArray *meetings;
     MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
     stubController.view.backgroundColor = [UIColor whiteColor];
     
-    Meeting *meet = [meetings objectAtIndex:indexPath.row];
+    Meeting *meet = [[[groups objectAtIndex:indexPath.section] objectForKey:@"data"] objectAtIndex:indexPath.row];
     stubController.title = meet.name;
     stubController.meeting = meet;
     
