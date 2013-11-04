@@ -36,6 +36,10 @@ NSArray *fileResults;
 {
     [super viewDidLoad];
     
+    [self.view sizeToFit];
+    self.tableView.scrollEnabled = YES;
+    
+    
     /* references the SAME obj.str declared in the MainViewController */
     data=[DataClass getInstance];
     
@@ -44,7 +48,7 @@ NSArray *fileResults;
     //self.automaticallyAdjustsScrollViewInsets=NO;
     self.tableView.frame = CGRectMake(60, 0, 260,900);
     
-    self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
+    //self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
     //self.tableView.frame = CGRectMake(60, 20, 260,900);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -91,14 +95,14 @@ NSArray *fileResults;
     switch (section) {
         case 0: return [meetingResults count];
         case 1: return [peopleResults count];
-        case 2: return [fileResults count];
+        case 2: return [fileResults count] + 8;
         default: return 0;
     }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width, 30)];
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width, 40)];
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:header.bounds];
     [header addSubview:headerLabel];
     
@@ -114,10 +118,22 @@ NSArray *fileResults;
             break;
     }
     [headerLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18.0]];
+    [headerLabel setTextColor:[UIColor whiteColor]];
     headerLabel.backgroundColor = [UIColor colorWithRed:131.0/255.0 green:194.0/255.0 blue:62.0/255.0 alpha:1.0 ];
     headerLabel.textAlignment = UITextAlignmentLeft;
     
+    self.tableView.separatorColor = [UIColor blackColor];
+    
     return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    switch(section){
+        case 0: if([meetingResults count] == 0) return 0; break;
+        case 1: if([peopleResults count] == 0) return 0; break;
+        case 2: if([fileResults count] == 0) return 0; break;
+    }
+    return 40.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -143,12 +159,23 @@ NSArray *fileResults;
             cell.textLabel.text = [[peopleResults objectAtIndex:indexPath.row] name];
             break;
         case 2:
-            cell.textLabel.text = [[fileResults objectAtIndex:indexPath.row] name];
+            if(indexPath.row < [fileResults count])
+            {
+                cell.textLabel.text = [[fileResults objectAtIndex:indexPath.row] name];}
+            else {
+                cell.textLabel.text = @"";
+            }
             break;
     }
     
-    cell.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    cell.textLabel.textAlignment = UITextAlignmentRight;
+    [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:18.0]];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
+    cell.textLabel.textAlignment = UITextAlignmentLeft;
+    
+    UIView *selectedBackgroundViewForCell = [UIView new];
+    [selectedBackgroundViewForCell setBackgroundColor:[UIColor colorWithWhite:0.1f alpha:1.0f]];
+    cell.selectedBackgroundView = selectedBackgroundViewForCell;
     
     for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
