@@ -31,6 +31,7 @@
 		21BD95A618231BA900A931D7 /* Icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A218231BA900A931D7 /* Icon_120x120.png */; };
 		21BD95A718231BA900A931D7 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A318231BA900A931D7 /* login.png */; };
 		21BD95AA18231D9900A931D7 /* splash-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BD95A918231D9900A931D7 /* splash-568h@2x.png */; };
+		21C5AB321827643100925168 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C5AB311827643100925168 /* LoginViewController.m */; };
 		21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D013CA181E1AA8005426F8 /* MeetingViewController.m */; };
 		21D013CD181F1287005426F8 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D013CC181F1287005426F8 /* user.png */; };
 		21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FD9594181844BA00E50963 /* SWRevealViewController.m */; };
@@ -112,6 +113,8 @@
 		21BD95A218231BA900A931D7 /* Icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_120x120.png; sourceTree = "<group>"; };
 		21BD95A318231BA900A931D7 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		21BD95A918231D9900A931D7 /* splash-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-568h@2x.png"; sourceTree = "<group>"; };
+		21C5AB301827643100925168 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		21C5AB311827643100925168 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		21D013C9181E1AA8005426F8 /* MeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingViewController.h; sourceTree = "<group>"; };
 		21D013CA181E1AA8005426F8 /* MeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingViewController.m; sourceTree = "<group>"; };
 		21D013CC181F1287005426F8 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF34177C9A1E00778578 /* Library */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
+				21C5AB301827643100925168 /* LoginViewController.h */,
+				21C5AB311827643100925168 /* LoginViewController.m */,
 				D84D3174182347560055F3A2 /* MeetingTabBarController.h */,
 				D84D3175182347560055F3A2 /* MeetingTabBarController.m */,
 				F4EECF2C177C99F400778578 /* MainViewController.h */,
@@ -517,6 +522,7 @@
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
 				F4EECF75177FF90600778578 /* PhotoViewController.m in Sources */,
 				D8E02D161826CDCA0027BD35 /* PeopleDetailViewController.m in Sources */,
+				21C5AB321827643100925168 /* LoginViewController.m in Sources */,
 				D84D317D182574710055F3A2 /* MediaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
