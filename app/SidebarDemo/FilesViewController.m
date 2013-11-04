@@ -194,7 +194,15 @@ NSString *sort = @"Name";
     [webView setScalesPageToFit:YES];
     [webViewController.view addSubview:webView];
     
-    File *file = [files objectAtIndex:indexPath.row];
+    File *file;
+    
+    if ([sort  isEqual: @"Type"]) {
+        file = [[[groups objectAtIndex:indexPath.section] objectForKey:@"data"] objectAtIndex:indexPath.row];
+    } else if ([sort  isEqual: @"Meeting"]) {
+        file = [[[meetings objectAtIndex:indexPath.section] files] objectAtIndex:indexPath.row];
+    } else {
+        file = [files objectAtIndex:indexPath.row];
+    }
     
     webViewController.title = file.name;
     
