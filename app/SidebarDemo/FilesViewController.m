@@ -72,6 +72,9 @@ NSString *sort = @"Name";
     [secondItemsArrayDict setValue:@"Images" forKey:@"title"];
     [groups addObject:secondItemsArrayDict];
     
+    sort = @"Name";
+    [tableView reloadData];
+    
 }
 
 // This is called both on load and after returning to this view
@@ -80,6 +83,7 @@ NSString *sort = @"Name";
 {
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
 }
 
 - (void)didReceiveMemoryWarning
