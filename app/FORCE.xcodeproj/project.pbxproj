@@ -52,6 +52,7 @@
 		D8E02D191826CF990027BD35 /* FilesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D181826CF990027BD35 /* FilesDetailViewController.m */; };
 		D8E02D1B18273D350027BD35 /* pdf-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E02D1A18273D350027BD35 /* pdf-icon.png */; };
 		D8E02D1D18273D6C0027BD35 /* txt-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E02D1C18273D6C0027BD35 /* txt-icon.png */; };
+		D8E02D20182896AB0027BD35 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D1F182896AB0027BD35 /* PersonViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
 		F4EECF16177C99F400778578 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF15177C99F400778578 /* CoreGraphics.framework */; };
@@ -160,6 +161,8 @@
 		D8E02D181826CF990027BD35 /* FilesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesDetailViewController.m; sourceTree = "<group>"; };
 		D8E02D1A18273D350027BD35 /* pdf-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf-icon.png"; sourceTree = "<group>"; };
 		D8E02D1C18273D6C0027BD35 /* txt-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "txt-icon.png"; sourceTree = "<group>"; };
+		D8E02D1E182896AB0027BD35 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		D8E02D1F182896AB0027BD35 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		F4EECF0E177C99F400778578 /* FORCE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FORCE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EECF11177C99F400778578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4EECF13177C99F400778578 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -329,6 +332,8 @@
 				08D8EB33182819A500794875 /* SeetingsViewController.m */,
 				08ABEE3A18284645002B46FB /* AboutViewController.h */,
 				08ABEE3B18284645002B46FB /* AboutViewController.m */,
+				D8E02D1E182896AB0027BD35 /* PersonViewController.h */,
+				D8E02D1F182896AB0027BD35 /* PersonViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				D8E02D191826CF990027BD35 /* FilesDetailViewController.m in Sources */,
 				D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */,
+				D8E02D20182896AB0027BD35 /* PersonViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				088A986218234CCE001B1602 /* DataClass.m in Sources */,
 				08C034571824A99300D749C7 /* Person.m in Sources */,

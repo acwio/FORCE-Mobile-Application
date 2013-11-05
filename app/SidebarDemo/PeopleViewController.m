@@ -7,6 +7,7 @@
 //
 
 #import "PeopleViewController.h"
+#import "PersonViewController.h"
 #import "SWRevealViewController.h"
 #import "DataClass.h"
 
@@ -112,6 +113,27 @@ NSMutableArray *people;
     [imageView setImage:[UIImage imageNamed:person.picURL]];
         
     return cell;
+}
+
+// Called when you click on an item in the search results
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // Create a new person page, using the identifier defined in Storyboard
+    PersonViewController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonViewController"];
+    stubController.view.backgroundColor = [UIColor whiteColor];
+    
+    Person *person = [people objectAtIndex:indexPath.row];
+    stubController.title = person.name;
+    stubController.person = person;
+    
+    // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
+    // a reference to revealViewController
+    [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    // Push the new page on top of the current page
+    [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+    
 }
 
 /*

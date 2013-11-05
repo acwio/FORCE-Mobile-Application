@@ -9,8 +9,11 @@
 #import "SWRevealViewController.h"
 #import "SearchViewController.h"
 #import "MeetingTabBarController.h"
+#import "PersonViewController.h"
 #import "DataClass.h"
 #import "Meeting.h"
+#import "Person.h"
+#import "File.h"
 
 @interface SearchViewController ()
 
@@ -216,29 +219,73 @@ shouldReloadTableForSearchString:(NSString *)searchString
         return;
     }
     
-    // Create a new meeting page, using the identifier defined in Storyboard
-    MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
-    stubController.view.backgroundColor = [UIColor whiteColor];
-    
-    // Set the title depending on if there was a search or not
-    if (indexPath.section != 0) {
-        return;
+    switch (indexPath.section) {
+        case 0: {
+            // Create a new meeting page, using the identifier defined in Storyboard
+            MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+            stubController.view.backgroundColor = [UIColor whiteColor];
+            
+            // Set the title depending on if there was a search or not
+            if (indexPath.section != 0) {
+                return;
+            }
+            
+            Meeting *meet = [meetingResults objectAtIndex:indexPath.row];
+            stubController.title = meet.name;
+            stubController.meeting = meet;
+            
+            // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
+            // a reference to revealViewController
+            [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+            
+            // Push the new meeting page on top of the current page
+            [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:NO];
+            
+            break;
+        }
+        case 1: {
+            // Create a new person page, using the identifier defined in Storyboard
+            PersonViewController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonViewController"];
+            stubController.view.backgroundColor = [UIColor whiteColor];
+            
+            Person *person = [peopleResults objectAtIndex:indexPath.row];
+            stubController.title = person.name;
+            stubController.person = person;
+            
+            // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
+            // a reference to revealViewController
+            [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+            
+            // Push the new page on top of the current page
+            [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+            break;
+        }
+        case 2: {
+            // Create a UIView and Controller to display the file
+            UIViewController *webViewController = [[UIViewController alloc] init];
+            UIWebView *webView = [[UIWebView alloc]  initWithFrame:CGRectMake(0, 0, 320, 568)];
+            [webView setScalesPageToFit:YES];
+            [webViewController.view addSubview:webView];
+            
+            File *file = [fileResults objectAtIndex:indexPath.row];
+            
+            webViewController.title = file.name;
+            
+            // Find the url of the file and load into the webview
+            NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
+            NSURL *targetURL = [NSURL fileURLWithPath:path];
+            NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+            [webView loadRequest:request];
+            
+            // Push the new page on top of the current page
+            [(UINavigationController*)self.revealViewController.frontViewController pushViewController:webViewController animated:YES];
+            break;
+        }
     }
-    
-    Meeting *meet;
-    meet = [meetingResults objectAtIndex:indexPath.row];
-    stubController.title = meet.name;
-    stubController.meeting = meet;
-    
-    // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
-    // a reference to revealViewController
-    [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
-    // Push the new meeting page on top of the current page
-    [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:NO];
     
     // Hide the search bar (it saves your search)
     [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+    
     
     
 }
