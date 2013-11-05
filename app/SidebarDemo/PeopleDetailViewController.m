@@ -99,10 +99,6 @@
     stubController.title = person.name;
     stubController.person = person;
     
-    // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
-    // a reference to revealViewController
-    [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
     // Push the new page on top of the current page
     [(UINavigationController*)self.parentViewController.parentViewController.parentViewController pushViewController:stubController animated:YES];
     

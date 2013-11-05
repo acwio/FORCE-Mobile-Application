@@ -39,6 +39,8 @@
 {
     [super viewDidAppear:animated];
     
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
     [[self.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%d", [self.meeting.people count]]];
     [[self.tabBar.items objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%d", [self.meeting.files count]]];
 

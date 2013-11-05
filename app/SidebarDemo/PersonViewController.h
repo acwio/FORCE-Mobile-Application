@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Person.h"
 
-@interface PersonViewController : UIViewController {
+@interface PersonViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     Person *person;
 }
 
 @property (nonatomic, strong) Person *person;
+
+@property (nonatomic, strong) IBOutlet UITableView *meetingsTable;
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) IBOutlet UILabel *nameLabel;
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *companyLabel;
 
 @end

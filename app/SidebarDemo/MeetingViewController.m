@@ -136,10 +136,6 @@ NSArray *meetings;
     stubController.title = meet.name;
     stubController.meeting = meet;
     
-    // Add the swipe gestures. I couldn't figure out a way to add those in the tab bar controller because it does not have
-    // a reference to revealViewController
-    [stubController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
     // Push the new meeting page on top of the current page
     [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
     

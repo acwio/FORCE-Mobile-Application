@@ -7,6 +7,10 @@
 //
 
 #import "PersonViewController.h"
+#import "MeetingTabBarController.h"
+#import "SWRevealViewController.h"
+#import "Meeting.h"
+#import "DataClass.h"
 
 @interface PersonViewController ()
 
@@ -15,7 +19,15 @@
 @implementation PersonViewController
 
 @synthesize person;
+
+@synthesize meetingsTable;
 @synthesize imageView;
+@synthesize nameLabel;
+@synthesize titleLabel;
+@synthesize companyLabel;
+
+NSArray *meetings;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,6 +35,7 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -30,15 +43,35 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
+    
+    nameLabel.text = @"";
+    titleLabel.text = @"";
+    companyLabel.text = @"";
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [imageView setImage:[UIImage imageNamed:person.picURL]];
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+    [imageView setImage:[UIImage imageNamed:person.picURL]];
+    nameLabel.text = person.name;
+    titleLabel.text = person.title;
+    companyLabel.text = person.company;
+    
+    meetings = [[DataClass getInstance].meetings filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Meeting *evaluatedObject, NSDictionary *bindings) {
+        for (Person *p in evaluatedObject.people) {
+            if ([p.name isEqual:person.name]) {
+                return true;
+            }
+        }
+        return false;
+    }]];
+    
+    [meetingsTable reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,5 +79,54 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [meetings count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier/* forIndexPath:indexPath*/];
+    
+    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    Meeting *meeting = [meetings objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = meeting.name;
+    
+    return cell;
+}
+
+// Called when you click on a file
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Create a new meeting page, using the identifier defined in Storyboard
+    MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+    stubController.view.backgroundColor = [UIColor whiteColor];
+    
+    Meeting *meet = [meetings objectAtIndex:indexPath.row];
+    stubController.title = meet.name;
+    stubController.meeting = meet;
+    
+    // Push the new meeting page on top of the current page
+    [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+    
+}
+
 
 @end
