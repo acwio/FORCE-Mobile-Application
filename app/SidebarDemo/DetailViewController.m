@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "MeetingTabBarController.h"
+#import "SWRevealViewController.h"
 
 @interface DetailViewController ()
 
@@ -108,6 +109,8 @@
         count++;
     }
     
+    [self.peopleView setContentSize:CGSizeMake(40*[meeting.people count], 40)];
+    
     // Draw the images of the files
     count = 0;
     for (File *f in meeting.files) {
@@ -128,6 +131,10 @@
         
         count++;
     }
+    
+    [self.filesView setContentSize:CGSizeMake(40*[meeting.files count], 40)];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

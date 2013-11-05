@@ -56,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 People Attending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sPF-M6-oPy">
-                                <rect key="frame" x="0.0" y="285" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="323" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51764705882352935" green="0.76862745098039209" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -64,23 +64,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Files" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xmp-7h-0dM">
-                                <rect key="frame" x="0.0" y="400" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="419" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51764705879999995" green="0.76862745099999996" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" id="cOX-oY-5A9">
-                                <rect key="frame" x="10" y="323" width="301" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="x6x-jT-GEJ">
-                                <rect key="frame" x="10" y="438" width="301" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="MER-4i-wbj">
+                                <rect key="frame" x="10" y="361" width="301" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Up5-Kf-7HQ">
+                                <rect key="frame" x="10" y="458" width="301" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -91,9 +89,9 @@
                         <outlet property="dateLabel" destination="UwZ-yw-I2Z" id="qm7-Lj-F2I"/>
                         <outlet property="descriptionLabel" destination="JVT-p2-ETV" id="OZX-6g-Ejf"/>
                         <outlet property="fileHeaderLabel" destination="Xmp-7h-0dM" id="BSa-sf-gQu"/>
-                        <outlet property="filesView" destination="x6x-jT-GEJ" id="ziz-fc-5ze"/>
+                        <outlet property="filesView" destination="Up5-Kf-7HQ" id="Dko-mt-x3D"/>
                         <outlet property="peopleHeaderLabel" destination="sPF-M6-oPy" id="Be6-tn-CTy"/>
-                        <outlet property="peopleView" destination="cOX-oY-5A9" id="0SI-uE-kDc"/>
+                        <outlet property="peopleView" destination="MER-4i-wbj" id="1Bb-is-gTl"/>
                         <outlet property="timeLabel" destination="uAC-0c-zVA" id="B0B-L8-KKK"/>
                         <outlet property="titleLabel" destination="OFY-rA-fl7" id="PSE-Vv-9Hz"/>
                     </connections>
