@@ -108,7 +108,7 @@
         count++;
     }
     
-    // Draw the images of the people
+    // Draw the images of the files
     count = 0;
     for (File *f in meeting.files) {
         UIImage *image;
