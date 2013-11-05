@@ -101,7 +101,7 @@ NSArray *meetings;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"MeetingCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier/* forIndexPath:indexPath*/];
     
     // Configure the cell...
@@ -109,16 +109,47 @@ NSArray *meetings;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *dateLabel = (UILabel *)[cell viewWithTag:2];
+    UILabel *timeLabel = (UILabel *)[cell viewWithTag:3];
+    UILabel *companyLabel = (UILabel *)[cell viewWithTag:4];
+    UILabel *peopleCountLabel = (UILabel *)[cell viewWithTag:5];
+    UILabel *filesCountLabel = (UILabel *)[cell viewWithTag:6];
+    
     Meeting *meet = [meetings objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = meet.name;
+    nameLabel.text = meet.name;
+    companyLabel.text = meet.company;
     
-    for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
-        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
-            [subview removeFromSuperview];
-            break;
-        }
-    }
+    peopleCountLabel.text = [NSString stringWithFormat:@"%d", [meet.people count]];
+    filesCountLabel.text = [NSString stringWithFormat:@"%d", [meet.files count]];
+    
+    //stuff for current date
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"EEE MMM dd yyyy"];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    
+    //tomorrow's date
+    NSString *tDate = [dateFormatter stringFromDate:[currDate dateByAddingTimeInterval:60*60*24]];
+    
+    
+    //stuff for stored date and time
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"EEE MMM dd yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:meet.date];
+    [formatter setDateFormat:@"HH:mm a"];
+    NSString *time = [formatter stringFromDate:meet.date];
+    
+    //figure out if the date is today or tomorrow only.
+    if([stringFromDate isEqualToString:dateString])
+        dateLabel.text = @"Today";
+    else if ([dateString isEqualToString:tDate])
+        dateLabel.text = @"Tomorrow";
+    else
+        dateLabel.text = stringFromDate;
+    
+    timeLabel.text = time;
     
     return cell;
 }
