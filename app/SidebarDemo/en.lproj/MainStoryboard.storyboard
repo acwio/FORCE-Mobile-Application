@@ -596,28 +596,28 @@
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OBd-nZ-LFU">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OBd-nZ-LFU">
                                 <rect key="frame" x="20" y="401" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aGJ-rC-uRB">
-                                <rect key="frame" x="20" y="430" width="64" height="21"/>
+                                <rect key="frame" x="20" y="430" width="136" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tge-hB-J6T">
-                                <rect key="frame" x="20" y="459" width="64" height="21"/>
+                                <rect key="frame" x="20" y="447" width="136" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uJo-It-bAO">
-                                <rect key="frame" x="20" y="488" width="64" height="21"/>
+                                <rect key="frame" x="20" y="464" width="136" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -625,6 +625,9 @@
                     </view>
                     <connections>
                         <outlet property="authors" destination="DZX-G5-enl" id="G3u-Go-jQV"/>
+                        <outlet property="desc1" destination="aGJ-rC-uRB" id="fWa-Rx-zVY"/>
+                        <outlet property="desc2" destination="Tge-hB-J6T" id="q65-8p-Eve"/>
+                        <outlet property="desc3" destination="uJo-It-bAO" id="x2M-eI-ere"/>
                         <outlet property="name1" destination="Fwt-Xx-8dw" id="RhK-om-13d"/>
                         <outlet property="name2" destination="OY8-kA-tZU" id="MZ9-9e-usn"/>
                         <outlet property="name3" destination="bqd-61-fgO" id="sd4-Vh-4ph"/>

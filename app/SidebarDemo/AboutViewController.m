@@ -28,12 +28,15 @@
 {
     [super viewDidLoad];
     
+    self.authors.text = @"Authors";
     //set up look
     self.name1.text = @"Nathan Perry";
     self.name2.text = @"Nathan Reale";
     self.name3.text = @"Alex Williams";
     
-    self.desc1.text = @"This is an example sentence, I wonder how much space it will take.";
+    self.desc1.text = @"AppCoda";
+    self.desc2.text = @"SWRevealController";
+    self.desc3.text = @"iOS7 Icon Pack";
     /* navigation bar button button */
     UIButton *btn =  [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(10.0, 2.0, 25.5, 24.0)];
