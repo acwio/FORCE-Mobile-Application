@@ -171,18 +171,38 @@ NSArray *fileResults;
     }
     
     switch (indexPath.section) {
-        case 0:
-            cell.textLabel.text = [[meetingResults objectAtIndex:indexPath.row] name];
+        case 0: {
+            Meeting *meet = [meetingResults objectAtIndex:indexPath.row];
+            cell.textLabel.text = [meet name];
+            cell.imageView.image = [UIImage imageNamed:@"InfoPage_Location_Icon.png"];
             break;
-        case 1:
-            cell.textLabel.text = [[peopleResults objectAtIndex:indexPath.row] name];
+        }
+        case 1: {
+            Person *person = [peopleResults objectAtIndex:indexPath.row];
+            cell.textLabel.text = [person name];
+            UIGraphicsBeginImageContextWithOptions(CGSizeMake(32, 32), NO, UIScreen.mainScreen.scale);
+            [[UIImage imageNamed:person.picURL] drawInRect:CGRectMake(0, 0, 32, 32)];
+            cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
             break;
+        }
         case 2:
             if(indexPath.row < [fileResults count])
             {
-                cell.textLabel.text = [[fileResults objectAtIndex:indexPath.row] name];}
+                File *file = [fileResults objectAtIndex:indexPath.row];
+                if ([[file.path pathExtension] isEqualToString:@"jpg"] || [[file.path pathExtension] isEqualToString:@"png"]) {
+                    cell.imageView.image = [UIImage imageNamed:file.path];
+                } else if ([[file.path pathExtension] isEqualToString:@"pdf"]) {
+                    cell.imageView.image = [UIImage imageNamed:@"pdf-icon.png"];
+                } else if ([[file.path pathExtension] isEqualToString:@"txt"]) {
+                    cell.imageView.image = [UIImage imageNamed:@"txt-icon.png"];
+                }
+                cell.textLabel.text = [file name];}
             else {
                 cell.textLabel.text = @"";
+                UIGraphicsBeginImageContextWithOptions(CGSizeMake(36, 36), NO, 0.0);
+                cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
             }
             break;
     }
