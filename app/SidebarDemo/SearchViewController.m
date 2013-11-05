@@ -39,8 +39,8 @@ NSArray *fileResults;
 {
     [super viewDidLoad];
     
-    [self.view sizeToFit];
     self.tableView.scrollEnabled = YES;
+    [self.tableView setSeparatorColor:[UIColor blackColor]];
     
     
     /* references the SAME obj.str declared in the MainViewController */
@@ -49,7 +49,6 @@ NSArray *fileResults;
     //self.edgesForExtendedLayout=UIRectEdgeNone;
     //self.extendedLayoutIncludesOpaqueBars=NO;
     //self.automaticallyAdjustsScrollViewInsets=NO;
-    self.tableView.frame = CGRectMake(60, 0, 260,900);
     
     //self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
     //self.tableView.frame = CGRectMake(60, 20, 260,900);
@@ -82,7 +81,7 @@ NSArray *fileResults;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (tableView != self.searchDisplayController.searchResultsTableView) {
-        return 0;
+        return 1;
     } else {
         return 3;
     }
@@ -92,7 +91,7 @@ NSArray *fileResults;
 {
     // Return the number of rows in the section.
     if (tableView != self.searchDisplayController.searchResultsTableView) {
-        return 0;
+        return 1;
     }
     
     switch (section) {
@@ -105,6 +104,10 @@ NSArray *fileResults;
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return nil;
+    }
+    
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width, 40)];
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:header.bounds];
     [header addSubview:headerLabel];
@@ -124,19 +127,31 @@ NSArray *fileResults;
     [headerLabel setTextColor:[UIColor whiteColor]];
     headerLabel.backgroundColor = [UIColor colorWithRed:131.0/255.0 green:194.0/255.0 blue:62.0/255.0 alpha:1.0 ];
     headerLabel.textAlignment = UITextAlignmentLeft;
-    
-    self.tableView.separatorColor = [UIColor blackColor];
-    
+        
     return header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return 0;
+    }
+    
     switch(section){
         case 0: if([meetingResults count] == 0) return 0; break;
         case 1: if([peopleResults count] == 0) return 0; break;
         case 2: if([fileResults count] == 0) return 0; break;
     }
     return 40.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return 600;
+    } else {
+        return 40;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -151,6 +166,7 @@ NSArray *fileResults;
     }
     
     if (tableView != self.searchDisplayController.searchResultsTableView) {
+        cell.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
         return cell;
     }
     
