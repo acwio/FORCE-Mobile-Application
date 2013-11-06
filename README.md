@@ -18,9 +18,11 @@ This project uses Xcode 5, and the iOS 7 SDK. We developed on an OS X Mavericks 
 
 Sources
 =======
-* iPhone-arkit
-* SWRevealController
-* AppCoda
+* ios-arkit
+ * https://github.com/calonso/ios-arkit
+ * https://github.com/zac/iphonearkit
+* SWRevealController (https://github.com/John-Lluch/SWRevealViewController)
+* AppCoda.com
 
 
 
