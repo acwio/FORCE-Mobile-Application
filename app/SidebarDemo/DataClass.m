@@ -30,7 +30,7 @@ static Meeting *meet = nil;
             instance.people = [[NSMutableArray alloc] init];
             instance.files = [[NSMutableArray alloc] init];
             
-            CLLocation *location = [[CLLocation alloc] initWithLatitude:36.166667 longitude:-86.783333];
+            CLLocation *location = [[CLLocation alloc] initWithLatitude:35.8492 longitude:-86.3686]; //85113 longitude:-86.369167];
             
             //set up date stuff
             NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
