@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARKit.h"
+#import "DetailView.h"
 
-@interface NavigationViewController : UIViewController
+@interface NavigationViewController : UIViewController <ARViewDelegate>{
+    NSArray *points;
+    ARKitEngine *engine;
+
+    NSInteger selectedIndex;
+    DetailView *currentDetailView;}
 
 @end

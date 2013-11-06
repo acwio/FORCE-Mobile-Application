@@ -13,6 +13,10 @@
 
 @synthesize geoLocation;
 
+@synthesize radialDistance, inclination, azimuth;
+
+@synthesize dataObject;
+
 - (float)angleFromCoordinate:(CLLocationCoordinate2D)first toCoordinate:(CLLocationCoordinate2D)second {
 	float longitudinalDifference = second.longitude - first.longitude;
 	float latitudinalDifference = second.latitude - first.latitude;
@@ -24,16 +28,20 @@
 	return 0.0f;
 }
 
-- (void)calibrateUsingOrigin:(CLLocation *)origin {
+- (void)calibrateUsingOrigin:(CLLocation *)origin useAltitude:(BOOL) useAltitude {
 	
 	if (!self.geoLocation) return;
 	
-	double baseDistance = [origin getDistanceFrom:self.geoLocation];
+	double baseDistance = [origin distanceFromLocation:self.geoLocation];
 	
 	self.radialDistance = sqrt(pow(origin.altitude - self.geoLocation.altitude, 2) + pow(baseDistance, 2));
 		
 	float angle = sin(ABS(origin.altitude - self.geoLocation.altitude) / self.radialDistance);
 	
+    if (!useAltitude) {
+        angle = 0;
+    }
+    
 	if (origin.altitude > self.geoLocation.altitude) angle = -angle;
 	
 	self.inclination = angle;
@@ -43,18 +51,37 @@
 + (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location {
 	ARGeoCoordinate *newCoordinate = [[ARGeoCoordinate alloc] init];
 	newCoordinate.geoLocation = location;
-	
-	newCoordinate.title = @"";
-	
-	return [newCoordinate autorelease];
-}
 
-+ (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location fromOrigin:(CLLocation *)origin {
-	ARGeoCoordinate *newCoordinate = [ARGeoCoordinate coordinateWithLocation:location];
-	
-	[newCoordinate calibrateUsingOrigin:origin];
-		
 	return newCoordinate;
 }
+
+- (NSUInteger)hash{
+	return ([dataObject hash] + (int)(self.radialDistance + self.inclination + self.azimuth));
+}
+
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    return [self isEqualToCoordinate:other];
+}
+
+- (BOOL)isEqualToCoordinate:(ARGeoCoordinate *)otherCoordinate {
+    if (self == otherCoordinate) return YES;
+    
+	BOOL equal = self.radialDistance == otherCoordinate.radialDistance;
+	equal &= self.inclination == otherCoordinate.inclination;
+	equal &= self.azimuth == otherCoordinate.azimuth;
+	equal &= self.dataObject == otherCoordinate.dataObject;
+	
+	return equal;
+}
+
+- (NSString *)description {
+	return [NSString stringWithFormat:@"r: %.3fm φ: %.3f° θ: %.3f°", self.radialDistance, radiansToDegrees(self.azimuth), radiansToDegrees(self.inclination)];
+}
+
+
 
 @end
