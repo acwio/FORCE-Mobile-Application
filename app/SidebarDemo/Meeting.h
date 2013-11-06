@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "Person.h"
 #import "File.h"
 
@@ -20,6 +21,7 @@
     NSString *city;         //city
     NSString *state;        //state
     NSString *zip;          //zip
+    CLLocation *location;
     
     NSMutableArray *people;
     NSMutableArray *files;
@@ -34,6 +36,7 @@
 @property(nonatomic,retain)NSString *zip;
 @property(nonatomic,retain)NSMutableArray *people;
 @property(nonatomic,retain)NSMutableArray *files;
+@property(nonatomic,retain)CLLocation *location;
 
 +(Meeting*)getInstance;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "Meeting.h"
 
 @interface DataClass : NSObject {
@@ -30,6 +31,7 @@
         setCity: (NSString *) city
         setStat: (NSString *) state
         setZip : (NSString *) zip
+        setLocation: (CLLocation *) location
         setPeople: (NSMutableArray *) people
         setFiles:(NSMutableArray *) files;
 

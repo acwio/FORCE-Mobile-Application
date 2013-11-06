@@ -19,6 +19,7 @@
 @synthesize zip;
 @synthesize people;
 @synthesize files;
+@synthesize location;
 static Meeting *instance=nil;
 +(Meeting *)getInstance
 {

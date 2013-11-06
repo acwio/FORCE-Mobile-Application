@@ -7,7 +7,9 @@
 //
 
 #import "NavigationViewController.h"
+#import "MeetingTabBarController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Meeting.h"
 
 @interface NavigationViewController ()
 
@@ -19,7 +21,10 @@
 - (void) viewDidLoad {
     selectedIndex = -1;
     
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:40.960887 longitude:-5.666279];
+    Meeting *meeting = ((MeetingTabBarController *)self.tabBarController).meeting;
+
+    
+    CLLocation *location = meeting.location;
     ARGeoCoordinate *cat = [ARGeoCoordinate coordinateWithLocation:location];
     cat.dataObject = @"Catedral";
     
