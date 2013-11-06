@@ -1,6 +1,5 @@
 //
 //  DetailView.h
-//  ARKit Example
 //
 //  Created by Carlos on 25/10/13.
 //

@@ -21,19 +21,14 @@
 - (void) viewDidLoad {
     selectedIndex = -1;
     
+    /* get meeting object and assign it's location to the on-screen array */
     Meeting *meeting = ((MeetingTabBarController *)self.tabBarController).meeting;
-
-    
     CLLocation *location = meeting.location;
     ARGeoCoordinate *cat = [ARGeoCoordinate coordinateWithLocation:location];
-    cat.dataObject = @"Catedral";
-    
-    location = [[CLLocation alloc] initWithLatitude:40.976027 longitude:-5.655125];
-    ARGeoCoordinate *ci = [ARGeoCoordinate coordinateWithLocation:location];
-    ci.dataObject = @"El Corte ingles";
-    
-    points = @[ci];
+    cat.dataObject = meeting.company;
+    points = @[cat];
 
+    /* setup and retrieve configuration settings */
     ARKitConfig *config = [ARKitConfig defaultConfigFor:self];
     config.orientation = self.interfaceOrientation;
     
@@ -44,12 +39,14 @@
         config.radarPoint = CGPointMake(s.height - 50, s.width - 50);
     }
     
+    /* display a close button to escape the AR Navigation View (calls closeAR when pressed) */
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [closeBtn setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
     [closeBtn sizeToFit];
     [closeBtn addTarget:self action:@selector(closeAr) forControlEvents:UIControlEventTouchUpInside];
     closeBtn.center = CGPointMake(50, 50);
     
+    /* start the AR engine */
     engine = [[ARKitEngine alloc] initWithConfig:config];
     [engine addCoordinates:points];
     [engine addExtraView:closeBtn];
