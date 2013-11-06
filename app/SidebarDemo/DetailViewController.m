@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "MeetingTabBarController.h"
 #import "SWRevealViewController.h"
+#import <MapKit/MapKit.h>
 
 @interface DetailViewController ()
 
@@ -47,6 +48,7 @@
     
     self.meeting = ((MeetingTabBarController *)self.tabBarController).meeting;
     self.titleLabel.text = meeting.name;
+
     
     //stuff for current date
     NSDate *currDate = [NSDate date];
@@ -135,6 +137,19 @@
     [self.filesView setContentSize:CGSizeMake(40*[meeting.files count], 40)];
     
     
+}
+
+- (IBAction)mapLocation:(id)sender {
+    
+    Class mapItemClass = [MKMapItem class];
+    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+    {
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:meeting.location.coordinate
+                                                       addressDictionary:nil];
+        MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+        [mapItem setName:meeting.company];
+        [mapItem openInMapsWithLaunchOptions:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning

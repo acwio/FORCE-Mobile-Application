@@ -28,4 +28,7 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *peopleView;
 @property (nonatomic, strong) IBOutlet UIScrollView *filesView;
 
+- (IBAction)mapLocation:(id)sender;
+
+
 @end

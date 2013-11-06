@@ -15,6 +15,7 @@
     ARKitEngine *engine;
 
     NSInteger selectedIndex;
-    DetailView *currentDetailView;}
+    DetailView *currentDetailView;
+}
 
 @end
