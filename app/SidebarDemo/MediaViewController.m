@@ -44,23 +44,84 @@
     
 }
 
-- (IBAction)recordPauseTapped:(id)sender {
+- (IBAction) record
+{
+    if(!recorder.recording){
+    NSError *error;
     
-    if (!recorder.recording) {
-        AVAudioSession *session = [AVAudioSession sharedInstance];
-        [session setActive:YES error:nil];
-        
-        // Start recording
-        [recorder record];
-        [recordButton setTitle:@"Stop" forState:UIControlStateNormal];
-        
-    } else {
-        
-        [recorder stop];
-        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-        [audioSession setActive:NO error:nil];
+    // Recording settings
+    NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+    
+    [settings setValue: [NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
+    [settings setValue: [NSNumber numberWithFloat:8000.0] forKey:AVSampleRateKey];
+    [settings setValue: [NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
+    [settings setValue: [NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
+    [settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
+    [settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
+    [settings setValue:  [NSNumber numberWithInt: AVAudioQualityMax] forKey:AVEncoderAudioQualityKey];
+    
+    NSArray *searchPaths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath_ = [searchPaths objectAtIndex: 0];
+    
+    NSString *pathToSave = [documentPath_ stringByAppendingPathComponent:[self dateString]];
+    
+    // File URL
+    NSURL *url = [NSURL fileURLWithPath:pathToSave];//FILEPATH];
+    
+    
+    //Save recording path to preferences
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    
+    [prefs setURL:url forKey:@"Test1"];
+    [prefs synchronize];
+    
+    
+    // Create recorder
+    recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
+    
+    [recorder prepareToRecord];
+    
+    [recorder record];
     }
+    else{
+        [recorder stop];
+    }
+}
+
+
+-(IBAction)playBack
+{
     
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [audioSession setActive:YES error:nil];
+    
+    
+    //Load recording path from preferences
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    temporaryRecFile = [prefs URLForKey:@"Test1"];
+    
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
+    
+    player.delegate = self;
+    
+    [player setNumberOfLoops:0];
+    player.volume = 1;
+    
+    [player prepareToPlay];
+    [player play];
+}
+
+
+
+- (NSString *) dateString
+{
+    // return a formatted string for a file name
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"ddMMMYY_hhmmssa";
+    return [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@".aif"];
 }
 
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
@@ -78,44 +139,16 @@
 
 - (void)viewDidLoad
 {
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+    [audioSession setActive:YES error:nil];
+    
+    [recorder setDelegate:self];
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                              message:@"Device has no camera"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles: nil];
-        
-        [myAlertView show];
-        
-    }
-    
-    // Set the audio file
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               @"TestAudio.m4a",
-                               nil];
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    
-    // Setup audio session
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    // Define the recorder setting
-    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
-    
-    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
-    
-    // Initiate and prepare the recorder
-    recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
-    recorder.delegate = self;
-    recorder.meteringEnabled = YES;
-    [recorder prepareToRecord];
 }
 
 - (void)didReceiveMemoryWarning
