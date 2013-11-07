@@ -151,7 +151,21 @@ static Meeting *meet = nil;
             [instance.people addObject:[Person initWithName:@"Lillie Vasquez" title:@"Software Developer" company:@"Drivers LLC" picture:@"women49.jpg"]];
             [instance.people addObject:[Person initWithName:@"Camille Bishop" title:@"Software Developer" company:@"Drivers LLC" picture:@"women50.jpg"]];
 
+            //shuffle people
+            static BOOL seeded = NO;
+            if(!seeded)
+            {
+                seeded = YES;
+                srandom(time(NULL));
+            }
             
+            NSUInteger count = [instance.people count];
+            for (NSUInteger i = 0; i < count; ++i) {
+                // Select a random element between i and end of array to swap with.
+                int nElements = count - i;
+                int n = (random() % nElements) + i;
+                [instance.people exchangeObjectAtIndex:i withObjectAtIndex:n];
+            }
             
             //set up all files
             [instance.files addObject:[File initWithName:@"Expense Report" path:@"force.pdf"]];
