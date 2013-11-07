@@ -1229,6 +1229,20 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LTF-SC-oHx">
+                                            <rect key="frame" x="262" y="10" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" backgroundImage="Phone_Icon.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vjq-WW-3i6">
+                                            <rect key="frame" x="262" y="54" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" backgroundImage="mail_icon.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1322,6 +1336,7 @@
         <image name="Nav_Dash_Icon.png" width="55" height="48"/>
         <image name="Nav_Files_Icon.png" width="55" height="48"/>
         <image name="Nav_Settings_Icon.png" width="55" height="48"/>
+        <image name="Phone_Icon.png" width="128" height="128"/>
         <image name="bookmark.png" width="1024" height="1024"/>
         <image name="calendar.png" width="1024" height="1024"/>
         <image name="camera-icon.png" width="30" height="30"/>
@@ -1329,6 +1344,7 @@
         <image name="google (1).png" width="280" height="51"/>
         <image name="l_bolt.png" width="46" height="56"/>
         <image name="linkedin (1).png" width="269" height="48"/>
+        <image name="mail_icon.png" width="128" height="128"/>
         <image name="near_me-128.png" width="128" height="128"/>
         <image name="user.png" width="69" height="69"/>
     </resources>

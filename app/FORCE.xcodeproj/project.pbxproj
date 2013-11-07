@@ -56,6 +56,8 @@
 		21C5AB321827643100925168 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C5AB311827643100925168 /* LoginViewController.m */; };
 		21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D013CA181E1AA8005426F8 /* MeetingViewController.m */; };
 		21D013CD181F1287005426F8 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D013CC181F1287005426F8 /* user.png */; };
+		21F4A02E182B5CA200E1BF7E /* mail_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4A02C182B5CA200E1BF7E /* mail_icon.png */; };
+		21F4A02F182B5CA200E1BF7E /* Phone_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4A02D182B5CA200E1BF7E /* Phone_Icon.png */; };
 		21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FD9594181844BA00E50963 /* SWRevealViewController.m */; };
 		D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D31721821E83C0055F3A2 /* SearchViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D84D3176182347560055F3A2 /* MeetingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D3175182347560055F3A2 /* MeetingTabBarController.m */; };
@@ -180,6 +182,8 @@
 		21D013C9181E1AA8005426F8 /* MeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingViewController.h; sourceTree = "<group>"; };
 		21D013CA181E1AA8005426F8 /* MeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingViewController.m; sourceTree = "<group>"; };
 		21D013CC181F1287005426F8 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		21F4A02C182B5CA200E1BF7E /* mail_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail_icon.png; sourceTree = "<group>"; };
+		21F4A02D182B5CA200E1BF7E /* Phone_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone_Icon.png; sourceTree = "<group>"; };
 		21FD9593181844BA00E50963 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		21FD9594181844BA00E50963 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		D84D31711821E83C0055F3A2 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 		F4EECF53177F37CB00778578 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21F4A02C182B5CA200E1BF7E /* mail_icon.png */,
+				21F4A02D182B5CA200E1BF7E /* Phone_Icon.png */,
 				21BDB340182B49CE000AA676 /* Location_Icon_Medium_Spaced.png */,
 				21BDB33E182B4643000AA676 /* Location_Icon_Large.png */,
 				08EA44C9182B330F0065DAEA /* google (1).png */,
@@ -596,6 +602,7 @@
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
 				2103C004182741550061FBB9 /* Nav_Archive_Icon.png in Resources */,
 				21BDB33D1829E672000AA676 /* DetailView.xib in Resources */,
+				21F4A02E182B5CA200E1BF7E /* mail_icon.png in Resources */,
 				D8969AC01829F7390031A369 /* near_me-128.png in Resources */,
 				F4FE87FB1780081300CB3DA8 /* comments_photo.jpg in Resources */,
 				21BDB33B1829E547000AA676 /* radar.png in Resources */,
@@ -606,6 +613,7 @@
 				D8E02D131826C4E40027BD35 /* Person.txt in Resources */,
 				F4FE87FF178010F000CB3DA8 /* bookmark_photo.jpg in Resources */,
 				2103C018182741670061FBB9 /* l_bolt.png in Resources */,
+				21F4A02F182B5CA200E1BF7E /* Phone_Icon.png in Resources */,
 				2103C00C182741550061FBB9 /* Search_X_Icon.png in Resources */,
 				2103C007182741550061FBB9 /* Nav_Icon.png in Resources */,
 				2103C015182741670061FBB9 /* InfoPage_Files_Icon.png in Resources */,
