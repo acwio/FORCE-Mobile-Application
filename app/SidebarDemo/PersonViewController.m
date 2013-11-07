@@ -82,6 +82,23 @@ NSArray *meetings;
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)phone:(id)sender {
+    NSString *phoneNumber = @"1-615-438-0013";
+    NSString *phoneURLString = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    NSURL *phoneURL = [NSURL URLWithString:phoneURLString];
+    [[UIApplication sharedApplication] openURL:phoneURL];
+}
+
+- (IBAction)email:(id)sender {
+    NSString *mail = [NSString stringWithFormat:@"ncr2g@mtmail.mtsu.edu"];
+
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"mailto://%@",
+                                                [mail stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]]];
+    
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
