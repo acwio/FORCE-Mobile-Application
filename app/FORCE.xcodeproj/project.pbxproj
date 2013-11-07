@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0820AC25182B363800F7B9E9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0820AC24182B363800F7B9E9 /* SettingsViewController.m */; };
+		0820AC28182B3E5900F7B9E9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0820AC27182B3E5900F7B9E9 /* AboutViewController.m */; };
 		088A986218234CCE001B1602 /* DataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A986118234CCE001B1602 /* DataClass.m */; };
-		08ABEE3C18284645002B46FB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ABEE3B18284645002B46FB /* AboutViewController.m */; };
 		08C0345418247D3800D749C7 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C0345318247D3800D749C7 /* Meeting.m */; };
 		08C034571824A99300D749C7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C034561824A99300D749C7 /* Person.m */; };
 		08C0345A1824AD4B00D749C7 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C034591824AD4B00D749C7 /* File.m */; };
@@ -113,10 +113,10 @@
 /* Begin PBXFileReference section */
 		0820AC23182B363800F7B9E9 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		0820AC24182B363800F7B9E9 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		0820AC26182B3E5900F7B9E9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		0820AC27182B3E5900F7B9E9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		088A986018234CCE001B1602 /* DataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataClass.h; sourceTree = "<group>"; };
 		088A986118234CCE001B1602 /* DataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataClass.m; sourceTree = "<group>"; };
-		08ABEE3A18284645002B46FB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		08ABEE3B18284645002B46FB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		08C0345218247D3800D749C7 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		08C0345318247D3800D749C7 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
 		08C034551824A99300D749C7 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -398,12 +398,12 @@
 				D8E02D0B1826B0A30027BD35 /* PeopleViewController.m */,
 				D8E02D0D1826BDBC0027BD35 /* FilesViewController.h */,
 				D8E02D0E1826BDBC0027BD35 /* FilesViewController.m */,
-				08ABEE3A18284645002B46FB /* AboutViewController.h */,
-				08ABEE3B18284645002B46FB /* AboutViewController.m */,
 				D8E02D1E182896AB0027BD35 /* PersonViewController.h */,
 				D8E02D1F182896AB0027BD35 /* PersonViewController.m */,
 				0820AC23182B363800F7B9E9 /* SettingsViewController.h */,
 				0820AC24182B363800F7B9E9 /* SettingsViewController.m */,
+				0820AC26182B3E5900F7B9E9 /* AboutViewController.h */,
+				0820AC27182B3E5900F7B9E9 /* AboutViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -628,6 +628,7 @@
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */,
 				08C0345A1824AD4B00D749C7 /* File.m in Sources */,
+				0820AC28182B3E5900F7B9E9 /* AboutViewController.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				D8E02D191826CF990027BD35 /* FilesDetailViewController.m in Sources */,
 				21BDB3271829DF37000AA676 /* ARKitConfig.m in Sources */,
@@ -644,7 +645,6 @@
 				D8E02D0F1826BDBC0027BD35 /* FilesViewController.m in Sources */,
 				D84D3182182589180055F3A2 /* NavigationViewController.m in Sources */,
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
-				08ABEE3C18284645002B46FB /* AboutViewController.m in Sources */,
 				F4EECF75177FF90600778578 /* PhotoViewController.m in Sources */,
 				D8E02D161826CDCA0027BD35 /* PeopleDetailViewController.m in Sources */,
 				21C5AB321827643100925168 /* LoginViewController.m in Sources */,
