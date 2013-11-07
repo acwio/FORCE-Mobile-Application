@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0820AC25182B363800F7B9E9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0820AC24182B363800F7B9E9 /* SettingsViewController.m */; };
 		0820AC28182B3E5900F7B9E9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0820AC27182B3E5900F7B9E9 /* AboutViewController.m */; };
-		088A986218234CCE001B1602 /* DataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A986118234CCE001B1602 /* DataClass.m */; };
+		088A986218234CCE001B1602 /* DataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A986118234CCE001B1602 /* DataClass.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		08C0345418247D3800D749C7 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C0345318247D3800D749C7 /* Meeting.m */; };
 		08C034571824A99300D749C7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C034561824A99300D749C7 /* Person.m */; };
 		08C0345A1824AD4B00D749C7 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C034591824AD4B00D749C7 /* File.m */; };
@@ -57,12 +57,12 @@
 		21D013CB181E1AA8005426F8 /* MeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D013CA181E1AA8005426F8 /* MeetingViewController.m */; };
 		21D013CD181F1287005426F8 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D013CC181F1287005426F8 /* user.png */; };
 		21FD9595181844BA00E50963 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FD9594181844BA00E50963 /* SWRevealViewController.m */; };
-		D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D31721821E83C0055F3A2 /* SearchViewController.m */; };
+		D84D31731821E83C0055F3A2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D31721821E83C0055F3A2 /* SearchViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D84D3176182347560055F3A2 /* MeetingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D3175182347560055F3A2 /* MeetingTabBarController.m */; };
 		D84D317A1824AAED0055F3A2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D31791824AAED0055F3A2 /* DetailViewController.m */; };
-		D84D317D182574710055F3A2 /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D317C182574710055F3A2 /* MediaViewController.m */; };
+		D84D317D182574710055F3A2 /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D317C182574710055F3A2 /* MediaViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D84D317F182576D60055F3A2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84D317E182576D60055F3A2 /* AVFoundation.framework */; };
-		D84D3182182589180055F3A2 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D3181182589180055F3A2 /* NavigationViewController.m */; };
+		D84D3182182589180055F3A2 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D3181182589180055F3A2 /* NavigationViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D84D31A418258E5E0055F3A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84D31A318258E5E0055F3A2 /* QuartzCore.framework */; };
 		D8969AC01829F7390031A369 /* near_me-128.png in Resources */ = {isa = PBXBuildFile; fileRef = D8969ABF1829F7390031A369 /* near_me-128.png */; };
 		D8969AC2182B215B0031A369 /* camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8969AC1182B215B0031A369 /* camera-icon.png */; };
@@ -70,7 +70,7 @@
 		D8969AC6182B23110031A369 /* txt-32.png in Resources */ = {isa = PBXBuildFile; fileRef = D8969AC4182B23110031A369 /* txt-32.png */; };
 		D8969AC8182B2F4C0031A369 /* mp3-100.png in Resources */ = {isa = PBXBuildFile; fileRef = D8969AC7182B2F4C0031A369 /* mp3-100.png */; };
 		D8E02D0C1826B0A30027BD35 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D0B1826B0A30027BD35 /* PeopleViewController.m */; };
-		D8E02D0F1826BDBC0027BD35 /* FilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D0E1826BDBC0027BD35 /* FilesViewController.m */; };
+		D8E02D0F1826BDBC0027BD35 /* FilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D0E1826BDBC0027BD35 /* FilesViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D8E02D111826C28E0027BD35 /* force.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8E02D101826C28E0027BD35 /* force.pdf */; };
 		D8E02D131826C4E40027BD35 /* Person.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8E02D121826C4E40027BD35 /* Person.txt */; };
 		D8E02D161826CDCA0027BD35 /* PeopleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D151826CDCA0027BD35 /* PeopleDetailViewController.m */; };
@@ -83,7 +83,7 @@
 		F4EECF16177C99F400778578 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF15177C99F400778578 /* CoreGraphics.framework */; };
 		F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4EECF1A177C99F400778578 /* InfoPlist.strings */; };
 		F4EECF1E177C99F400778578 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EECF1D177C99F400778578 /* main.m */; };
-		F4EECF22177C99F400778578 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EECF21177C99F400778578 /* AppDelegate.m */; };
+		F4EECF22177C99F400778578 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EECF21177C99F400778578 /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		F4EECF24177C99F400778578 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EECF23177C99F400778578 /* Default.png */; };
 		F4EECF26177C99F400778578 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EECF25177C99F400778578 /* Default@2x.png */; };
 		F4EECF28177C99F400778578 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EECF27177C99F400778578 /* Default-568h@2x.png */; };
@@ -706,10 +706,11 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -730,8 +731,8 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
