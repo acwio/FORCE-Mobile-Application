@@ -61,6 +61,7 @@
 		D84D3182182589180055F3A2 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D3181182589180055F3A2 /* NavigationViewController.m */; };
 		D84D31A418258E5E0055F3A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84D31A318258E5E0055F3A2 /* QuartzCore.framework */; };
 		D8969AC01829F7390031A369 /* near_me-128.png in Resources */ = {isa = PBXBuildFile; fileRef = D8969ABF1829F7390031A369 /* near_me-128.png */; };
+		D8969AC2182B215B0031A369 /* camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8969AC1182B215B0031A369 /* camera-icon.png */; };
 		D8E02D0C1826B0A30027BD35 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D0B1826B0A30027BD35 /* PeopleViewController.m */; };
 		D8E02D0F1826BDBC0027BD35 /* FilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E02D0E1826BDBC0027BD35 /* FilesViewController.m */; };
 		D8E02D111826C28E0027BD35 /* force.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8E02D101826C28E0027BD35 /* force.pdf */; };
@@ -183,6 +184,7 @@
 		D84D3181182589180055F3A2 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		D84D31A318258E5E0055F3A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D8969ABF1829F7390031A369 /* near_me-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "near_me-128.png"; sourceTree = "<group>"; };
+		D8969AC1182B215B0031A369 /* camera-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-icon.png"; sourceTree = "<group>"; };
 		D8E02D0A1826B0A30027BD35 /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
 		D8E02D0B1826B0A30027BD35 /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
 		D8E02D0D1826BDBC0027BD35 /* FilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesViewController.h; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 		F4EECF18177C99F400778578 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D8969AC1182B215B0031A369 /* camera-icon.png */,
 				D8969ABF1829F7390031A369 /* near_me-128.png */,
 				D8E02D1C18273D6C0027BD35 /* txt-icon.png */,
 				D8E02D1A18273D350027BD35 /* pdf-icon.png */,
@@ -546,6 +549,7 @@
 				F4EECF5D177F384900778578 /* comments.png in Resources */,
 				F4EECF5E177F384900778578 /* map.png in Resources */,
 				F4EECF5F177F384900778578 /* news.png in Resources */,
+				D8969AC2182B215B0031A369 /* camera-icon.png in Resources */,
 				21BD95AA18231D9900A931D7 /* splash-568h@2x.png in Resources */,
 				21BD95A718231BA900A931D7 /* login.png in Resources */,
 				2103C017182741670061FBB9 /* InfoPage_People_Icon.png in Resources */,
