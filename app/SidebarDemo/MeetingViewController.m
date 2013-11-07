@@ -40,7 +40,7 @@ NSArray *meetings;
     
     
     
-    self.title = @"Archive";
+    self.title = @"Meetings";
     //self.view.backgroundColor = [UIColor clearColor];
     //self.view.backgroundColor = [UIColor colorWithRed: 0.0 green: 0.477 blue: 1.0 alpha:1.0];
     

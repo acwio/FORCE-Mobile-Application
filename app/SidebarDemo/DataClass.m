@@ -344,7 +344,17 @@ static Meeting *meet = nil;
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
-            instance.next = [instance.meetings objectAtIndex:3];
+            
+            /* Find the next meeting */
+            NSDate *todayDate = [NSDate date];
+            
+            NSPredicate *today = [NSPredicate predicateWithBlock:^BOOL(Meeting *evaluatedObject, NSDictionary *bindings) {
+                return [evaluatedObject.date compare:todayDate] == NSOrderedDescending;
+            }];
+            
+            instance.next = [[[instance.meetings filteredArrayUsingPredicate:today] sortedArrayUsingComparator:^(Meeting *m1, Meeting *m2) {
+                return [[m1 date] compare:[m2 date]];
+            }] objectAtIndex:0];
         }
     }
     return instance;
