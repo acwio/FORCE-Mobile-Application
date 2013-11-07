@@ -199,6 +199,14 @@ NSString *sort = @"Name";
         cell.imageView.image = [UIImage imageNamed:@"ppt-100.png"];
     }
     
+    
+    CGSize size = CGSizeMake(200.0,200.0);
+    UIGraphicsBeginImageContext(size);
+    [cell.imageView.image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    cell.imageView.image = destImage;
+    
     cell.textLabel.text = file.name;
     
     return cell;
