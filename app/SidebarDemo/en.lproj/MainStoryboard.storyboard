@@ -1388,19 +1388,6 @@
             </objects>
             <point key="canvasLocation" x="2304" y="568"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hQj-CB-GgV">
-            <objects>
-                <viewController id="lRt-Kc-cEO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WVt-Z2-9cd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="08w-dH-2GT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="InfoPage_Details_Icon.png" width="30" height="29"/>
