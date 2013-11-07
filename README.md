@@ -14,7 +14,7 @@ Installation
 
 This project uses Xcode 5, and the iOS 7 SDK. We developed on an OS X Mavericks system, and tested on an iPhone 5. To build the project, open the Xcode project, set the platform target to retina iPhone 4-inch, and press build.
 
-
+After running the application, enter any username and the password "password" to log in.
 
 Sources
 =======
