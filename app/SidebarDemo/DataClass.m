@@ -494,8 +494,8 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:10]];
             
             dateComponents.year = 2013;
-            dateComponents.month = 11;
-            dateComponents.day = 05;
+            dateComponents.month = 12;
+            dateComponents.day = 04;
             dateComponents.hour = 8;
             dateComponents.minute = 45;
             
@@ -517,7 +517,7 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:10]];
             
             dateComponents.year = 2013;
-            dateComponents.month = 11;
+            dateComponents.month = 10;
             dateComponents.day = 05;
             dateComponents.hour = 8;
             dateComponents.minute = 45;
@@ -539,7 +539,7 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:5]];
             [mFiles addObject:[instance.files objectAtIndex:10]];
             
-            dateComponents.year = 2013;
+            dateComponents.year = 2014;
             dateComponents.month = 11;
             dateComponents.day = 05;
             dateComponents.hour = 8;
@@ -562,7 +562,7 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:5]];
             [mFiles addObject:[instance.files objectAtIndex:10]];
             
-            dateComponents.year = 2013;
+            dateComponents.year = 2015;
             dateComponents.month = 11;
             dateComponents.day = 05;
             dateComponents.hour = 8;
@@ -585,7 +585,7 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:5]];
             [mFiles addObject:[instance.files objectAtIndex:10]];
             
-            dateComponents.year = 2013;
+            dateComponents.year = 2016;
             dateComponents.month = 11;
             dateComponents.day = 05;
             dateComponents.hour = 8;
@@ -608,7 +608,7 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:5]];
             [mFiles addObject:[instance.files objectAtIndex:10]];
             
-            dateComponents.year = 2013;
+            dateComponents.year = 2017;
             dateComponents.month = 11;
             dateComponents.day = 05;
             dateComponents.hour = 8;
@@ -631,7 +631,7 @@ static Meeting *meet = nil;
             [mFiles addObject:[instance.files objectAtIndex:5]];
             [mFiles addObject:[instance.files objectAtIndex:10]];
             
-            dateComponents.year = 2013;
+            dateComponents.year = 2018;
             dateComponents.month = 11;
             dateComponents.day = 05;
             dateComponents.hour = 8;
