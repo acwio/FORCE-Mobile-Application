@@ -217,9 +217,9 @@ NSString *sort = @"Name";
     // Find the url of the file and load into the webview
     @try{
         NSLog(@"First:");
-    NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
-    NSURL *targetURL = [NSURL fileURLWithPath:path];
-    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+        NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
+        NSURL *targetURL = [NSURL fileURLWithPath:path];
+        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
         [webView loadRequest:request];}
     @catch(NSException *exception){
         NSLog(@"Second:");

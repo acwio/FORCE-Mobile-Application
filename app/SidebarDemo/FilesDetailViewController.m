@@ -73,6 +73,8 @@
     
     cell.textLabel.text = file.name;
     
+    NSLog(@"File Path: %@", file.path);
+    
     if ([[file.path pathExtension] isEqualToString:@"jpg"] || [[file.path pathExtension] isEqualToString:@"png"]) {
         cell.imageView.image = [UIImage imageNamed:file.path];
     } else if ([[file.path pathExtension] isEqualToString:@"pdf"]) {
@@ -107,10 +109,20 @@
     webViewController.title = file.name;
     
     // Find the url of the file and load into the webview
-    NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
-    NSURL *targetURL = [NSURL fileURLWithPath:path];
-    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
-    [webView loadRequest:request];
+    @try{
+        NSLog(@"First:");
+        NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
+        NSURL *targetURL = [NSURL fileURLWithPath:path];
+        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+        [webView loadRequest:request];}
+    @catch(NSException *exception){
+        NSLog(@"Second:");
+        NSString *documentdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *tileDirectory = [documentdir stringByAppendingPathComponent:@"MyImage.png"];
+        NSURL *targetURL = [NSURL fileURLWithPath:tileDirectory];
+        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+        [webView loadRequest:request];
+    }
     
     // Push the new page on top of the current page
     [(UINavigationController*)self.parentViewController.parentViewController.parentViewController pushViewController:webViewController animated:YES];
