@@ -121,9 +121,11 @@
         if ([[f.path pathExtension] isEqualToString:@"jpg"] || [[f.path pathExtension] isEqualToString:@"png"]) {
             image = [UIImage imageNamed:f.path];
         } else if ([[f.path pathExtension] isEqualToString:@"pdf"]) {
-            image = [UIImage imageNamed:@"pdf-icon.png"];
+            image = [UIImage imageNamed:@"pdf-32.png"];
         } else if ([[f.path pathExtension] isEqualToString:@"txt"]) {
-            image = [UIImage imageNamed:@"txt-icon.png"];
+            image = [UIImage imageNamed:@"txt-32.png"];
+        } else if ([[f.path pathExtension] isEqualToString:@"aif"]) {
+            image = [UIImage imageNamed:@"mp3-100.png"];
         }
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
