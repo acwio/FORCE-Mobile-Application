@@ -277,7 +277,7 @@ NSMutableArray *groups;
         [stubController setSelectedIndex:4];
         stubController.view.backgroundColor = [UIColor whiteColor];
         
-        Meeting *meet = [[[groups objectAtIndex:0] objectForKey:@"data"] objectAtIndex:0];
+        Meeting *meet = [[DataClass getInstance] next];
         stubController.title = meet.name;
         stubController.meeting = meet;
         
