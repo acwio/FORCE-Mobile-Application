@@ -180,11 +180,10 @@ static Meeting *meet = nil;
             [instance.files addObject:[File initWithName:@"Shoot for the..." path:@"img5.jpg"]];
             [instance.files addObject:[File initWithName:@"Timey Wimey" path:@"img6.jpg"]];
             [instance.files addObject:[File initWithName:@"Broaden Your Horizons" path:@"img7.jpg"]];
-            [instance.files addObject:[File initWithName:@"Mathmatical Proposal" path:@"text.doc"]];
             [instance.files addObject:[File initWithName:@"Conducting Business Meetings" path:@"ppt1.ppt"]];
             [instance.files addObject:[File initWithName:@"Meeting PPT" path:@"ppt2.ppt"]];
             [instance.files addObject:[File initWithName:@"Report1" path:@"pdf1.pdf"]];
-            [instance.files addObject:[File initWithName:@"Report2ß" path:@"pdf2.pdf"]];
+            [instance.files addObject:[File initWithName:@"Report2" path:@"pdf2.pdf"]];
             
             /* Set up Meeting
                 Step1: Assign People Attending Meeting
@@ -204,18 +203,34 @@ static Meeting *meet = nil;
             [mPeople addObject:[instance.people objectAtIndex:5]];
             [mPeople addObject:[instance.people objectAtIndex:6]];
             [mPeople addObject:[instance.people objectAtIndex:8]];
+            [mPeople addObject:[instance.people objectAtIndex:10]];
+            [mPeople addObject:[instance.people objectAtIndex:12]];
+            [mPeople addObject:[instance.people objectAtIndex:14]];
+            [mPeople addObject:[instance.people objectAtIndex:15]];
+            [mPeople addObject:[instance.people objectAtIndex:16]];
+            [mPeople addObject:[instance.people objectAtIndex:18]];
+            [mPeople addObject:[instance.people objectAtIndex:20]];
+            [mPeople addObject:[instance.people objectAtIndex:22]];
+            [mPeople addObject:[instance.people objectAtIndex:24]];
+            [mPeople addObject:[instance.people objectAtIndex:25]];
+            [mPeople addObject:[instance.people objectAtIndex:26]];
+            [mPeople addObject:[instance.people objectAtIndex:28]];
             //assign files
             [mFiles addObject:[instance.files objectAtIndex:0]];
             [mFiles addObject:[instance.files objectAtIndex:1]];
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:6]];
+            [mFiles addObject:[instance.files objectAtIndex:12]];
+            [mFiles addObject:[instance.files objectAtIndex:15]];
             
             //set up date
-            dateComponents.year = 2012;
-            dateComponents.month = 10;
-            dateComponents.day = 11;
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 9;
             dateComponents.hour = 10;
             NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
             //assign a meeting
-            [instance.meetings addObject:[self setName:@"TestMeeting" setDate:date setDesc:@"test meeting" setComp:@"NOM PEW LLC" setAddr:@"234 nom drive" setCity:@"nom" setStat:@"Nomtopia" setZip:@"1111111" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [instance.meetings addObject:[self setName:@"Staff Meeting" setDate:date setDesc:@"A meeting in which staff meet to discuss business." setComp:@"Drivers LLC" setAddr:@"1770 Shady Willow Crescent" setCity:@"Elf" setStat:@"Utah" setZip:@"84234" setLocation:location setPeople:mPeople setFiles:mFiles]];
             //empty mPeople and mFiles
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
@@ -223,14 +238,25 @@ static Meeting *meet = nil;
             
             //meeting 2
             //assign people
-            [mPeople addObject:[instance.people objectAtIndex:9]];
-            [mPeople addObject:[instance.people objectAtIndex:8]];
-            [mPeople addObject:[instance.people objectAtIndex:2]];
-            [mPeople addObject:[instance.people objectAtIndex:3]];
+            [mPeople addObject:[instance.people objectAtIndex:99]];
+            [mPeople addObject:[instance.people objectAtIndex:98]];
+            [mPeople addObject:[instance.people objectAtIndex:92]];
+            [mPeople addObject:[instance.people objectAtIndex:93]];
+            [mPeople addObject:[instance.people objectAtIndex:89]];
+            [mPeople addObject:[instance.people objectAtIndex:88]];
+            [mPeople addObject:[instance.people objectAtIndex:82]];
+            [mPeople addObject:[instance.people objectAtIndex:83]];
+            [mPeople addObject:[instance.people objectAtIndex:79]];
+            [mPeople addObject:[instance.people objectAtIndex:78]];
+            [mPeople addObject:[instance.people objectAtIndex:72]];
+            [mPeople addObject:[instance.people objectAtIndex:73]];
             //assign files
-            [mFiles addObject:[instance.files objectAtIndex:9]];
+            [mFiles addObject:[instance.files objectAtIndex:1]];
+            [mFiles addObject:[instance.files objectAtIndex:2]];
             [mFiles addObject:[instance.files objectAtIndex:3]];
-            [mFiles addObject:[instance.files objectAtIndex:7]];
+            [mFiles addObject:[instance.files objectAtIndex:4]];
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:6]];
             
             //set up date
             dateComponents.year = 2013;
@@ -239,7 +265,7 @@ static Meeting *meet = nil;
             dateComponents.hour = 10;
             
             date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
-            [instance.meetings addObject:[self setName:@"Annual Sales Report" setDate:date setDesc:@"This is a meeting to discuss the annual sales." setComp:@"The Republic" setAddr:@"Space" setCity:@"Space City" setStat:@"Tatooine" setZip:@"1234567" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [instance.meetings addObject:[self setName:@"Annual Sales Report" setDate:date setDesc:@"This is a meeting to discuss the annual sales." setComp:@"Poke E Monn" setAddr:@"5047 Little Hill" setCity:@"Promise City" setStat:@"Arkansas" setZip:@"72890" setLocation:location setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
@@ -251,9 +277,77 @@ static Meeting *meet = nil;
             [mPeople addObject:[instance.people objectAtIndex:5]];
             [mPeople addObject:[instance.people objectAtIndex:6]];
             [mPeople addObject:[instance.people objectAtIndex:8]];
+            [mPeople addObject:[instance.people objectAtIndex:20]];
+            [mPeople addObject:[instance.people objectAtIndex:22]];
+            [mPeople addObject:[instance.people objectAtIndex:24]];
+            [mPeople addObject:[instance.people objectAtIndex:25]];
+            [mPeople addObject:[instance.people objectAtIndex:26]];
+            [mPeople addObject:[instance.people objectAtIndex:28]];
+            [mPeople addObject:[instance.people objectAtIndex:30]];
+            [mPeople addObject:[instance.people objectAtIndex:32]];
+            [mPeople addObject:[instance.people objectAtIndex:34]];
+            [mPeople addObject:[instance.people objectAtIndex:35]];
+            [mPeople addObject:[instance.people objectAtIndex:36]];
+            [mPeople addObject:[instance.people objectAtIndex:38]];
+            [mPeople addObject:[instance.people objectAtIndex:40]];
+            [mPeople addObject:[instance.people objectAtIndex:42]];
+            [mPeople addObject:[instance.people objectAtIndex:44]];
+            [mPeople addObject:[instance.people objectAtIndex:45]];
+            [mPeople addObject:[instance.people objectAtIndex:46]];
+            [mPeople addObject:[instance.people objectAtIndex:48]];
+            [mPeople addObject:[instance.people objectAtIndex:50]];
+            [mPeople addObject:[instance.people objectAtIndex:52]];
+            [mPeople addObject:[instance.people objectAtIndex:54]];
+            [mPeople addObject:[instance.people objectAtIndex:55]];
+            [mPeople addObject:[instance.people objectAtIndex:56]];
+            [mPeople addObject:[instance.people objectAtIndex:58]];
+            [mPeople addObject:[instance.people objectAtIndex:60]];
+            [mPeople addObject:[instance.people objectAtIndex:62]];
+            [mPeople addObject:[instance.people objectAtIndex:64]];
+            [mPeople addObject:[instance.people objectAtIndex:65]];
+            [mPeople addObject:[instance.people objectAtIndex:66]];
+            [mPeople addObject:[instance.people objectAtIndex:68]];
+            [mPeople addObject:[instance.people objectAtIndex:1]];
+            [mPeople addObject:[instance.people objectAtIndex:3]];
+            [mPeople addObject:[instance.people objectAtIndex:7]];
+            [mPeople addObject:[instance.people objectAtIndex:9]];
+            [mPeople addObject:[instance.people objectAtIndex:11]];
+            [mPeople addObject:[instance.people objectAtIndex:13]];
+            [mPeople addObject:[instance.people objectAtIndex:15]];
+            [mPeople addObject:[instance.people objectAtIndex:17]];
+            [mPeople addObject:[instance.people objectAtIndex:19]];
+            [mPeople addObject:[instance.people objectAtIndex:21]];
+            [mPeople addObject:[instance.people objectAtIndex:23]];
+            [mPeople addObject:[instance.people objectAtIndex:25]];
+            [mPeople addObject:[instance.people objectAtIndex:27]];
+            [mPeople addObject:[instance.people objectAtIndex:29]];
+            [mPeople addObject:[instance.people objectAtIndex:31]];
+            [mPeople addObject:[instance.people objectAtIndex:95]];
+            [mPeople addObject:[instance.people objectAtIndex:96]];
+            [mPeople addObject:[instance.people objectAtIndex:98]];
+            [mPeople addObject:[instance.people objectAtIndex:80]];
+            [mPeople addObject:[instance.people objectAtIndex:82]];
+            [mPeople addObject:[instance.people objectAtIndex:84]];
+            [mPeople addObject:[instance.people objectAtIndex:85]];
+            [mPeople addObject:[instance.people objectAtIndex:86]];
+            [mPeople addObject:[instance.people objectAtIndex:88]];
             //assign files
             [mFiles addObject:[instance.files objectAtIndex:0]];
             [mFiles addObject:[instance.files objectAtIndex:1]];
+            [mFiles addObject:[instance.files objectAtIndex:2]];
+            [mFiles addObject:[instance.files objectAtIndex:3]];
+            [mFiles addObject:[instance.files objectAtIndex:4]];
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:6]];
+            [mFiles addObject:[instance.files objectAtIndex:7]];
+            [mFiles addObject:[instance.files objectAtIndex:8]];
+            [mFiles addObject:[instance.files objectAtIndex:9]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            [mFiles addObject:[instance.files objectAtIndex:11]];
+            [mFiles addObject:[instance.files objectAtIndex:12]];
+            [mFiles addObject:[instance.files objectAtIndex:13]];
+            [mFiles addObject:[instance.files objectAtIndex:14]];
+            [mFiles addObject:[instance.files objectAtIndex:15]];
             
             dateComponents.year = 2003;
             dateComponents.month = 02;
@@ -262,7 +356,7 @@ static Meeting *meet = nil;
             dateComponents.minute = 30;
             
             date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
-            [instance.meetings addObject:[self setName:@"Technology Report" setDate:date setDesc:@"Talk about the technological advances we are strivingto make" setComp:@"Death Star Inc" setAddr:@"1234 Death Star" setCity:@"Death Star" setStat:@"Space" setZip:@"54678" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [instance.meetings addObject:[self setName:@"Technology Report" setDate:date setDesc:@"Talk about the technological advances we are striving to make. Let the team know about how good the future looks!" setComp:@"Magic Industries" setAddr:@"663 Red Embers Wharf" setCity:@"Nashville" setStat:@"Tennessee" setZip:@"37130" setLocation:location setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
@@ -361,6 +455,236 @@ static Meeting *meet = nil;
             
             date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
             [instance.meetings addObject:[self setName:@"Monthly Financial Report" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:50]];
+            [mPeople addObject:[instance.people objectAtIndex:51]];
+            [mPeople addObject:[instance.people objectAtIndex:57]];
+            [mPeople addObject:[instance.people objectAtIndex:55]];
+            [mPeople addObject:[instance.people objectAtIndex:53]];
+            [mPeople addObject:[instance.people objectAtIndex:60]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Financial Report" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:40]];
+            [mPeople addObject:[instance.people objectAtIndex:41]];
+            [mPeople addObject:[instance.people objectAtIndex:47]];
+            [mPeople addObject:[instance.people objectAtIndex:45]];
+            [mPeople addObject:[instance.people objectAtIndex:43]];
+            [mPeople addObject:[instance.people objectAtIndex:20]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Report" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:30]];
+            [mPeople addObject:[instance.people objectAtIndex:13]];
+            [mPeople addObject:[instance.people objectAtIndex:37]];
+            [mPeople addObject:[instance.people objectAtIndex:53]];
+            [mPeople addObject:[instance.people objectAtIndex:33]];
+            [mPeople addObject:[instance.people objectAtIndex:31]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Technical Meeting on Future" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:90]];
+            [mPeople addObject:[instance.people objectAtIndex:91]];
+            [mPeople addObject:[instance.people objectAtIndex:97]];
+            [mPeople addObject:[instance.people objectAtIndex:95]];
+            [mPeople addObject:[instance.people objectAtIndex:93]];
+            [mPeople addObject:[instance.people objectAtIndex:9]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"All Staff Meeting" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:0]];
+            [mPeople addObject:[instance.people objectAtIndex:1]];
+            [mPeople addObject:[instance.people objectAtIndex:7]];
+            [mPeople addObject:[instance.people objectAtIndex:5]];
+            [mPeople addObject:[instance.people objectAtIndex:3]];
+            [mPeople addObject:[instance.people objectAtIndex:10]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Staff Meeting" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:0]];
+            [mPeople addObject:[instance.people objectAtIndex:1]];
+            [mPeople addObject:[instance.people objectAtIndex:7]];
+            [mPeople addObject:[instance.people objectAtIndex:5]];
+            [mPeople addObject:[instance.people objectAtIndex:3]];
+            [mPeople addObject:[instance.people objectAtIndex:10]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Interview Day 2" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:0]];
+            [mPeople addObject:[instance.people objectAtIndex:1]];
+            [mPeople addObject:[instance.people objectAtIndex:7]];
+            [mPeople addObject:[instance.people objectAtIndex:5]];
+            [mPeople addObject:[instance.people objectAtIndex:3]];
+            [mPeople addObject:[instance.people objectAtIndex:10]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Interview Day 1" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:0]];
+            [mPeople addObject:[instance.people objectAtIndex:1]];
+            [mPeople addObject:[instance.people objectAtIndex:7]];
+            [mPeople addObject:[instance.people objectAtIndex:5]];
+            [mPeople addObject:[instance.people objectAtIndex:3]];
+            [mPeople addObject:[instance.people objectAtIndex:10]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Statistical Analysis" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:0]];
+            [mPeople addObject:[instance.people objectAtIndex:1]];
+            [mPeople addObject:[instance.people objectAtIndex:7]];
+            [mPeople addObject:[instance.people objectAtIndex:5]];
+            [mPeople addObject:[instance.people objectAtIndex:3]];
+            [mPeople addObject:[instance.people objectAtIndex:10]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Foundation Report" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [mPeople removeAllObjects];
+            [mFiles removeAllObjects];
+            
+            //meeting 7
+            //assign people
+            [mPeople addObject:[instance.people objectAtIndex:0]];
+            [mPeople addObject:[instance.people objectAtIndex:1]];
+            [mPeople addObject:[instance.people objectAtIndex:7]];
+            [mPeople addObject:[instance.people objectAtIndex:5]];
+            [mPeople addObject:[instance.people objectAtIndex:3]];
+            [mPeople addObject:[instance.people objectAtIndex:10]];
+            //assign files
+            [mFiles addObject:[instance.files objectAtIndex:5]];
+            [mFiles addObject:[instance.files objectAtIndex:10]];
+            
+            dateComponents.year = 2013;
+            dateComponents.month = 11;
+            dateComponents.day = 05;
+            dateComponents.hour = 8;
+            dateComponents.minute = 45;
+            
+            date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+            [instance.meetings addObject:[self setName:@"Billy Joel Concert" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
