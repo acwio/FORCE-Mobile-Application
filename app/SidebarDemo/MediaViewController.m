@@ -9,6 +9,10 @@
 // http://www.appcoda.com/ios-programming-camera-iphone-app/
 
 #import "MediaViewController.h"
+#import "DataClass.h"
+#import "File.h"
+#import "Meeting.h"
+#import "MeetingTabBarController.h"
 
 @interface MediaViewController ()
 
@@ -30,7 +34,7 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
+    image = [info objectForKey:UIImagePickerControllerOriginalImage];
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = chosenImage;
     
@@ -42,6 +46,29 @@
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
+}
+
+- (IBAction)btnSave:(id)sender {
+    
+    if (image != nil)
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                             NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                          [NSString stringWithFormat: @"MyImage.png"]];
+        NSData* data = UIImagePNGRepresentation(image);
+        
+        [data writeToFile:path atomically:YES];
+        
+        DataClass *obj = [DataClass getInstance];
+        File *file = [File initWithName:@"New Picture File" path:path];
+        [obj.files addObject:file];
+        [meeting.files addObject:file];
+        
+        NSLog(@"saved: %@", path);
+        
+    }
 }
 
 - (IBAction) record
@@ -63,7 +90,7 @@
     NSArray *searchPaths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentPath_ = [searchPaths objectAtIndex: 0];
     
-    NSString *pathToSave = [documentPath_ stringByAppendingPathComponent:[self dateString]];
+    pathToSave = [documentPath_ stringByAppendingPathComponent:[self dateString]];
     
     // File URL
     NSURL *url = [NSURL fileURLWithPath:pathToSave];//FILEPATH];
@@ -86,6 +113,13 @@
     }
     else{
         [recorder stop];
+        
+        NSLog(@"%@", pathToSave);
+        
+        DataClass *obj = [DataClass getInstance];
+        File *file = [File initWithName:@"New Audio File" path:pathToSave];
+        [obj.files addObject:file];
+        [meeting.files addObject:file];
     }
 }
 
@@ -139,6 +173,8 @@
 
 - (void)viewDidLoad
 {
+    self.meeting = ((MeetingTabBarController *)self.tabBarController).meeting;
+    
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
@@ -146,6 +182,8 @@
     [audioSession setActive:YES error:nil];
     
     [recorder setDelegate:self];
+    
+    //[self loadImage];
     
     [super viewDidLoad];
     

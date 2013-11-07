@@ -207,10 +207,20 @@ NSString *sort = @"Name";
     webViewController.title = file.name;
     
     // Find the url of the file and load into the webview
+    @try{
+        NSLog(@"First:");
     NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
     NSURL *targetURL = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
-    [webView loadRequest:request];
+        [webView loadRequest:request];}
+    @catch(NSException *exception){
+        NSLog(@"Second:");
+        NSString *documentdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *tileDirectory = [documentdir stringByAppendingPathComponent:@"MyImage.png"];
+        NSURL *targetURL = [NSURL fileURLWithPath:tileDirectory];
+        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+        [webView loadRequest:request];
+    }
     
     // Push the new page on top of the current page
     [(UINavigationController*)self.revealViewController.frontViewController pushViewController:webViewController animated:YES];
