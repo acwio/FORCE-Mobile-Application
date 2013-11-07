@@ -75,8 +75,6 @@
     
     cell.textLabel.text = file.name;
     
-    NSLog(@"File Path: %@", file.path);
-    
     if ([[file.path pathExtension] isEqualToString:@"jpg"] || [[file.path pathExtension] isEqualToString:@"png"]) {
         if([file.path rangeOfString:@"/"].location == NSNotFound){
             cell.imageView.image = [UIImage imageNamed:file.path];}
@@ -89,6 +87,10 @@
         cell.imageView.image = [UIImage imageNamed:@"txt-32.png"];
     } else if ([[file.path pathExtension] isEqualToString:@"aif"]) {
         cell.imageView.image = [UIImage imageNamed:@"mp3-100.png"];
+    } else if ([[file.path pathExtension] isEqualToString:@"doc"]) {
+        cell.imageView.image = [UIImage imageNamed:@"doc-100.png"];
+    } else if ([[file.path pathExtension] isEqualToString:@"ppt"]) {
+        cell.imageView.image = [UIImage imageNamed:@"ppt-100.png"];
     }
     
     for (UIView *subview in self.searchDisplayController.searchBar.subviews) {

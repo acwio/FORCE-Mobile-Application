@@ -53,22 +53,33 @@
     
     if (image != nil)
     {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                             NSUserDomainMask, YES);
+        /* build path to save file*/
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         NSString* path = [documentsDirectory stringByAppendingPathComponent:
                           [NSString stringWithFormat: @"MyImage.jpg"]];
+        
+        /* change image size to fit for previews*/
+        CGSize size = CGSizeMake(200.0,200.0);
+        UIGraphicsBeginImageContext(size);
+        [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+        UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        image = destImage;
+        
+        /* convert to jpeg */
         NSData* data = UIImageJPEGRepresentation(image, 1.0);
         
+        /* write to file */
         [data writeToFile:path atomically:YES];
         
-        NSLog(@"meeting array: %@", meeting.files);
-        
+        /* add to the current app */
         DataClass *obj = [DataClass getInstance];
         File *file = [File initWithName:@"New Picture File" path:path];
         [obj.files addObject:file];
         [meeting.files addObject:file];
         
+        /* report file as saved and where */
         NSLog(@"saved: %@", path);
         
     }
