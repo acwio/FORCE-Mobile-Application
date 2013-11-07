@@ -187,18 +187,18 @@ NSArray *fileResults;
             break;
         }
         case 2:
-            if(indexPath.row < [fileResults count])
-            {
+            if(indexPath.row < [fileResults count]) {
                 File *file = [fileResults objectAtIndex:indexPath.row];
                 if ([[file.path pathExtension] isEqualToString:@"jpg"] || [[file.path pathExtension] isEqualToString:@"png"]) {
                     cell.imageView.image = [UIImage imageNamed:file.path];
                 } else if ([[file.path pathExtension] isEqualToString:@"pdf"]) {
-                    cell.imageView.image = [UIImage imageNamed:@"pdf-icon.png"];
+                    cell.imageView.image = [UIImage imageNamed:@"pdf-32.png"];
                 } else if ([[file.path pathExtension] isEqualToString:@"txt"]) {
-                    cell.imageView.image = [UIImage imageNamed:@"txt-icon.png"];
+                    cell.imageView.image = [UIImage imageNamed:@"txt-32.png"];
                 }
-                cell.textLabel.text = [file name];}
-            else {
+                
+                cell.textLabel.text = [file name];
+            } else {
                 cell.textLabel.text = @"";
                 UIGraphicsBeginImageContextWithOptions(CGSizeMake(36, 36), NO, 0.0);
                 cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();

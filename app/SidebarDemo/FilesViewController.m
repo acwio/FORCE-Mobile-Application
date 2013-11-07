@@ -59,7 +59,8 @@ NSString *sort = @"Name";
     groups = [[NSMutableArray alloc] init];
     
     NSPredicate *documentPredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.pdf'"];
-    NSPredicate *imagePredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.jpg'"];
+    NSPredicate *imagePredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.jpg' or path contains[cd] '.png'"];
+    NSPredicate *textPredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.txt'"];
     
     NSArray *firstItemsArray = [files filteredArrayUsingPredicate:documentPredicate];
     NSMutableDictionary *firstItemsArrayDict = [NSMutableDictionary dictionaryWithObject:firstItemsArray forKey:@"data"];
@@ -71,6 +72,11 @@ NSString *sort = @"Name";
     NSMutableDictionary *secondItemsArrayDict = [NSMutableDictionary dictionaryWithObject:secondItemsArray forKey:@"data"];
     [secondItemsArrayDict setValue:@"Images" forKey:@"title"];
     [groups addObject:secondItemsArrayDict];
+    
+    NSArray *thirdItemsArray = [files filteredArrayUsingPredicate:textPredicate];
+    NSMutableDictionary *thirdItemsArrayDict = [NSMutableDictionary dictionaryWithObject:thirdItemsArray forKey:@"data"];
+    [thirdItemsArrayDict setValue:@"Text Files" forKey:@"title"];
+    [groups addObject:thirdItemsArrayDict];
     
     sort = @"Name";
     [tableView reloadData];
@@ -175,9 +181,9 @@ NSString *sort = @"Name";
     if ([[file.path pathExtension] isEqualToString:@"jpg"] || [[file.path pathExtension] isEqualToString:@"png"]) {
         cell.imageView.image = [UIImage imageNamed:file.path];
     } else if ([[file.path pathExtension] isEqualToString:@"pdf"]) {
-        cell.imageView.image = [UIImage imageNamed:@"pdf-icon.png"];
+        cell.imageView.image = [UIImage imageNamed:@"pdf-32.png"];
     } else if ([[file.path pathExtension] isEqualToString:@"txt"]) {
-        cell.imageView.image = [UIImage imageNamed:@"txt-icon.png"];
+        cell.imageView.image = [UIImage imageNamed:@"txt-32.png"];
     }
     
     cell.textLabel.text = file.name;
