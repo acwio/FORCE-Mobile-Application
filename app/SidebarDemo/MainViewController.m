@@ -131,6 +131,8 @@ NSMutableArray *groups;
 
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    [self becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -257,6 +259,32 @@ NSMutableArray *groups;
     // Push the new meeting page on top of the current page
     [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
     
+}
+
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewDidDisappear:animated];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+        [stubController setSelectedIndex:4];
+        stubController.view.backgroundColor = [UIColor whiteColor];
+        
+        Meeting *meet = [[[groups objectAtIndex:0] objectForKey:@"data"] objectAtIndex:0];
+        stubController.title = meet.name;
+        stubController.meeting = meet;
+        
+        // Push the new meeting page on top of the current page
+        [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+    }
+    [super motionEnded:motion withEvent:event];
 }
 
 
