@@ -592,7 +592,7 @@ static Meeting *meet = nil;
             dateComponents.minute = 45;
             
             date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
-            [instance.meetings addObject:[self setName:@"Interview Day 2" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [instance.meetings addObject:[self setName:@"Interview Day 1" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
@@ -615,7 +615,7 @@ static Meeting *meet = nil;
             dateComponents.minute = 45;
             
             date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
-            [instance.meetings addObject:[self setName:@"Interview Day 1" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [instance.meetings addObject:[self setName:@"Interview Day 2" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
