@@ -20,7 +20,7 @@
 
 @implementation MediaViewController
 
-@synthesize recordButton;
+@synthesize recordButton, meeting;
 
 - (IBAction)takePhoto:(UIButton *)sender {
     
@@ -59,10 +59,12 @@
                           [NSString stringWithFormat: @"MyImage.png"]];
         NSData* data = UIImagePNGRepresentation(image);
         
-        [data writeToFile:path atomically:YES];
+        [data writeToFile:[path lastPathComponent] atomically:YES];
+        
+        NSLog(@"meeting array: %@", meeting.files);
         
         DataClass *obj = [DataClass getInstance];
-        File *file = [File initWithName:@"New Picture File" path:path];
+        File *file = [File initWithName:@"New Picture File" path:[path lastPathComponent]];
         [obj.files addObject:file];
         [meeting.files addObject:file];
         

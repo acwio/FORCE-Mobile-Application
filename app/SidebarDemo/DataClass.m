@@ -265,7 +265,7 @@ static Meeting *meet = nil;
     meet.zip = zip;
     meet.location = [location copy];
     meet.people = [people copy];
-    meet.files = [files copy];
+    meet.files = [files mutableCopy];
     
     return meet;
 }

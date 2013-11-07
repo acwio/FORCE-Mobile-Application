@@ -184,6 +184,8 @@ NSString *sort = @"Name";
         cell.imageView.image = [UIImage imageNamed:@"pdf-32.png"];
     } else if ([[file.path pathExtension] isEqualToString:@"txt"]) {
         cell.imageView.image = [UIImage imageNamed:@"txt-32.png"];
+    } else if ([[file.path pathExtension] isEqualToString:@"aif"]) {
+        cell.imageView.image = [UIImage imageNamed:@"mp3-100.png"];
     }
     
     cell.textLabel.text = file.name;
@@ -215,9 +217,9 @@ NSString *sort = @"Name";
     // Find the url of the file and load into the webview
     @try{
         NSLog(@"First:");
-    NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
-    NSURL *targetURL = [NSURL fileURLWithPath:path];
-    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+        NSString *path = [[NSBundle mainBundle] pathForResource:file.path ofType:nil];
+        NSURL *targetURL = [NSURL fileURLWithPath:path];
+        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
         [webView loadRequest:request];}
     @catch(NSException *exception){
         NSLog(@"Second:");
