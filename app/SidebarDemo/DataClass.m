@@ -431,7 +431,7 @@ static Meeting *meet = nil;
             dateComponents.minute = 30;
             
             date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
-            [instance.meetings addObject:[self setName:@"Meglomaniacs Meeting" setDate:date setDesc:@"A meeting of likeminded individuals who want to take over the world." setComp:@"The Truth Squad" setAddr:@"444 Truth Lane" setCity:@"Truth City" setStat:@"Tennessee" setZip:@"37128" setLocation:location setPeople:mPeople setFiles:mFiles]];
+            [instance.meetings addObject:[self setName:@"Meeting of Sales" setDate:date setDesc:@"A meeting of likeminded individuals who want to take over the world." setComp:@"The Truth Squad" setAddr:@"444 Truth Lane" setCity:@"Truth City" setStat:@"Tennessee" setZip:@"37128" setLocation:location setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
