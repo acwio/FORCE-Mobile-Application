@@ -79,6 +79,8 @@
         cell.imageView.image = [UIImage imageNamed:@"pdf-32.png"];
     } else if ([[file.path pathExtension] isEqualToString:@"txt"]) {
         cell.imageView.image = [UIImage imageNamed:@"txt-32.png"];
+    } else if ([[file.path pathExtension] isEqualToString:@"aif"]) {
+        cell.imageView.image = [UIImage imageNamed:@"mp3-100.png"];
     }
     
     for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
