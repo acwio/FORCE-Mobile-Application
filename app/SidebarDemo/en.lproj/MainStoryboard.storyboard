@@ -526,10 +526,10 @@
             </objects>
             <point key="canvasLocation" x="1203" y="1402"/>
         </scene>
-        <!--Table View Controller-->
+        <!--About View Controller-->
         <scene sceneID="fKc-7C-Bsc">
             <objects>
-                <tableViewController id="Xgg-PS-lLk" sceneMemberID="viewController">
+                <tableViewController id="Xgg-PS-lLk" customClass="AboutViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="of5-cu-yNG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,7 +666,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFR-x7-smg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1203" y="2139"/>
+            <point key="canvasLocation" x="1203" y="2145"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="eYa-0E-scx">
@@ -1029,7 +1029,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Xgg-PS-lLk" kind="custom" customClass="SWRevealViewControllerSegue" id="bvs-gW-bww"/>
+                                    <segue destination="Xgg-PS-lLk" kind="custom" customClass="SWRevealViewControllerSegue" id="SYT-Bo-Obs"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settings" rowHeight="45" id="nbP-Rl-Faz">
