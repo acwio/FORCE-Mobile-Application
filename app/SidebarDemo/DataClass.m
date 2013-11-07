@@ -36,7 +36,7 @@ static Meeting *meet = nil;
             NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
             
             //set up all people
-            [instance.people addObject:[Person initWithName:@"Magic Karp" title:@"Splash" company:@"Poke E Monn" picture:@"user.png"]];
+            /*[instance.people addObject:[Person initWithName:@"Magic Karp" title:@"Splash" company:@"Poke E Monn" picture:@"user.png"]];
             [instance.people addObject:[Person initWithName:@"Gyra Dos" title:@"Dragon-like" company:@"Poke E Monn" picture:@"calendar_photo.jpg"]];
             [instance.people addObject:[Person initWithName:@"Dragon Ite" title:@"More Dragon-like" company:@"Poke E Monn" picture:@"bookmark_photo.jpg"]];
             [instance.people addObject:[Person initWithName:@"Ampha Ros" title:@"Who?" company:@"Poke E Monn" picture:@"comments_photo.jpg"]];
@@ -46,7 +46,7 @@ static Meeting *meet = nil;
             [instance.people addObject:[Person initWithName:@"Chari Zard" title:@"The BE(a)ST" company:@"Poke E Monn" picture:@"bookmark_photo.jpg"]];
             [instance.people addObject:[Person initWithName:@"Blast Oise" title:@"Okay, I guess" company:@"Poke E Monn" picture:@"comments_photo.jpg"]];
             [instance.people addObject:[Person initWithName:@"Venus Aur" title:@"Terrible" company:@"Poke E Monn" picture:@"tag_photo.jpg"]];
-            [instance.people addObject:[Person initWithName:@"Cle Fable" title:@"Cle-who?" company:@"Poke E Monn" picture:@"wishlist_photo.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Cle Fable" title:@"Cle-who?" company:@"Poke E Monn" picture:@"wishlist_photo.jpg"]];*/
             
             [instance.people addObject:[Person initWithName:@"Mark Hamilton" title:@"Chairman" company:@"Magic Industries" picture:@"men1.jpg"]];
             [instance.people addObject:[Person initWithName:@"Donald White" title:@"Vice Chairman" company:@"Magic Industries" picture:@"men2.jpg"]];
