@@ -48,6 +48,111 @@ static Meeting *meet = nil;
             [instance.people addObject:[Person initWithName:@"Venus Aur" title:@"Terrible" company:@"Poke E Monn" picture:@"tag_photo.jpg"]];
             [instance.people addObject:[Person initWithName:@"Cle Fable" title:@"Cle-who?" company:@"Poke E Monn" picture:@"wishlist_photo.jpg"]];
             
+            [instance.people addObject:[Person initWithName:@"Mark Hamilton" title:@"Director of Sales" company:@"Magic Industries" picture:@"men1.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Donald White" title:@"Director of Sales" company:@"Magic Industries" picture:@"men2.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Owen Thomas" title:@"Director of Sales" company:@"Magic Industries" picture:@"men3.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Stephen Thompson" title:@"Director of Sales" company:@"Magic Industries" picture:@"men4.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Angel Griffen" title:@"Director of Sales" company:@"Magic Industries" picture:@"men5.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Aiden Howard" title:@"Director of Sales" company:@"Magic Industries" picture:@"men6.jpg"]];
+            [instance.people addObject:[Person initWithName:@"George Bell" title:@"Director of Sales" company:@"Magic Industries" picture:@"men7.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Evan Watson" title:@"Director of Sales" company:@"Magic Industries" picture:@"men8.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Abraham	 Davidson" title:@"Director of Sales" company:@"Magic Industries" picture:@"men9.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Josh Manning" title:@"Director of Sales" company:@"Magic Industries" picture:@"men10.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Loren Ford" title:@"Director of Sales" company:@"Magic Industries" picture:@"men11.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Shane Stone" title:@"Director of Sales" company:@"Magic Industries" picture:@"men12.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Zachary Gibbs" title:@"Director of Sales" company:@"Magic Industries" picture:@"men13.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Brandon	 Mckinney" title:@"Director of Sales" company:@"Magic Industries" picture:@"men14.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Orlando	 Williamson" title:@"Director of Sales" company:@"Magic Industries" picture:@"men15.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Jorge Curry" title:@"Director of Sales" company:@"Magic Industries" picture:@"men16.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Andrew Tran" title:@"Director of Sales" company:@"Magic Industries" picture:@"men17.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Owen Lynch" title:@"Director of Sales" company:@"Magic Industries" picture:@"men18.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Lyle Soto" title:@"Director of Sales" company:@"Magic Industries" picture:@"men19.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Herbert Walker" title:@"Director of Sales" company:@"Magic Industries" picture:@"men20.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Samuel Wilkins" title:@"Director of Sales" company:@"Magic Industries" picture:@"men21.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Elias Higgins" title:@"Director of Sales" company:@"Magic Industries" picture:@"men22.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Miguel Craid" title:@"Director of Sales" company:@"Magic Industries" picture:@"men23.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Cesar Medina" title:@"Director of Sales" company:@"Magic Industries" picture:@"men24.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Seth Torres" title:@"Director of Sales" company:@"Magic Industries" picture:@"men25.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Michael Moss" title:@"Director of Sales" company:@"Magic Industries" picture:@"men26.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Levi Andrews" title:@"Director of Sales" company:@"Magic Industries" picture:@"men27.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Cameron Cortez" title:@"Director of Sales" company:@"Magic Industries" picture:@"men28.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Rodney Rios" title:@"Director of Sales" company:@"Magic Industries" picture:@"men29.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Eugene Pena" title:@"Director of Sales" company:@"Magic Industries" picture:@"men30.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Tyler Sanders" title:@"Director of Sales" company:@"Magic Industries" picture:@"men31.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Kyle Carson" title:@"Director of Sales" company:@"Magic Industries" picture:@"men32.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Brendan Bridges" title:@"Director of Sales" company:@"Magic Industries" picture:@"men33.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Angelo Ray" title:@"Director of Sales" company:@"Magic Industries" picture:@"men34.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Robert Wong" title:@"Director of Sales" company:@"Magic Industries" picture:@"men35.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Bert Ortega" title:@"Director of Sales" company:@"Magic Industries" picture:@"men36.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Scott Norman" title:@"Director of Sales" company:@"Magic Industries" picture:@"men37.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Fernando Duncan" title:@"Director of Sales" company:@"Magic Industries" picture:@"men38.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Ray Lindsay" title:@"Director of Sales" company:@"Magic Industries" picture:@"men39.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Abel Pratt" title:@"Director of Sales" company:@"Magic Industries" picture:@"men40.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Mario Ramos" title:@"Director of Sales" company:@"Magic Industries" picture:@"men41.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Thomas Bishop" title:@"Director of Sales" company:@"Magic Industries" picture:@"men42.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Courtney Stewart" title:@"Director of Sales" company:@"Magic Industries" picture:@"men43.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Victor Thompson" title:@"Director of Sales" company:@"Magic Industries" picture:@"men44.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Myron Green" title:@"Director of Sales" company:@"Magic Industries" picture:@"men45.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Dewey Gilbert" title:@"Director of Sales" company:@"Magic Industries" picture:@"men46.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Mike Fuller" title:@"Director of Sales" company:@"Magic Industries" picture:@"men47.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Kelly Lawson" title:@"Director of Sales" company:@"Magic Industries" picture:@"men48.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Terrance Dawson" title:@"Director of Sales" company:@"Magic Industries" picture:@"men49.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Lynn Weber" title:@"Director of Sales" company:@"Magic Industries" picture:@"men50.jpg"]];
+ 
+            
+            [instance.people addObject:[Person initWithName:@"Ernestine Todd" title:@"Director of Sales" company:@"Magic Industries" picture:@"women1.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Janie Young" title:@"Director of Sales" company:@"Magic Industries" picture:@"women2.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Sophie Carson" title:@"Director of Sales" company:@"Magic Industries" picture:@"women3.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Maxine Poole" title:@"Director of Sales" company:@"Magic Industries" picture:@"women4.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Rebecca Hardy" title:@"Director of Sales" company:@"Magic Industries" picture:@"women5.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Johnnie Palmer" title:@"Director of Sales" company:@"Magic Industries" picture:@"women6.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Beatrice Turner" title:@"Director of Sales" company:@"Magic Industries" picture:@"women7.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Angie Gibson" title:@"Director of Sales" company:@"Magic Industries" picture:@"women8.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Lucia White" title:@"Director of Sales" company:@"Magic Industries" picture:@"women9.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Sonna Wright" title:@"Director of Sales" company:@"Magic Industries" picture:@"women10.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Eloise Cross" title:@"Director of Sales" company:@"Magic Industries" picture:@"women11.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Kelli Martinez" title:@"Director of Sales" company:@"Magic Industries" picture:@"women12.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Velma Hamilton" title:@"Director of Sales" company:@"Magic Industries" picture:@"women13.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Nicole Aguilar" title:@"Director of Sales" company:@"Magic Industries" picture:@"women14.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Elsa Goodwin" title:@"Director of Sales" company:@"Magic Industries" picture:@"women15.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Lynda Fuller" title:@"Director of Sales" company:@"Magic Industries" picture:@"women16.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Yvette Pratt" title:@"Director of Sales" company:@"Magic Industries" picture:@"women17.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Teresa Murphy" title:@"Director of Sales" company:@"Magic Industries" picture:@"women18.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Kristi Cortez" title:@"Director of Sales" company:@"Magic Industries" picture:@"women19.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Krista Ryan" title:@"Director of Sales" company:@"Magic Industries" picture:@"women20.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Leona Warner" title:@"Director of Sales" company:@"Magic Industries" picture:@"women21.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Elisa Mcdaniel" title:@"Director of Sales" company:@"Magic Industries" picture:@"women22.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Cristina Mccarthy" title:@"Director of Sales" company:@"Magic Industries" picture:@"women23.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Jaime Gregory" title:@"Director of Sales" company:@"Magic Industries" picture:@"women24.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Victoria Nunez" title:@"Director of Sales" company:@"Magic Industries" picture:@"women25.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Pam Moore" title:@"Director of Sales" company:@"Magic Industries" picture:@"women26.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Patti May" title:@"Director of Sales" company:@"Magic Industries" picture:@"women27.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Tasha Sparks" title:@"Director of Sales" company:@"Magic Industries" picture:@"women28.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Katrina Armstrong" title:@"Director of Sales" company:@"Magic Industries" picture:@"women29.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Nellie Love" title:@"Director of Sales" company:@"Magic Industries" picture:@"women30.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Silvia Stevenson" title:@"Director of Sales" company:@"Magic Industries" picture:@"women31.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Margaret Wallace" title:@"Director of Sales" company:@"Magic Industries" picture:@"women32.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Anna Sanders" title:@"Director of Sales" company:@"Magic Industries" picture:@"women33.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Kimberly Snyder" title:@"Director of Sales" company:@"Magic Industries" picture:@"women34.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Candace Santiago" title:@"Director of Sales" company:@"Magic Industries" picture:@"women35.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Kristen Morris" title:@"Director of Sales" company:@"Magic Industries" picture:@"women36.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Alexis Francis" title:@"Director of Sales" company:@"Magic Industries" picture:@"women37.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Hazel Crr" title:@"Director of Sales" company:@"Magic Industries" picture:@"women38.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Pamela Patterson" title:@"Director of Sales" company:@"Magic Industries" picture:@"women39.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Lola Valdez" title:@"Director of Sales" company:@"Magic Industries" picture:@"women40.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Gloria Rodgers" title:@"Director of Sales" company:@"Magic Industries" picture:@"women41.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Katie Reynolds" title:@"Director of Sales" company:@"Magic Industries" picture:@"women42.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Marha Ford" title:@"Director of Sales" company:@"Magic Industries" picture:@"women43.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Flora Buchanan" title:@"Director of Sales" company:@"Magic Industries" picture:@"women44.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Vivian Fowler" title:@"Director of Sales" company:@"Magic Industries" picture:@"women45.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Rosie Swanson" title:@"Director of Sales" company:@"Magic Industries" picture:@"women46.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Marion Erikson" title:@"Director of Sales" company:@"Magic Industries" picture:@"women47.jpg"]];
+            [instance.people addObject:[Person initWithName:@"April Hayes" title:@"Director of Sales" company:@"Magic Industries" picture:@"women48.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Lillie Vasquez" title:@"Director of Sales" company:@"Magic Industries" picture:@"women49.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Camille Bishop" title:@"Director of Sales" company:@"Magic Industries" picture:@"women50.jpg"]];
+
+            
+            
             //set up all files
             [instance.files addObject:[File initWithName:@"Expense Report" path:@"force.pdf"]];
             [instance.files addObject:[File initWithName:@"Meeting Docket" path:@"Person.txt"]];
@@ -239,7 +344,17 @@ static Meeting *meet = nil;
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
             
-            instance.next = [instance.meetings objectAtIndex:3];
+            
+            /* Find the next meeting */
+            NSDate *todayDate = [NSDate date];
+            
+            NSPredicate *today = [NSPredicate predicateWithBlock:^BOOL(Meeting *evaluatedObject, NSDictionary *bindings) {
+                return [evaluatedObject.date compare:todayDate] == NSOrderedDescending;
+            }];
+            
+            instance.next = [[[instance.meetings filteredArrayUsingPredicate:today] sortedArrayUsingComparator:^(Meeting *m1, Meeting *m2) {
+                return [[m1 date] compare:[m2 date]];
+            }] objectAtIndex:0];
         }
     }
     return instance;

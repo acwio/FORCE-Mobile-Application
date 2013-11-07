@@ -71,6 +71,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
 -(BOOL)canBecomeFirstResponder {
     return YES;
 }
