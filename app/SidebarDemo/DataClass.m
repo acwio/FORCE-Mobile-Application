@@ -238,6 +238,8 @@ static Meeting *meet = nil;
             [instance.meetings addObject:[self setName:@"Monthly Financial Report" setDate:date setDesc:@"This meeting covers all financial relations of the past month." setComp:@"Queen Industries" setAddr:@"654 Queen Avenue" setCity:@"Starling City" setStat:@"DCState" setZip:@"12223" setLocation:location setPeople:mPeople setFiles:mFiles]];
             [mPeople removeAllObjects];
             [mFiles removeAllObjects];
+            
+            instance.next = [instance.meetings objectAtIndex:3];
         }
     }
     return instance;

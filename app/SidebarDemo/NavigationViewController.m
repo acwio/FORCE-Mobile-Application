@@ -74,7 +74,7 @@
         UIImageView *boxView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"box.png"]];
         boxView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(4, 16, boxView.frame.size.width - 8, 20)];
-        lbl.font = [UIFont systemFontOfSize:17];
+        lbl.font = [UIFont systemFontOfSize:10];
         lbl.minimumFontSize = 2;
         lbl.backgroundColor = [UIColor clearColor];
         lbl.textColor = [UIColor whiteColor];
@@ -82,7 +82,7 @@
         lbl.text = text;
         lbl.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
         view = [[ARObjectView alloc] initWithFrame:boxView.frame];
-        [view addSubview:boxView];
+        //[view addSubview:boxView];
         [view addSubview:lbl];
     }
     

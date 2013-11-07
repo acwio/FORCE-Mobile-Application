@@ -9,6 +9,7 @@
 #import "MeetingTabBarController.h"
 #import "SWRevealViewController.h"
 #import "Meeting.h"
+#import "DataClass.h"
 
 @interface MeetingTabBarController ()
 
@@ -43,6 +44,8 @@
     
     [[self.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%d", [self.meeting.people count]]];
     [[self.tabBar.items objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%d", [self.meeting.files count]]];
+    
+    [self becomeFirstResponder];
 
 }
 
@@ -50,6 +53,32 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewDidDisappear:animated];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+        [stubController setSelectedIndex:4];
+        stubController.view.backgroundColor = [UIColor whiteColor];
+        
+        Meeting *meet = [[DataClass getInstance] next];
+        stubController.title = meet.name;
+        stubController.meeting = meet;
+        
+        // Push the new meeting page on top of the current page
+        [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+    }
+    [super motionEnded:motion withEvent:event];
 }
 
 @end

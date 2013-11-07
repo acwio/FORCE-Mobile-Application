@@ -15,11 +15,14 @@
     NSMutableArray *meetings;
     NSMutableArray *people;
     NSMutableArray *files;
+    
+    Meeting *next;
 }
 
 @property(nonatomic,retain)NSMutableArray *meetings;
 @property(nonatomic,retain)NSMutableArray *people;
 @property(nonatomic,retain)NSMutableArray *files;
+@property(nonatomic,retain)Meeting *next;
 
 +(DataClass*)getInstance;
 
