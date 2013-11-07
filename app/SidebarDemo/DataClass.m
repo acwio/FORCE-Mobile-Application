@@ -168,17 +168,23 @@ static Meeting *meet = nil;
             }
             
             //set up all files
-            [instance.files addObject:[File initWithName:@"Expense Report" path:@"force.pdf"]];
-            [instance.files addObject:[File initWithName:@"Meeting Docket" path:@"Person.txt"]];
-            [instance.files addObject:[File initWithName:@"Epic Notes" path:@"user.png"]];
-            [instance.files addObject:[File initWithName:@"Future Endeavors" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"New Technology" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"White Board Picture" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"Cat Picture" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"AR Demo" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"Recording of Tech Meeting" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"What did the fox say" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"Other Expense Report" path:@"calendar_photo.jpg"]];
+            [instance.files addObject:[File initWithName:@"Force PDF" path:@"force.pdf"]];
+            [instance.files addObject:[File initWithName:@"Code Documentation" path:@"Person.txt"]];
+            [instance.files addObject:[File initWithName:@"User Picture" path:@"user.png"]];
+            [instance.files addObject:[File initWithName:@"Calender Icon" path:@"calendar_photo.jpg"]];
+            [instance.files addObject:[File initWithName:@"Space" path:@"img1.jpg"]];
+            [instance.files addObject:[File initWithName:@"The Final Fronteir" path:@"img2.jpg"]];
+            [instance.files addObject:[File initWithName:@"Outer Space" path:@"img3.jpg"]];
+            [instance.files addObject:[File initWithName:@"Starry Sky" path:@"calendar_photo.jpg"]];
+            [instance.files addObject:[File initWithName:@"The future of Mankind" path:@"img4.jpg"]];
+            [instance.files addObject:[File initWithName:@"Shoot for the..." path:@"img5.jpg"]];
+            [instance.files addObject:[File initWithName:@"Timey Wimey" path:@"img6.jpg"]];
+            [instance.files addObject:[File initWithName:@"Broaden Your Horizons" path:@"img7.jpg"]];
+            [instance.files addObject:[File initWithName:@"Mathmatical Proposal" path:@"text.doc"]];
+            [instance.files addObject:[File initWithName:@"Conducting Business Meetings" path:@"ppt1.ppt"]];
+            [instance.files addObject:[File initWithName:@"Meeting PPT" path:@"ppt2.ppt"]];
+            [instance.files addObject:[File initWithName:@"Report1" path:@"pdf1.pdf"]];
+            [instance.files addObject:[File initWithName:@"Report2ß" path:@"pdf2.pdf"]];
             
             /* Set up Meeting
                 Step1: Assign People Attending Meeting
