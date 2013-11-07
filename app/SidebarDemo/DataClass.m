@@ -56,13 +56,13 @@ static Meeting *meet = nil;
             [instance.people addObject:[Person initWithName:@"Aiden Howard" title:@"General Manager" company:@"Magic Industries" picture:@"men6.jpg"]];
             [instance.people addObject:[Person initWithName:@"George Bell" title:@"Section Head" company:@"Drivers LLC" picture:@"men7.jpg"]];
             [instance.people addObject:[Person initWithName:@"Evan Watson" title:@"Assistant Manager" company:@"Drivers LLC" picture:@"men8.jpg"]];
-            [instance.people addObject:[Person initWithName:@"Abraham	 Davidson" title:@"Software Developer" company:@"Drivers LLC" picture:@"men9.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Abraham Davidson" title:@"Software Developer" company:@"Drivers LLC" picture:@"men9.jpg"]];
             [instance.people addObject:[Person initWithName:@"Josh Manning" title:@"Director of IT" company:@"Drivers LLC" picture:@"men10.jpg"]];
             [instance.people addObject:[Person initWithName:@"Loren Ford" title:@"Web Developer" company:@"Battle Hardened" picture:@"men11.jpg"]];
             [instance.people addObject:[Person initWithName:@"Shane Stone" title:@"Chief Accounting Officer" company:@"Battle Hardened" picture:@"men12.jpg"]];
             [instance.people addObject:[Person initWithName:@"Zachary Gibbs" title:@"Chief Operations Officer" company:@"Battle Hardened" picture:@"men13.jpg"]];
-            [instance.people addObject:[Person initWithName:@"Brandon	 Mckinney" title:@"General Manager" company:@"Battle Hardened" picture:@"men14.jpg"]];
-            [instance.people addObject:[Person initWithName:@"Orlando	 Williamson" title:@"Section Head" company:@"ImageTech LLC" picture:@"men15.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Brandon Mckinney" title:@"General Manager" company:@"Battle Hardened" picture:@"men14.jpg"]];
+            [instance.people addObject:[Person initWithName:@"Orlando Williamson" title:@"Section Head" company:@"ImageTech LLC" picture:@"men15.jpg"]];
             [instance.people addObject:[Person initWithName:@"Jorge Curry" title:@"Assistant Manager" company:@"ImageTech LLC" picture:@"men16.jpg"]];
             [instance.people addObject:[Person initWithName:@"Andrew Tran" title:@"Software Developer" company:@"ImageTech LLC" picture:@"men17.jpg"]];
             [instance.people addObject:[Person initWithName:@"Owen Lynch" title:@"Director of Marketing" company:@"ImageTech LLC" picture:@"men18.jpg"]];
@@ -168,17 +168,23 @@ static Meeting *meet = nil;
             }
             
             //set up all files
-            [instance.files addObject:[File initWithName:@"Expense Report" path:@"force.pdf"]];
-            [instance.files addObject:[File initWithName:@"Meeting Docket" path:@"Person.txt"]];
-            [instance.files addObject:[File initWithName:@"Epic Notes" path:@"user.png"]];
-            [instance.files addObject:[File initWithName:@"Future Endeavors" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"New Technology" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"White Board Picture" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"Cat Picture" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"AR Demo" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"Recording of Tech Meeting" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"What did the fox say" path:@"calendar_photo.jpg"]];
-            [instance.files addObject:[File initWithName:@"Other Expense Report" path:@"calendar_photo.jpg"]];
+            [instance.files addObject:[File initWithName:@"Force PDF" path:@"force.pdf"]];
+            [instance.files addObject:[File initWithName:@"Code Documentation" path:@"Person.txt"]];
+            [instance.files addObject:[File initWithName:@"User Picture" path:@"user.png"]];
+            [instance.files addObject:[File initWithName:@"Calender Icon" path:@"calendar_photo.jpg"]];
+            [instance.files addObject:[File initWithName:@"Space" path:@"img1.jpg"]];
+            [instance.files addObject:[File initWithName:@"The Final Fronteir" path:@"img2.jpg"]];
+            [instance.files addObject:[File initWithName:@"Outer Space" path:@"img3.jpg"]];
+            [instance.files addObject:[File initWithName:@"Starry Sky" path:@"calendar_photo.jpg"]];
+            [instance.files addObject:[File initWithName:@"The future of Mankind" path:@"img4.jpg"]];
+            [instance.files addObject:[File initWithName:@"Shoot for the..." path:@"img5.jpg"]];
+            [instance.files addObject:[File initWithName:@"Timey Wimey" path:@"img6.jpg"]];
+            [instance.files addObject:[File initWithName:@"Broaden Your Horizons" path:@"img7.jpg"]];
+            [instance.files addObject:[File initWithName:@"Mathmatical Proposal" path:@"text.doc"]];
+            [instance.files addObject:[File initWithName:@"Conducting Business Meetings" path:@"ppt1.ppt"]];
+            [instance.files addObject:[File initWithName:@"Meeting PPT" path:@"ppt2.ppt"]];
+            [instance.files addObject:[File initWithName:@"Report1" path:@"pdf1.pdf"]];
+            [instance.files addObject:[File initWithName:@"Report2ß" path:@"pdf2.pdf"]];
             
             /* Set up Meeting
                 Step1: Assign People Attending Meeting
