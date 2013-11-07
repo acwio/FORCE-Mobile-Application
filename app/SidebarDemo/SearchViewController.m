@@ -190,7 +190,11 @@ NSArray *fileResults;
             if(indexPath.row < [fileResults count]) {
                 File *file = [fileResults objectAtIndex:indexPath.row];
                 if ([[file.path pathExtension] isEqualToString:@"jpg"] || [[file.path pathExtension] isEqualToString:@"png"]) {
-                    cell.imageView.image = [UIImage imageNamed:file.path];
+                    if([file.path rangeOfString:@"/"].location == NSNotFound){
+                        cell.imageView.image = [UIImage imageNamed:file.path];}
+                    else{
+                        cell.imageView.image = [UIImage imageWithContentsOfFile:file.path];
+                    }
                 } else if ([[file.path pathExtension] isEqualToString:@"pdf"]) {
                     cell.imageView.image = [UIImage imageNamed:@"pdf-32.png"];
                 } else if ([[file.path pathExtension] isEqualToString:@"txt"]) {

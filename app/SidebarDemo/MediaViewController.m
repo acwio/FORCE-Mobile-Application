@@ -56,15 +56,15 @@
                                                              NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                          [NSString stringWithFormat: @"MyImage.png"]];
-        NSData* data = UIImagePNGRepresentation(image);
+                          [NSString stringWithFormat: @"MyImage.jpg"]];
+        NSData* data = UIImageJPEGRepresentation(image, 1.0);
         
-        [data writeToFile:[path lastPathComponent] atomically:YES];
+        [data writeToFile:path atomically:YES];
         
         NSLog(@"meeting array: %@", meeting.files);
         
         DataClass *obj = [DataClass getInstance];
-        File *file = [File initWithName:@"New Picture File" path:[path lastPathComponent]];
+        File *file = [File initWithName:@"New Picture File" path:path];
         [obj.files addObject:file];
         [meeting.files addObject:file];
         

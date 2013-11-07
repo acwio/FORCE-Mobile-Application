@@ -119,7 +119,11 @@
         UIImage *image;
         
         if ([[f.path pathExtension] isEqualToString:@"jpg"] || [[f.path pathExtension] isEqualToString:@"png"]) {
-            image = [UIImage imageNamed:f.path];
+            if([f.path rangeOfString:@"/"].location == NSNotFound){
+                image = [UIImage imageNamed:f.path];}
+            else{
+                image = [UIImage imageWithContentsOfFile:f.path];
+            }
         } else if ([[f.path pathExtension] isEqualToString:@"pdf"]) {
             image = [UIImage imageNamed:@"pdf-icon.png"];
         } else if ([[f.path pathExtension] isEqualToString:@"txt"]) {
