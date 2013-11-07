@@ -59,7 +59,7 @@ NSString *sort = @"Name";
     
     groups = [[NSMutableArray alloc] init];
     
-    NSPredicate *documentPredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.pdf'"];
+    NSPredicate *documentPredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.pdf' or path contains[cd] '.doc' or path contains[cd] '.ppt'"];
     NSPredicate *imagePredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.jpg' or path contains[cd] '.png'"];
     NSPredicate *textPredicate = [NSPredicate predicateWithFormat:@"path contains[cd] '.txt'"];
     
@@ -193,6 +193,10 @@ NSString *sort = @"Name";
         cell.imageView.image = [UIImage imageNamed:@"txt-32.png"];
     } else if ([[file.path pathExtension] isEqualToString:@"aif"]) {
         cell.imageView.image = [UIImage imageNamed:@"mp3-100.png"];
+    } else if ([[file.path pathExtension] isEqualToString:@"doc"]) {
+        cell.imageView.image = [UIImage imageNamed:@"doc-100.png"];
+    } else if ([[file.path pathExtension] isEqualToString:@"ppt"]) {
+        cell.imageView.image = [UIImage imageNamed:@"ppt-100.png"];
     }
     
     cell.textLabel.text = file.name;

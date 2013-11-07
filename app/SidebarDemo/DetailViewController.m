@@ -131,6 +131,10 @@
             image = [UIImage imageNamed:@"txt-32.png"];
         } else if ([[f.path pathExtension] isEqualToString:@"aif"]) {
             image = [UIImage imageNamed:@"mp3-100.png"];
+        } else if ([[f.path pathExtension] isEqualToString:@"doc"]) {
+            image = [UIImage imageNamed:@"doc-100.png"];
+        } else if ([[f.path pathExtension] isEqualToString:@"ppt"]) {
+            image = [UIImage imageNamed:@"ppt-100.png"];
         }
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];

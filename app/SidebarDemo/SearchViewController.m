@@ -201,6 +201,10 @@ NSArray *fileResults;
                     cell.imageView.image = [UIImage imageNamed:@"txt-32.png"];
                 } else if ([[file.path pathExtension] isEqualToString:@"aif"]) {
                     cell.imageView.image = [UIImage imageNamed:@"mp3-100.png"];
+                } else if ([[file.path pathExtension] isEqualToString:@"doc"]) {
+                    cell.imageView.image = [UIImage imageNamed:@"doc-100.png"];
+                } else if ([[file.path pathExtension] isEqualToString:@"ppt"]) {
+                    cell.imageView.image = [UIImage imageNamed:@"ppt-100.png"];
                 }
                 
                 cell.textLabel.text = [file name];
