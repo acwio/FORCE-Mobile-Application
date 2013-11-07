@@ -8,6 +8,9 @@
 
 #import "AboutViewController.h"
 #include "SWRevealViewController.h"
+#import "Meeting.h"
+#import "DataClass.h"
+#import "MeetingTabBarController.h"
 
 @interface AboutViewController ()
 
@@ -57,6 +60,8 @@
 {
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    [self becomeFirstResponder];
 }
 
 
@@ -66,7 +71,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewDidDisappear:animated];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+        [stubController setSelectedIndex:4];
+        stubController.view.backgroundColor = [UIColor whiteColor];
+        
+        Meeting *meet = [[DataClass getInstance] next];
+        stubController.title = meet.name;
+        stubController.meeting = meet;
+        
+        // Push the new meeting page on top of the current page
+        [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+    }
+    [super motionEnded:motion withEvent:event];
+}
 
 /*
 // Override to support conditional editing of the table view.

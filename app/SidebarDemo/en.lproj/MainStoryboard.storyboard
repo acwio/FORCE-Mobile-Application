@@ -128,7 +128,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="LargeCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LargeCell" rowHeight="200" id="0pT-WX-PzP">
-                                <rect key="frame" x="0.0" y="22" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0pT-WX-PzP" id="XQt-8d-uXR">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
@@ -190,7 +190,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="SmallCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SmallCell" rowHeight="50" id="lTV-Ia-IE8">
-                                <rect key="frame" x="0.0" y="222" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="286" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lTV-Ia-IE8" id="aJW-j6-Zk1">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -1339,6 +1339,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1jC-OM-Gbr"/>
+        <segue reference="YRX-p5-H7V"/>
     </inferredMetricsTieBreakers>
 </document>

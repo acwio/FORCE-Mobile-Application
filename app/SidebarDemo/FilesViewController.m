@@ -8,6 +8,7 @@
 
 #import "FilesViewController.h"
 #import "SWRevealViewController.h"
+#import "MeetingTabBarController.h"
 #import "DataClass.h"
 #import "File.h"
 #import "Meeting.h"
@@ -89,6 +90,8 @@ NSString *sort = @"Name";
 {
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    [self becomeFirstResponder];
     
 }
 
@@ -243,6 +246,32 @@ NSString *sort = @"Name";
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     sort = [segmentedControl titleForSegmentAtIndex: [segmentedControl selectedSegmentIndex]];
     [tableView reloadData];
+}
+
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewDidDisappear:animated];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        MeetingTabBarController *stubController = [self.storyboard instantiateViewControllerWithIdentifier:@"MeetingTabBar"];
+        [stubController setSelectedIndex:4];
+        stubController.view.backgroundColor = [UIColor whiteColor];
+        
+        Meeting *meet = [[DataClass getInstance] next];
+        stubController.title = meet.name;
+        stubController.meeting = meet;
+        
+        // Push the new meeting page on top of the current page
+        [(UINavigationController*)self.revealViewController.frontViewController pushViewController:stubController animated:YES];
+    }
+    [super motionEnded:motion withEvent:event];
 }
 
 /*
