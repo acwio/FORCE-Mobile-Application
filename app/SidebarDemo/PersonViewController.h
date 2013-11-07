@@ -21,4 +21,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *companyLabel;
 
+- (IBAction)phone:(id)sender;
+- (IBAction)email:(id)sender;
+
 @end
