@@ -564,10 +564,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark.png" id="fqx-eA-ktZ">
-                                                    <rect key="frame" x="20" y="1" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nathan Perry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fwt-Xx-8dw">
                                                     <rect key="frame" x="130" y="30" width="170" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -575,6 +571,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nperry.jpg" id="CXy-aV-IRw">
+                                                    <rect key="frame" x="12" y="3" width="96" height="96"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -585,10 +585,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comments.png" id="Ghm-v3-1bV">
-                                                    <rect key="frame" x="20" y="1" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nathan Reale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OY8-kA-tZU">
                                                     <rect key="frame" x="130" y="30" width="170" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -596,6 +592,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nreale.jpg" id="ptq-zp-Qg7">
+                                                    <rect key="frame" x="12" y="3" width="96" height="96"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -606,10 +606,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.png" id="B89-y4-Sdb">
-                                                    <rect key="frame" x="20" y="1" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alex Williams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bqd-61-fgO">
                                                     <rect key="frame" x="130" y="30" width="170" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -617,6 +613,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="awilliams.jpg" id="7F2-Qi-8o9">
+                                                    <rect key="frame" x="12" y="3" width="96" height="96"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1343,15 +1343,15 @@
         <image name="Nav_Files_Icon.png" width="55" height="48"/>
         <image name="Nav_Settings_Icon.png" width="55" height="48"/>
         <image name="Phone_Icon.png" width="128" height="128"/>
-        <image name="bookmark.png" width="1024" height="1024"/>
-        <image name="calendar.png" width="1024" height="1024"/>
+        <image name="awilliams.jpg" width="100" height="100"/>
         <image name="camera-icon.png" width="30" height="30"/>
-        <image name="comments.png" width="1024" height="1024"/>
         <image name="google (1).png" width="280" height="51"/>
         <image name="l_bolt.png" width="46" height="56"/>
         <image name="linkedin (1).png" width="269" height="48"/>
         <image name="mail_icon.png" width="128" height="128"/>
         <image name="near_me-128.png" width="128" height="128"/>
+        <image name="nperry.jpg" width="100" height="100"/>
+        <image name="nreale.jpg" width="100" height="100"/>
         <image name="user.png" width="69" height="69"/>
     </resources>
     <color key="tintColor" red="0.51372549019607838" green="0.76078431372549016" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
