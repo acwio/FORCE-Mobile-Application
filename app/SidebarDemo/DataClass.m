@@ -227,7 +227,7 @@ static Meeting *meet = nil;
             dateComponents.year = 2013;
             dateComponents.month = 11;
             dateComponents.day = 9;
-            dateComponents.hour = 10;
+            dateComponents.hour = 20;
             NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
             //assign a meeting
             [instance.meetings addObject:[self setName:@"Staff Meeting" setDate:date setDesc:@"A meeting in which staff meet to discuss business." setComp:@"Drivers LLC" setAddr:@"1770 Shady Willow Crescent" setCity:@"Elf" setStat:@"Utah" setZip:@"84234" setLocation:location setPeople:mPeople setFiles:mFiles]];

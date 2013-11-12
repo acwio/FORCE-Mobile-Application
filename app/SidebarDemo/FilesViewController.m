@@ -243,7 +243,7 @@ NSString *sort = @"Name";
     @catch(NSException *exception){
         NSLog(@"Second:");
         NSString *documentdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *tileDirectory = [documentdir stringByAppendingPathComponent:@"MyImage.png"];
+        NSString *tileDirectory = [documentdir stringByAppendingPathComponent:@"MyImage.jpg"];
         NSURL *targetURL = [NSURL fileURLWithPath:tileDirectory];
         NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
         [webView loadRequest:request];

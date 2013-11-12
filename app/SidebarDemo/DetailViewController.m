@@ -67,7 +67,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"EEE MMM dd yyyy"];
     NSString *stringFromDate = [formatter stringFromDate:meeting.date];
-    [formatter setDateFormat:@"HH:mm a"];
+    [formatter setDateFormat:@"hh:mm a"];
     NSString *time = [formatter stringFromDate:meeting.date];
     
     //figure out if the date is today or tomorrow only.
